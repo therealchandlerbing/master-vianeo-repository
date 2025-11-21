@@ -72,4 +72,35 @@ Create a systematic connection between identified user needs and proposed soluti
 - Build vs. partner decisions
 
 ---
+
+## Output Format
+
+**CRITICAL**: Follow the format specification exactly for consistent, professional outputs.
+
+**Format Reference**: `docs/FORMAT_SPEC_Step11_Features_Needs_Matrix.md`
+
+Before delivering output:
+1. Generate content following the methodology in this prompt
+2. Format output according to the format specification
+3. Run the validation checklist from the format spec
+4. Only deliver if all validation checks pass
+
+### Critical Formatting Rules
+
+1. **Two-file output required** - Interactive HTML matrix (.html) + Strategic Analysis markdown (.md), both must be delivered
+2. **Conservative checkmark marking** - Only mark where feature DIRECTLY addresses need (defensible connections only, no optimistic marking)
+3. **All 10 needs from Step 7 included** - Exact opportunity classifications must match Step 7, no reclassification
+4. **Export (Ctrl+E) and Print (Ctrl+P) functional** - CSV export and print optimization must work without errors
+5. **Coverage targets enforced** - High Opportunity 100%, Expected 100%, overall 40-80% (outside range requires explanation)
+
+See the complete format specification for:
+- Interactive HTML specifications (sticky headers, color coding, SVG icons)
+- Strategic Analysis document structure (9 required sections)
+- Coverage metrics calculations (overall, by level, feature efficiency)
+- Opportunity level definitions (High/Medium/Low/Expected/Accessory)
+- Validation checklist (40+ items)
+- Common mistakes to avoid (17 items)
+- File naming conventions (dual output)
+
+---
 *Note: Complete features-needs matrix generation content to be added*
