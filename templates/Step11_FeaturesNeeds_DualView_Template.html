@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="[PROJECT NAME] - Features & Needs Matrix with Partners and Means views">
+    <title>Features & Needs Matrix | [PROJECT NAME]</title>
+
+    <style>
+/* ========================================
+   VIANEO DESIGN SYSTEM - FEATURES & NEEDS MATRIX
+   Step 11: Features & Needs/Feasibility
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary Colors */
+    --color-primary: #1a365d;
+    --color-primary-light: #2c5282;
+    --color-surface: #ffffff;
+    --color-border: #e2e8f0;
+
+    /* Text Colors */
+    --color-text-primary: #1a202c;
+    --color-text-secondary: #4a5568;
+    --color-text-tertiary: #718096;
+
+    /* Opportunity Levels */
+    --color-opportunity-high: #0f9d58;
+    --color-opportunity-medium: #f4b400;
+    --color-opportunity-low: #ef6c00;
+    --color-expected: #1a73e8;
+    --color-accessory: #5f6368;
+
+    /* Row Backgrounds */
+    --bg-opportunity-high: #e8f5e9;
+    --bg-opportunity-medium: #fff9e6;
+    --bg-opportunity-low: #fff3e0;
+    --bg-expected: #e8f0fe;
+    --bg-accessory: #f5f5f5;
+
+    /* Font */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: var(--font-family);
+    background: #e8ebed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    max-width: 1600px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 10px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* === ACCESSIBILITY === */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* === HEADER === */
+.header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.header-title-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-title {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.header-subtitle {
+    font-size: 10px;
+    opacity: 0.9;
+}
+
+.stats-inline {
+    display: flex;
+    gap: 20px;
+    font-size: 11px;
+}
+
+.stat-inline {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.stat-inline-value {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.stat-inline-label {
+    font-size: 9px;
+    opacity: 0.85;
+}
+
+.header-right {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* === TOGGLE === */
+.header-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    font-size: 10px;
+    margin-right: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.toggle-label-small {
+    font-weight: 500;
+    opacity: 0.7;
+    transition: opacity 0.15s ease;
+    user-select: none;
+}
+
+.toggle-label-small.active {
+    opacity: 1;
+    font-weight: 600;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 40px;
+    height: 22px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.25s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.toggle-switch:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.toggle-switch:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+}
+
+.toggle-switch.active {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.toggle-switch-slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background: var(--color-surface);
+    border-radius: 50%;
+    transition: transform 0.25s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch.active .toggle-switch-slider {
+    transform: translateX(18px);
+}
+
+/* === BUTTONS === */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    backdrop-filter: blur(10px);
+}
+
+.btn:hover {
+    background: rgba(255,255,255,0.25);
+    border-color: rgba(255,255,255,0.4);
+}
+
+.btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+}
+
+.btn svg {
+    width: 12px;
+    height: 12px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* === TABLE CONTAINER === */
+.table-container {
+    flex: 1;
+    overflow-y: auto;
+    background: var(--color-surface);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.view-header {
+    background: var(--color-primary);
+    color: white;
+    padding: 12px 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+}
+
+.table-scroll {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.table-scroll::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.table-scroll::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 5px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
+
+/* === TABLE === */
+.matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    font-size: 11px;
+}
+
+.matrix-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #f8fafc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.matrix-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-secondary);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.matrix-table thead th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 11;
+    background: #f8fafc;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.matrix-table tbody th {
+    position: sticky;
+    left: 0;
+    z-index: 9;
+    background: inherit;
+    font-weight: 600;
+    font-size: 11px;
+    text-align: left;
+    padding: 12px 16px;
+    color: var(--color-text-primary);
+    border-right: 2px solid var(--color-border);
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.matrix-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-border);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.matrix-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.matrix-table tbody tr:hover {
+    background: rgba(26, 54, 93, 0.02);
+}
+
+/* Opportunity-based row backgrounds */
+.matrix-table tbody tr[data-opportunity="high"] {
+    background: var(--bg-opportunity-high);
+}
+
+.matrix-table tbody tr[data-opportunity="medium"] {
+    background: var(--bg-opportunity-medium);
+}
+
+.matrix-table tbody tr[data-opportunity="low"] {
+    background: var(--bg-opportunity-low);
+}
+
+.matrix-table tbody tr[data-opportunity="expected"] {
+    background: var(--bg-expected);
+}
+
+.matrix-table tbody tr[data-opportunity="accessory"] {
+    background: var(--bg-accessory);
+}
+
+/* === TIMING BADGES === */
+.timing-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.timing-badge svg {
+    width: 12px;
+    height: 12px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.timing-available {
+    background: var(--bg-opportunity-high);
+    color: var(--color-opportunity-high);
+}
+
+.timing-short {
+    background: var(--bg-expected);
+    color: var(--color-expected);
+}
+
+.timing-mid {
+    background: var(--bg-opportunity-medium);
+    color: var(--color-opportunity-medium);
+}
+
+.timing-long {
+    background: var(--bg-opportunity-low);
+    color: var(--color-opportunity-low);
+}
+
+/* === CELL CONTENT === */
+.check {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-opportunity-high);
+    position: relative;
+}
+
+.check::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.partner-text {
+    font-size: 11px;
+    color: var(--color-text-primary);
+    font-weight: 500;
+}
+
+/* === VISIBILITY TOGGLE === */
+.hidden {
+    display: none !important;
+}
+
+/* === FOOTER LEGEND === */
+.legend-footer {
+    padding: 12px 20px;
+    background: #f8fafc;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+.legend-title {
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.legend-items {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+.legend-color.high {
+    background: var(--color-opportunity-high);
+}
+
+.legend-color.medium {
+    background: var(--color-opportunity-medium);
+}
+
+.legend-color.low {
+    background: var(--color-opportunity-low);
+}
+
+.legend-color.expected {
+    background: var(--color-expected);
+}
+
+.legend-label {
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+/* === PRINT STYLES === */
+@media print {
+    html, body {
+        height: auto;
+        overflow: visible;
+        padding: 0;
+        background: white;
+    }
+
+    .card {
+        max-width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .header-right {
+        display: none;
+    }
+
+    .table-container {
+        overflow: visible;
+    }
+
+    .table-scroll {
+        overflow: visible;
+    }
+
+    .matrix-table {
+        page-break-inside: auto;
+    }
+
+    .matrix-table tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+
+    .timing-badge {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Screen reader live region for accessibility -->
+    <div id="liveRegion" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <div class="card">
+        <!-- ========================================
+             HEADER SECTION - CUSTOMIZE PROJECT INFO
+             ======================================== -->
+        <header class="header" role="banner">
+            <div class="header-left">
+                <div class="header-title-group">
+                    <h1 class="header-title">Features & Needs Matrix</h1>
+                    <p class="header-subtitle">[PROJECT NAME]</p>
+                </div>
+
+                <div class="stats-inline" role="group" aria-label="Matrix statistics">
+                    <div class="stat-inline">
+                        <span class="stat-inline-value">12</span>
+                        <span class="stat-inline-label">FEATURES</span>
+                    </div>
+                    <div class="stat-inline">
+                        <span class="stat-inline-value">5</span>
+                        <span class="stat-inline-label">CATEGORIES</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <!-- Toggle Switch -->
+                <div class="header-toggle">
+                    <span id="partnersLabel" class="toggle-label-small active">Partners</span>
+                    <div
+                        class="toggle-switch"
+                        id="toggleSwitch"
+                        role="switch"
+                        aria-checked="false"
+                        aria-label="Toggle between Partners and Means views"
+                        tabindex="0"
+                    >
+                        <div class="toggle-switch-slider"></div>
+                    </div>
+                    <span id="meansLabel" class="toggle-label-small">Means</span>
+                </div>
+
+                <!-- Export Button -->
+                <button class="btn" onclick="exportCSV()" aria-label="Export to CSV">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Export
+                </button>
+
+                <!-- Print Button -->
+                <button class="btn" onclick="window.print()" aria-label="Print matrix">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                        <rect x="6" y="14" width="12" height="8"></rect>
+                    </svg>
+                    Print
+                </button>
+            </div>
+        </header>
+
+        <!-- ========================================
+             MAIN CONTENT - TABLE SECTION
+             ======================================== -->
+        <main class="table-container" role="main">
+            <!-- View Header (shows current view) -->
+            <div class="view-header" id="viewHeader" aria-live="polite">PARTNERS</div>
+
+            <div class="table-scroll">
+                <table class="matrix-table" role="table" aria-label="Features and needs matrix">
+                    <caption class="sr-only">[PROJECT NAME] features mapped to partners and means</caption>
+
+                    <!-- ========================================
+                         TABLE HEADERS - CUSTOMIZE COLUMNS
+                         ======================================== -->
+                    <thead>
+                        <tr>
+                            <th scope="col">FEATURE</th>
+                            <th scope="col">IMPLEMENTATION TIMING</th>
+
+                            <!-- PARTNERS VIEW COLUMNS (visible by default) -->
+                            <th scope="col" data-view="partners">Technology Stack</th>
+                            <th scope="col" data-view="partners">Data Sources</th>
+                            <th scope="col" data-view="partners">Integration Partners</th>
+                            <th scope="col" data-view="partners">Service Providers</th>
+                            <th scope="col" data-view="partners">Cloud Platform</th>
+
+                            <!-- MEANS VIEW COLUMNS (hidden by default) -->
+                            <th scope="col" class="hidden" data-view="means">Internal Team</th>
+                            <th scope="col" class="hidden" data-view="means">Contractors</th>
+                            <th scope="col" class="hidden" data-view="means">Open Source</th>
+                            <th scope="col" class="hidden" data-view="means">SaaS Platforms</th>
+                            <th scope="col" class="hidden" data-view="means">Cloud Services</th>
+                            <th scope="col" class="hidden" data-view="means">Budget</th>
+                            <th scope="col" class="hidden" data-view="means">Equipment</th>
+                            <th scope="col" class="hidden" data-view="means">Licenses</th>
+                            <th scope="col" class="hidden" data-view="means">Consulting</th>
+                            <th scope="col" class="hidden" data-view="means">Grants</th>
+                        </tr>
+                    </thead>
+
+                    <!-- ========================================
+                         TABLE BODY - ADD YOUR FEATURES HERE
+
+                         IMPORTANT: Number of cells MUST match number of columns
+                         - 5 partner cells per row (matching 5 partner columns)
+                         - 10 means cells per row (matching 10 means columns)
+                         ======================================== -->
+                    <tbody>
+                        <!-- Example Row 1: Already Available -->
+                        <tr data-opportunity="high">
+                            <th scope="row">Feature Name 1</th>
+                            <td>
+                                <span class="timing-badge timing-available">
+                                    <svg viewBox="0 0 12 12" aria-hidden="true">
+                                        <path d="M10 3L4.5 8.5L2 6"/>
+                                    </svg>
+                                    Already available
+                                </span>
+                            </td>
+                            <!-- Partners cells (5 cells) -->
+                            <td data-view="partners"></td>
+                            <td data-view="partners"><div class="partner-text">Partner Name</div></td>
+                            <td data-view="partners"></td>
+                            <td data-view="partners"></td>
+                            <td data-view="partners"><div class="partner-text">AWS</div></td>
+                            <!-- Means cells (10 cells) -->
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"></td>
+                        </tr>
+
+                        <!-- Example Row 2: Short-term -->
+                        <tr data-opportunity="medium">
+                            <th scope="row">Feature Name 2</th>
+                            <td>
+                                <span class="timing-badge timing-short">
+                                    <svg viewBox="0 0 12 12" aria-hidden="true">
+                                        <circle cx="6" cy="6" r="5"/>
+                                    </svg>
+                                    Short-term (0-6 months)
+                                </span>
+                            </td>
+                            <!-- Partners cells (5 cells) -->
+                            <td data-view="partners"><div class="partner-text">Tech Partner</div></td>
+                            <td data-view="partners"></td>
+                            <td data-view="partners"></td>
+                            <td data-view="partners"><div class="partner-text">Service Provider</div></td>
+                            <td data-view="partners"></td>
+                            <!-- Means cells (10 cells) -->
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"></td>
+                        </tr>
+
+                        <!-- Example Row 3: Mid-term -->
+                        <tr data-opportunity="expected">
+                            <th scope="row">Feature Name 3</th>
+                            <td>
+                                <span class="timing-badge timing-mid">
+                                    <svg viewBox="0 0 12 12" aria-hidden="true">
+                                        <circle cx="6" cy="6" r="5"/>
+                                    </svg>
+                                    Mid-term (6-12 months)
+                                </span>
+                            </td>
+                            <!-- Partners cells (5 cells) -->
+                            <td data-view="partners"></td>
+                            <td data-view="partners"><div class="partner-text">Data Provider</div></td>
+                            <td data-view="partners"><div class="partner-text">API Partner</div></td>
+                            <td data-view="partners"></td>
+                            <td data-view="partners"></td>
+                            <!-- Means cells (10 cells) -->
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                        </tr>
+
+                        <!-- Example Row 4: Long-term -->
+                        <tr data-opportunity="low">
+                            <th scope="row">Feature Name 4</th>
+                            <td>
+                                <span class="timing-badge timing-long">
+                                    <svg viewBox="0 0 12 12" aria-hidden="true">
+                                        <circle cx="6" cy="6" r="5"/>
+                                    </svg>
+                                    Long-term (12+ months)
+                                </span>
+                            </td>
+                            <!-- Partners cells (5 cells) -->
+                            <td data-view="partners"></td>
+                            <td data-view="partners"></td>
+                            <td data-view="partners"></td>
+                            <td data-view="partners"></td>
+                            <td data-view="partners"><div class="partner-text">Cloud Provider</div></td>
+                            <!-- Means cells (10 cells) -->
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"></td>
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                            <td class="hidden" data-view="means"><div class="check" role="img" aria-label="Required"></div></td>
+                        </tr>
+
+                        <!-- ADD MORE ROWS HERE - Copy structure from examples above -->
+                        <!-- Recommended: 10-12 total features for optimal viewport fit -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <!-- ========================================
+             FOOTER LEGEND
+             ======================================== -->
+        <footer class="legend-footer" role="contentinfo">
+            <div class="legend-title">Opportunity Level:</div>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-color high"></div>
+                    <span class="legend-label">High</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color medium"></div>
+                    <span class="legend-label">Medium</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color low"></div>
+                    <span class="legend-label">Low</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color expected"></div>
+                    <span class="legend-label">Expected</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ========================================
+         JAVASCRIPT - TOGGLE & EXPORT FUNCTIONALITY
+         DO NOT MODIFY UNLESS NECESSARY
+         ======================================== -->
+    <script>
+        // ==========================================
+        // STATE MANAGEMENT
+        // ==========================================
+        const APP_STATE = {
+            isShowingMeans: false,
+            lastToggleTime: 0,
+            DEBOUNCE_MS: 250
+        };
+
+        // ==========================================
+        // DOM REFERENCES
+        // ==========================================
+        const DOM = {
+            toggleSwitch: null,
+            partnersLabel: null,
+            meansLabel: null,
+            viewHeader: null,
+            liveRegion: null,
+            partnersColumns: null,
+            meansColumns: null
+        };
+
+        // ==========================================
+        // INITIALIZATION
+        // ==========================================
+        function initializeApp() {
+            try {
+                DOM.toggleSwitch = document.getElementById('toggleSwitch');
+                DOM.partnersLabel = document.getElementById('partnersLabel');
+                DOM.meansLabel = document.getElementById('meansLabel');
+                DOM.viewHeader = document.getElementById('viewHeader');
+                DOM.liveRegion = document.getElementById('liveRegion');
+                DOM.partnersColumns = document.querySelectorAll('[data-view="partners"]');
+                DOM.meansColumns = document.querySelectorAll('[data-view="means"]');
+
+                setupEventListeners();
+                console.log('Features & Needs Matrix initialized successfully');
+            } catch (error) {
+                console.error('Initialization error:', error);
+            }
+        }
+
+        // ==========================================
+        // EVENT LISTENERS
+        // ==========================================
+        function setupEventListeners() {
+            if (DOM.toggleSwitch) {
+                DOM.toggleSwitch.addEventListener('click', handleToggleClick);
+                DOM.toggleSwitch.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handleToggleClick();
+                    }
+                });
+            }
+            document.addEventListener('keydown', handleGlobalShortcuts);
+        }
+
+        // ==========================================
+        // VIEW TOGGLE
+        // ==========================================
+        function handleToggleClick() {
+            const now = Date.now();
+            if (now - APP_STATE.lastToggleTime < APP_STATE.DEBOUNCE_MS) return;
+            APP_STATE.lastToggleTime = now;
+
+            APP_STATE.isShowingMeans = !APP_STATE.isShowingMeans;
+            updateToggleUI();
+            toggleColumnVisibility();
+            announceViewChange();
+        }
+
+        function updateToggleUI() {
+            if (!DOM.toggleSwitch) return;
+
+            const viewText = APP_STATE.isShowingMeans ? 'MEANS' : 'PARTNERS';
+            DOM.toggleSwitch.classList.toggle('active');
+            DOM.toggleSwitch.setAttribute('aria-checked', APP_STATE.isShowingMeans);
+            if (DOM.partnersLabel) DOM.partnersLabel.classList.toggle('active');
+            if (DOM.meansLabel) DOM.meansLabel.classList.toggle('active');
+            if (DOM.viewHeader) DOM.viewHeader.textContent = viewText;
+        }
+
+        function toggleColumnVisibility() {
+            if (DOM.partnersColumns) {
+                DOM.partnersColumns.forEach(col => col.classList.toggle('hidden'));
+            }
+            if (DOM.meansColumns) {
+                DOM.meansColumns.forEach(col => col.classList.toggle('hidden'));
+            }
+        }
+
+        function announceViewChange() {
+            if (DOM.liveRegion) {
+                const viewText = APP_STATE.isShowingMeans ? 'Means' : 'Partners';
+                DOM.liveRegion.textContent = `Switched to ${viewText} view`;
+                setTimeout(() => { DOM.liveRegion.textContent = ''; }, 1000);
+            }
+        }
+
+        // ==========================================
+        // KEYBOARD SHORTCUTS
+        // ==========================================
+        function handleGlobalShortcuts(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'e') {
+                e.preventDefault();
+                exportCSV();
+            }
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                window.print();
+            }
+            if ((e.ctrlKey || e.metaKey) && e.key === 't') {
+                e.preventDefault();
+                handleToggleClick();
+            }
+        }
+
+        // ==========================================
+        // CSV EXPORT
+        // ==========================================
+        function exportCSV() {
+            try {
+                const table = document.querySelector('.matrix-table');
+                if (!table) throw new Error('Table not found');
+
+                const csv = [];
+                const headerRow = ['Feature', 'Implementation Timing'];
+                const headers = table.querySelectorAll('thead th');
+
+                headers.forEach((th, index) => {
+                    if (index <= 1 || th.classList.contains('hidden')) return;
+                    headerRow.push(escapeCSVField(th.textContent.trim()));
+                });
+                csv.push(headerRow.join(','));
+
+                table.querySelectorAll('tbody tr').forEach(row => {
+                    const rowData = [];
+                    const featureName = row.querySelector('th');
+                    if (featureName) rowData.push(escapeCSVField(featureName.textContent.trim()));
+
+                    const timingBadge = row.querySelector('.timing-badge');
+                    if (timingBadge) {
+                        rowData.push(escapeCSVField(timingBadge.textContent.trim()));
+                    } else {
+                        rowData.push('');
+                    }
+
+                    const cells = row.querySelectorAll('td');
+                    cells.forEach((cell, index) => {
+                        if (index === 0 || cell.classList.contains('hidden')) return;
+                        const hasCheck = cell.querySelector('.check');
+                        const partnerText = cell.querySelector('.partner-text');
+
+                        if (hasCheck) {
+                            rowData.push('✓');
+                        } else if (partnerText) {
+                            rowData.push(escapeCSVField(partnerText.textContent.trim()));
+                        } else {
+                            rowData.push('');
+                        }
+                    });
+                    csv.push(rowData.join(','));
+                });
+
+                downloadCSV(csv.join('\n'));
+
+                if (DOM.liveRegion) {
+                    DOM.liveRegion.textContent = 'CSV file exported successfully';
+                    setTimeout(() => { DOM.liveRegion.textContent = ''; }, 2000);
+                }
+            } catch (error) {
+                console.error('Export failed:', error);
+                alert('Export failed. Please try again.');
+            }
+        }
+
+        function escapeCSVField(field) {
+            if (field.includes(',') || field.includes('"') || field.includes('\n')) {
+                return `"${field.replace(/"/g, '""')}"`;
+            }
+            return field;
+        }
+
+        function downloadCSV(csvContent) {
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+
+            const viewType = APP_STATE.isShowingMeans ? 'means' : 'partners';
+            const timestamp = new Date().toISOString().split('T')[0];
+
+            link.href = url;
+            link.download = `features-${viewType}-${timestamp}.csv`;
+            link.style.display = 'none';
+
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+
+        // ==========================================
+        // INITIALIZE ON LOAD
+        // ==========================================
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeApp);
+        } else {
+            initializeApp();
+        }
+    </script>
+</body>
+</html>

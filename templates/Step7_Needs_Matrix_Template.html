@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Project Name] - Needs Qualification Matrix</title>
+    <style>
+        /* Page Setup for Printing */
+        @page {
+            size: letter landscape;
+            margin: 0.4in;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px;
+        }
+
+        .dashboard-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            padding: 0;
+            max-width: 1400px;
+            margin: 0 auto;
+            page-break-inside: avoid;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            page-break-after: avoid;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 12px;
+            font-weight: 400;
+            margin-bottom: 0;
+            opacity: 0.95;
+        }
+
+        /* Validation Notice (Use only for pre-validation matrices) */
+        .validation-notice {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 8px 25px;
+            text-align: center;
+            font-size: 10px;
+            color: #856404;
+        }
+
+        .validation-notice strong {
+            font-weight: 600;
+        }
+
+        /* Legend Container */
+        .legend-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 25px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            gap: 35px;
+        }
+
+        .legend-section {
+            flex: 1;
+        }
+
+        .legend-section h3 {
+            font-size: 11px;
+            font-weight: 700;
+            color: #2d3748;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            margin-bottom: 7px;
+        }
+
+        .legend-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 10px;
+            color: #4a5568;
+        }
+
+        .legend-color {
+            width: 18px;
+            height: 18px;
+            border-radius: 3px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+        }
+
+        /* Matrix Container */
+        .matrix-container {
+            padding: 20px 25px;
+            overflow-x: auto;
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9.5px;
+        }
+
+        .matrix-table th {
+            background: #4a5568;
+            color: white;
+            padding: 10px 6px;
+            text-align: center;
+            font-weight: 600;
+            vertical-align: middle;
+            border: 1px solid #718096;
+            font-size: 9px;
+            line-height: 1.3;
+        }
+
+        .matrix-table th.need-col {
+            background: #2d3748;
+            text-align: left;
+            width: 200px;
+            padding-left: 12px;
+            font-size: 10px;
+        }
+
+        .matrix-table td {
+            padding: 6px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            vertical-align: middle;
+            background: white;
+        }
+
+        .matrix-table td.need-label {
+            text-align: left;
+            font-weight: 500;
+            background: #f7fafc;
+            padding-left: 12px;
+            font-size: 10px;
+            line-height: 1.3;
+            color: #2d3748;
+            border-right: 2px solid #cbd5e0;
+        }
+
+        .cell-content {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+        }
+
+        .indicator {
+            width: 100%;
+            padding: 5px 3px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        /* Importance Colors */
+        .importance-fundamental {
+            background: #dc3545;
+            color: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .importance-important {
+            background: #fd7e14;
+            color: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .importance-secondary {
+            background: #ffc107;
+            color: #212529;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .importance-none {
+            background: #6c757d;
+            color: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .importance-dontknow {
+            background: #e9ecef;
+            color: #6c757d;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* Satisfaction Colors */
+        .satisfaction-verywell {
+            background: #28a745;
+            color: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .satisfaction-prettymuch {
+            background: #20c997;
+            color: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .satisfaction-rathernot {
+            background: #ffc107;
+            color: #212529;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .satisfaction-notatall {
+            background: #dc3545;
+            color: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .satisfaction-na {
+            background: #e9ecef;
+            color: #6c757d;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .satisfaction-dontknow {
+            background: #e9ecef;
+            color: #6c757d;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .interview-badge {
+            display: block;
+            font-size: 8px;
+            font-weight: 400;
+            margin-top: 3px;
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 15px 25px;
+            background: #f8f9fa;
+            border-top: 2px solid #e9ecef;
+            font-size: 9px;
+            color: #4a5568;
+            line-height: 1.5;
+        }
+
+        .footer-title {
+            font-size: 10px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 6px;
+        }
+
+        .footer p {
+            margin: 4px 0;
+        }
+
+        .footer strong {
+            color: #2d3748;
+        }
+
+        /* Print Optimization */
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+
+            .dashboard-container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: 100%;
+            }
+
+            .matrix-table {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>[Project Name] - Needs Qualification Matrix</h1>
+            <p>Visual Assessment of Importance & Satisfaction Across Requester Segments</p>
+        </div>
+
+        <!-- Validation Notice (REMOVE THIS SECTION if matrix is validated through interviews) -->
+        <div class="validation-notice">
+            <strong>⚠ PRE-VALIDATION HYPOTHESIS - REQUIRES SYSTEMATIC INTERVIEW VALIDATION</strong>
+        </div>
+
+        <!-- Legend -->
+        <div class="legend-container">
+            <div class="legend-section">
+                <h3>Importance Level</h3>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #dc3545;"></div>
+                        <span>Fundamental</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #fd7e14;"></div>
+                        <span>Important</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ffc107;"></div>
+                        <span>Secondary</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #6c757d;"></div>
+                        <span>None</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #e9ecef; border: 1px solid #adb5bd;"></div>
+                        <span>Don't Know</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="legend-section">
+                <h3>Satisfaction Level (Current Solutions)</h3>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #28a745;"></div>
+                        <span>Very Well</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #20c997;"></div>
+                        <span>Pretty Much</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ffc107;"></div>
+                        <span>Rather Not</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #dc3545;"></div>
+                        <span>Not At All</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #e9ecef; border: 1px solid #adb5bd;"></div>
+                        <span>N/A</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #e9ecef; border: 1px solid #adb5bd;"></div>
+                        <span>Don't Know</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Matrix Table -->
+        <div class="matrix-container">
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th class="need-col">Need</th>
+                        <th>
+                            Segment 1 Name<br>
+                            <span class="interview-badge">X Interviews</span>
+                        </th>
+                        <th>
+                            Segment 2 Name<br>
+                            <span class="interview-badge">0 Interviews</span>
+                        </th>
+                        <th>
+                            Segment 3 Name<br>
+                            <span class="interview-badge">5+ interviewed</span>
+                        </th>
+                        <th>
+                            Segment 4 Name<br>
+                            <span class="interview-badge">Not interviewed</span>
+                        </th>
+                        <th>
+                            Segment 5 Name<br>
+                            <span class="interview-badge">X Interviews</span>
+                        </th>
+                        <th>
+                            Segment 6 Name<br>
+                            <span class="interview-badge">X Interviews</span>
+                        </th>
+                        <!-- Add more segment columns as needed (typically 6-9 total) -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example Row 1: Hot Opportunity (Fundamental + Not At All) -->
+                    <tr>
+                        <td class="need-label">1. [Need statement here - max 60 characters]</td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-fundamental">FUNDAMENTAL</div>
+                                <div class="indicator satisfaction-notatall">NOT AT ALL</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-important">IMPORTANT</div>
+                                <div class="indicator satisfaction-rathernot">RATHER NOT</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-secondary">SECONDARY</div>
+                                <div class="indicator satisfaction-prettymuch">PRETTY MUCH</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-fundamental">FUNDAMENTAL</div>
+                                <div class="indicator satisfaction-notatall">NOT AT ALL</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-important">IMPORTANT</div>
+                                <div class="indicator satisfaction-rathernot">RATHER NOT</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-secondary">SECONDARY</div>
+                                <div class="indicator satisfaction-prettymuch">PRETTY MUCH</div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Example Row 2: Mixed Importance/Satisfaction -->
+                    <tr>
+                        <td class="need-label">2. [Another need statement example]</td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-important">IMPORTANT</div>
+                                <div class="indicator satisfaction-verywell">VERY WELL</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-fundamental">FUNDAMENTAL</div>
+                                <div class="indicator satisfaction-notatall">NOT AT ALL</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-none">NONE</div>
+                                <div class="indicator satisfaction-na">N/A</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-important">IMPORTANT</div>
+                                <div class="indicator satisfaction-prettymuch">PRETTY MUCH</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-secondary">SECONDARY</div>
+                                <div class="indicator satisfaction-verywell">VERY WELL</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-fundamental">FUNDAMENTAL</div>
+                                <div class="indicator satisfaction-rathernot">RATHER NOT</div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Example Row 3: Research Gaps (Don't Know) -->
+                    <tr>
+                        <td class="need-label">3. [Third need statement]</td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-secondary">SECONDARY</div>
+                                <div class="indicator satisfaction-dontknow">DON'T KNOW</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-dontknow">DON'T KNOW</div>
+                                <div class="indicator satisfaction-dontknow">DON'T KNOW</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-important">IMPORTANT</div>
+                                <div class="indicator satisfaction-rathernot">RATHER NOT</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-dontknow">DON'T KNOW</div>
+                                <div class="indicator satisfaction-dontknow">DON'T KNOW</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-secondary">SECONDARY</div>
+                                <div class="indicator satisfaction-prettymuch">PRETTY MUCH</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-important">IMPORTANT</div>
+                                <div class="indicator satisfaction-notatall">NOT AT ALL</div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Example Row 4 -->
+                    <tr>
+                        <td class="need-label">4. [Fourth need statement]</td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-fundamental">FUNDAMENTAL</div>
+                                <div class="indicator satisfaction-rathernot">RATHER NOT</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-important">IMPORTANT</div>
+                                <div class="indicator satisfaction-notatall">NOT AT ALL</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-secondary">SECONDARY</div>
+                                <div class="indicator satisfaction-verywell">VERY WELL</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-fundamental">FUNDAMENTAL</div>
+                                <div class="indicator satisfaction-prettymuch">PRETTY MUCH</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-important">IMPORTANT</div>
+                                <div class="indicator satisfaction-rathernot">RATHER NOT</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-none">NONE</div>
+                                <div class="indicator satisfaction-na">N/A</div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Example Row 5 -->
+                    <tr>
+                        <td class="need-label">5. [Fifth need statement]</td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-important">IMPORTANT</div>
+                                <div class="indicator satisfaction-prettymuch">PRETTY MUCH</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-secondary">SECONDARY</div>
+                                <div class="indicator satisfaction-rathernot">RATHER NOT</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-fundamental">FUNDAMENTAL</div>
+                                <div class="indicator satisfaction-notatall">NOT AT ALL</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-important">IMPORTANT</div>
+                                <div class="indicator satisfaction-verywell">VERY WELL</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-fundamental">FUNDAMENTAL</div>
+                                <div class="indicator satisfaction-rathernot">RATHER NOT</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content">
+                                <div class="indicator importance-secondary">SECONDARY</div>
+                                <div class="indicator satisfaction-prettymuch">PRETTY MUCH</div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Continue adding rows for needs 6-10 (or up to 12) with same structure -->
+                    <!-- Each row should have the same number of cells as there are segment columns -->
+                    <!-- Replace example data with your actual needs and ratings -->
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-title">[Project Name] System | Vianeo Business Validation Sprint</div>
+            <p>[Description of how this matrix was generated - e.g., "Pre-validation hypothesis matrix generated from strategic analysis, policy research, technical gap assessment, and institutional knowledge (30+ years materials science)." OR "Validation matrix based on 120+ customer discovery interviews across 8 segments, competitive testing of 6 alternatives, and pilot user feedback."]</p>
+            <p><strong>Evidence basis:</strong> [List your specific evidence sources - e.g., "Brazil's complete import dependence, nanostructured microsphere technical gaps, INCT funding validation, strategic sector analysis." OR "50+ beta users, documented 60% time reduction, $25K pilot contract signed, blind testing with 10 professionals (avg. 8.2/10 rating)."]</p>
+            <p><strong>Next step:</strong> [What needs to happen next - e.g., "Systematic interview program (20-30 per segment) to validate or revise these hypotheses before pilot plant investment decision." OR "Convert 40% of beta users to paid, complete institutional buyer interviews (15-20), achieve 7+ quality rating from external reviewers."]</p>
+        </div>
+    </div>
+</body>
+</html>

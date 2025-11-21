@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechEd Learning Platform Value Network</title>
+    <style>
+        /* PDF Page Settings - 16:9 Landscape */
+        @page {
+            size: 16in 9in;
+            margin: 0.25in 0.3in;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: white;
+            font-size: 9px;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 0.25in 0.3in;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 0.12in;
+            padding-bottom: 0.06in;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .header h1 {
+            font-size: 20px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin: 0 0 3px 0;
+            letter-spacing: -0.3px;
+        }
+
+        .header p {
+            font-size: 10px;
+            color: #6c757d;
+            margin: 0;
+        }
+
+        /* Network Flow - 5 Column Grid */
+        .network-flow {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr 1fr 1fr 1fr;
+            gap: 0.12in;
+            flex: 1;
+            margin-bottom: 0.1in;
+            align-items: start;
+        }
+
+        .network-column {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* Column Headers */
+        .column-header {
+            padding: 5px 8px;
+            border-radius: 4px 4px 0 0;
+            font-weight: 700;
+            font-size: 8.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            margin-bottom: 6px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .enablers-header {
+            background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 100%);
+        }
+
+        .product-header {
+            background: linear-gradient(135deg, #ba68c8 0%, #ab47bc 100%);
+        }
+
+        .channels-header {
+            background: linear-gradient(135deg, #ffd54f 0%, #ffca28 100%);
+            color: #f57c00;
+        }
+
+        .buyers-header {
+            background: linear-gradient(135deg, #ef5350 0%, #e53935 100%);
+        }
+
+        .end-users-header {
+            background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%);
+        }
+
+        /* Player Boxes */
+        .player-box {
+            background: white;
+            border-radius: 4px;
+            padding: 6px 8px;
+            margin-bottom: 4px;
+            border: 2px solid;
+            position: relative;
+            min-height: 40px;
+        }
+
+        .player-title {
+            font-size: 8.5px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+            line-height: 1.2;
+        }
+
+        .player-subtitle {
+            font-size: 7.5px;
+            color: #6c757d;
+            font-style: italic;
+            line-height: 1.2;
+        }
+
+        .requester-name {
+            font-size: 6.5px;
+            color: #495057;
+            margin-top: 3px;
+            padding-top: 3px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .requester-name::before {
+            content: "👤 ";
+            font-size: 7px;
+        }
+
+        /* Priority Target (MOST IMPORTANT VISUAL) */
+        .priority-target {
+            background: linear-gradient(135deg, #e8f5e9 0%, #dcedc8 100%);
+            border-color: #4caf50;
+            border-width: 2.5px;
+        }
+
+        /* Box Variants by Acceptability */
+        .box-favorable {
+            border-color: #66bb6a;
+        }
+
+        .box-neutral {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-color: #ffa726;
+        }
+
+        .box-unfavorable {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-color: #ef5350;
+        }
+
+        /* Core Product Styling */
+        .core-product {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: #667eea;
+            padding: 9px 10px;
+            min-height: auto;
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.2);
+        }
+
+        .core-product .player-title {
+            color: white;
+            font-size: 10px;
+            margin-bottom: 3px;
+            font-weight: 800;
+        }
+
+        .core-product .player-subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            font-style: normal;
+            font-size: 8.5px;
+            margin-bottom: 5px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 5px 0 0 0;
+        }
+
+        .feature-list li {
+            padding: 1.5px 0;
+            padding-left: 11px;
+            position: relative;
+            font-size: 8px;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.3;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-weight: bold;
+            font-size: 9px;
+        }
+
+        /* Need Badges */
+        .need-badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 7px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+
+        .need-critical {
+            background: linear-gradient(135deg, #ef5350 0%, #e53935 100%);
+            color: white;
+        }
+
+        .need-important {
+            background: linear-gradient(135deg, #ffa726 0%, #ff9800 100%);
+            color: white;
+        }
+
+        .need-secondary {
+            background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%);
+            color: white;
+        }
+
+        /* Acceptability Indicator */
+        .acceptability-indicator {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+        }
+
+        .acceptability-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .dot-favorable {
+            background: #4caf50;
+        }
+
+        .dot-neutral {
+            background: #ffa726;
+        }
+
+        .dot-unfavorable {
+            background: #ef5350;
+        }
+
+        /* Legend */
+        .legend-container {
+            display: flex;
+            gap: 0.2in;
+            justify-content: center;
+            padding: 0.08in 0;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .legend-section {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-title {
+            font-size: 7.5px;
+            font-weight: 700;
+            color: #495057;
+            margin-right: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .legend-items {
+            display: flex;
+            gap: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 7px;
+            color: #6c757d;
+        }
+
+        .legend-box {
+            width: 14px;
+            height: 10px;
+            border-radius: 2px;
+            border: 2px solid;
+        }
+
+        .legend-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .legend-badge {
+            padding: 2px 5px;
+            border-radius: 2px;
+            font-size: 6.5px;
+            font-weight: 700;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>TechEd Learning Platform Value Network</h1>
+            <p>Ecosystem map of key stakeholders, channels, and end users | Last Updated: 2025-01-15</p>
+        </div>
+
+        <!-- Network Flow -->
+        <div class="network-flow">
+            <!-- ENABLERS COLUMN -->
+            <div class="network-column">
+                <div class="column-header enablers-header">Enablers & Influencers</div>
+
+                <!-- Priority Target: Dept of Education -->
+                <div class="player-box priority-target">
+                    <div class="player-title">Department of Education</div>
+                    <div class="player-subtitle">Federal funding, regulatory compliance</div>
+                    <div class="requester-name">Policy Directors</div>
+                    <div class="need-badge need-critical">Critical</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-favorable"></div>
+                    </div>
+                </div>
+
+                <!-- Priority Target: State Education Agencies -->
+                <div class="player-box priority-target">
+                    <div class="player-title">State Education Agencies</div>
+                    <div class="player-subtitle">K-12 standards, curriculum approval</div>
+                    <div class="requester-name">Curriculum Supervisors</div>
+                    <div class="need-badge need-important">Important</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-favorable"></div>
+                    </div>
+                </div>
+
+                <!-- Favorable (No urgent needs) -->
+                <div class="player-box box-favorable">
+                    <div class="player-title">Education Foundations</div>
+                    <div class="player-subtitle">Grant funding for innovation</div>
+                    <div class="requester-name">Program Officers</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-favorable"></div>
+                    </div>
+                </div>
+
+                <!-- Neutral -->
+                <div class="player-box box-neutral">
+                    <div class="player-title">ISTE (EdTech Standards)</div>
+                    <div class="player-subtitle">Technology standards, conferences</div>
+                    <div class="requester-name">Standards Committee</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-neutral"></div>
+                    </div>
+                </div>
+
+                <!-- Unfavorable -->
+                <div class="player-box box-unfavorable">
+                    <div class="player-title">Content Publishers</div>
+                    <div class="player-subtitle">Curriculum IP, textbook integration</div>
+                    <div class="requester-name">Partnership Managers</div>
+                    <div class="need-badge need-secondary">Secondary</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-unfavorable"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CORE PRODUCT COLUMN -->
+            <div class="network-column">
+                <div class="column-header product-header">Core Product/Service</div>
+
+                <div class="player-box core-product">
+                    <div class="player-title">TechEd Learning Platform</div>
+                    <div class="player-subtitle">Personalized AI-Powered Learning for Every Student</div>
+                    <ul class="feature-list">
+                        <li>Adaptive learning paths based on student performance</li>
+                        <li>Real-time performance analytics for teachers/admin</li>
+                        <li>Parent engagement portal with progress tracking</li>
+                        <li>Teacher collaboration tools and resource sharing</li>
+                        <li>Standards-aligned content library (Common Core)</li>
+                        <li>Offline capability for low-connectivity schools</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CHANNELS COLUMN -->
+            <div class="network-column">
+                <div class="column-header channels-header">Channels & Partners</div>
+
+                <!-- Priority Target: Regional Ed Cooperatives -->
+                <div class="player-box priority-target">
+                    <div class="player-title">Regional Ed Cooperatives</div>
+                    <div class="player-subtitle">Multi-district service networks</div>
+                    <div class="requester-name">Program Coordinators</div>
+                    <div class="need-badge need-important">Important</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-favorable"></div>
+                    </div>
+                </div>
+
+                <!-- Favorable (No urgent needs) -->
+                <div class="player-box box-favorable">
+                    <div class="player-title">Teacher Training Centers</div>
+                    <div class="player-subtitle">Professional development providers</div>
+                    <div class="requester-name">Training Directors</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-favorable"></div>
+                    </div>
+                </div>
+
+                <!-- Neutral with Important need -->
+                <div class="player-box box-neutral">
+                    <div class="player-title">EdTech Consultants</div>
+                    <div class="player-subtitle">Integration specialists</div>
+                    <div class="requester-name">Managing Partners</div>
+                    <div class="need-badge need-important">Important</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-neutral"></div>
+                    </div>
+                </div>
+
+                <!-- Neutral -->
+                <div class="player-box box-neutral">
+                    <div class="player-title">Parent-Teacher Associations</div>
+                    <div class="player-subtitle">Community outreach, advocacy</div>
+                    <div class="requester-name">PTA Presidents</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-neutral"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BUYERS COLUMN -->
+            <div class="network-column">
+                <div class="column-header buyers-header">Buyers & Clients</div>
+
+                <!-- Priority Target: Large Urban Districts -->
+                <div class="player-box priority-target">
+                    <div class="player-title">Large Urban School Districts</div>
+                    <div class="player-subtitle">Primary purchasers (10K+ students)</div>
+                    <div class="requester-name">IT Directors</div>
+                    <div class="need-badge need-critical">Critical</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-favorable"></div>
+                    </div>
+                </div>
+
+                <!-- Priority Target: Mid-Size Districts -->
+                <div class="player-box priority-target">
+                    <div class="player-title">Mid-Size Suburban Districts</div>
+                    <div class="player-subtitle">Secondary market (2K-10K students)</div>
+                    <div class="requester-name">Curriculum Directors</div>
+                    <div class="need-badge need-critical">Critical</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-favorable"></div>
+                    </div>
+                </div>
+
+                <!-- Priority Target: Charter Networks -->
+                <div class="player-box priority-target">
+                    <div class="player-title">Charter School Networks</div>
+                    <div class="player-subtitle">Alternative education buyers</div>
+                    <div class="requester-name">Academic Directors</div>
+                    <div class="need-badge need-important">Important</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-favorable"></div>
+                    </div>
+                </div>
+
+                <!-- Neutral with Secondary need -->
+                <div class="player-box box-neutral">
+                    <div class="player-title">Private School Consortia</div>
+                    <div class="player-subtitle">Independent school buyers</div>
+                    <div class="requester-name">Heads of School</div>
+                    <div class="need-badge need-secondary">Secondary</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-neutral"></div>
+                    </div>
+                </div>
+
+                <!-- Neutral -->
+                <div class="player-box box-neutral">
+                    <div class="player-title">State Procurement Offices</div>
+                    <div class="player-subtitle">Bulk purchasing for state contracts</div>
+                    <div class="requester-name">Procurement Managers</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-neutral"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- END USERS COLUMN -->
+            <div class="network-column">
+                <div class="column-header end-users-header">End Users (Downstream)</div>
+
+                <!-- Priority Target: Elementary Schools -->
+                <div class="player-box priority-target">
+                    <div class="player-title">Elementary Schools (K-5)</div>
+                    <div class="player-subtitle">Primary education delivery</div>
+                    <div class="requester-name">Teachers</div>
+                    <div class="need-badge need-critical">Critical</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-favorable"></div>
+                    </div>
+                </div>
+
+                <!-- Priority Target: After-School Centers -->
+                <div class="player-box priority-target">
+                    <div class="player-title">After-School Learning Centers</div>
+                    <div class="player-subtitle">Supplemental education services</div>
+                    <div class="requester-name">Center Directors</div>
+                    <div class="need-badge need-important">Important</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-favorable"></div>
+                    </div>
+                </div>
+
+                <!-- Favorable but Important need (Middle Schools) -->
+                <div class="player-box priority-target">
+                    <div class="player-title">Middle Schools (6-8)</div>
+                    <div class="player-subtitle">Transition years education</div>
+                    <div class="requester-name">Technology Coordinators</div>
+                    <div class="need-badge need-important">Important</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-favorable"></div>
+                    </div>
+                </div>
+
+                <!-- Neutral with Secondary need -->
+                <div class="player-box box-neutral">
+                    <div class="player-title">High Schools (9-12)</div>
+                    <div class="player-subtitle">Secondary education</div>
+                    <div class="requester-name">Department Heads</div>
+                    <div class="need-badge need-secondary">Secondary</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-neutral"></div>
+                    </div>
+                </div>
+
+                <!-- Neutral with Critical need (not priority - barrier is acceptability) -->
+                <div class="player-box box-neutral">
+                    <div class="player-title">Special Education Programs</div>
+                    <div class="player-subtitle">IEP-mandated services</div>
+                    <div class="requester-name">Special Ed Coordinators</div>
+                    <div class="need-badge need-critical">Critical</div>
+                    <div class="acceptability-indicator">
+                        <div class="acceptability-dot dot-neutral"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="legend-container">
+            <div class="legend-section">
+                <div class="legend-title">Priority Targets</div>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <div class="legend-box" style="background: linear-gradient(135deg, #e8f5e9 0%, #dcedc8 100%); border-color: #4caf50; border-width: 2.5px;"></div>
+                        <span>Favorable + Has Needs</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-box" style="background: white; border-color: #66bb6a;"></div>
+                        <span>Favorable (No urgent needs)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="legend-section">
+                <div class="legend-title">Acceptability Status</div>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <div class="legend-dot dot-favorable"></div>
+                        <span>Favorable</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot dot-neutral"></div>
+                        <span>Neutral</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot dot-unfavorable"></div>
+                        <span>Unfavorable</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="legend-section">
+                <div class="legend-title">Need Intensity</div>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <div class="legend-badge need-critical">Critical</div>
+                        <span>Urgent needs</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-badge need-important">Important</div>
+                        <span>Significant needs</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-badge need-secondary">Secondary</div>
+                        <span>Minor needs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
