@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="[PROJECT NAME] - Viability Assessment Dashboard: Product-Market Fit & Business Model Portfolio">
+    <title>Viability Dashboard | [PROJECT NAME]</title>
+
+    <style>
+/* ========================================
+   VIANEO DESIGN SYSTEM - VIABILITY DASHBOARD
+   Step 12: Viability Assessment (Product-Market Fit & Business Model)
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary Colors */
+    --color-primary: #1a365d;
+    --color-primary-light: #2c5282;
+    --color-primary-lighter: #4a5d7f;
+    --color-surface: #ffffff;
+    --color-border: #e2e8f0;
+    --color-background: #f7fafc;
+
+    /* Text Colors */
+    --color-text-primary: #1a202c;
+    --color-text-secondary: #4a5568;
+    --color-text-tertiary: #718096;
+
+    /* Status Colors */
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-info: #3b82f6;
+    --color-danger: #ef4444;
+
+    /* Product Status Colors */
+    --color-mvp-ready: #10b981;
+    --color-in-progress: #3b82f6;
+    --color-planning: #8b5cf6;
+    --color-blocked: #ef4444;
+
+    /* Validation Colors */
+    --color-high-validation: #10b981;
+    --color-medium-validation: #f59e0b;
+    --color-low-validation: #ef4444;
+
+    /* Background Shades */
+    --bg-success-light: #d1fae5;
+    --bg-warning-light: #fef3c7;
+    --bg-info-light: #dbeafe;
+    --bg-danger-light: #fee2e2;
+
+    /* Font */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* === ACCESSIBILITY === */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Skip to content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* === CONTAINER === */
+.dashboard-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* === HEADER === */
+.dashboard-header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: white;
+    padding: 32px;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.header-title-group h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.header-subtitle {
+    font-size: 16px;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+.header-meta {
+    text-align: right;
+    font-size: 14px;
+}
+
+.header-meta-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.header-meta-label {
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+.header-meta-value {
+    font-weight: 600;
+}
+
+/* Status Badge in Header */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.status-badge.ready {
+    background: var(--color-success);
+    border-color: var(--color-success);
+}
+
+.status-badge.in-progress {
+    background: var(--color-info);
+    border-color: var(--color-info);
+}
+
+.status-badge.planning {
+    background: var(--color-warning);
+    border-color: var(--color-warning);
+}
+
+/* Key Metrics Row */
+.key-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.metric-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.metric-label {
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.85;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.metric-value {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.metric-description {
+    font-size: 13px;
+    opacity: 0.8;
+    margin-top: 8px;
+}
+
+/* === MAIN CONTENT === */
+.dashboard-content {
+    background: white;
+    padding: 32px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+/* Section Headers */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.section-subtitle {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-top: 4px;
+}
+
+.section-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* === EXECUTIVE SUMMARY === */
+.executive-summary {
+    margin-bottom: 48px;
+}
+
+.summary-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+}
+
+.summary-content p {
+    margin-bottom: 16px;
+}
+
+.summary-content strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+/* === PRODUCT PORTFOLIO GRID === */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.product-card {
+    background: white;
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    border-color: var(--color-primary-light);
+    box-shadow: 0 8px 16px rgba(26, 54, 93, 0.12);
+    transform: translateY(-2px);
+}
+
+.product-card:hover::before {
+    transform: scaleX(1);
+}
+
+.product-card:focus-visible {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(26, 54, 93, 0.1);
+}
+
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.product-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+}
+
+.product-client {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.product-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-status.mvp-ready {
+    background: var(--bg-success-light);
+    color: var(--color-success);
+}
+
+.product-status.in-progress {
+    background: var(--bg-info-light);
+    color: var(--color-info);
+}
+
+.product-status.planning {
+    background: var(--bg-warning-light);
+    color: var(--color-warning);
+}
+
+.product-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-bottom: 16px;
+}
+
+.product-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.product-metric {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.product-metric-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    letter-spacing: 0.5px;
+}
+
+.product-metric-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.product-metric-detail {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.product-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    background: var(--color-background);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+}
+
+.tag.revenue-model {
+    background: #eff6ff;
+    color: #1e40af;
+    border-color: #bfdbfe;
+}
+
+.tag.distribution {
+    background: #f0fdf4;
+    color: #166534;
+    border-color: #bbf7d0;
+}
+
+/* === COMPARISON TABLES === */
+.comparison-table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 48px;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.comparison-table thead {
+    background: var(--color-primary);
+    color: white;
+}
+
+.comparison-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.comparison-table tbody tr {
+    border-bottom: 1px solid var(--color-border);
+    transition: background 0.15s ease;
+}
+
+.comparison-table tbody tr:hover {
+    background: var(--color-background);
+}
+
+.comparison-table td {
+    padding: 16px;
+    vertical-align: top;
+}
+
+.comparison-table td:first-child {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.check-mark {
+    color: var(--color-success);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.cross-mark {
+    color: var(--color-text-tertiary);
+    font-weight: 400;
+    opacity: 0.3;
+}
+
+/* === PROGRESS BARS === */
+.progress-section {
+    margin-bottom: 48px;
+}
+
+.progress-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.progress-item {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.progress-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.progress-percentage {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.progress-bar-container {
+    height: 8px;
+    background: var(--color-background);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+    border-radius: 4px;
+    transition: width 1s ease;
+    width: 0;
+}
+
+.progress-bar.animated {
+    animation: progressFill 1s ease forwards;
+}
+
+@keyframes progressFill {
+    from { width: 0; }
+}
+
+.progress-detail {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin-top: 8px;
+}
+
+/* === INSIGHTS SECTION === */
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.insight-card {
+    background: white;
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    padding: 24px;
+    border-left: 4px solid var(--color-primary);
+}
+
+.insight-card.strength {
+    border-left-color: var(--color-success);
+}
+
+.insight-card.opportunity {
+    border-left-color: var(--color-info);
+}
+
+.insight-card.concern {
+    border-left-color: var(--color-warning);
+}
+
+.insight-card.recommendation {
+    border-left-color: var(--color-primary-light);
+}
+
+.insight-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.insight-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.insight-card.strength .insight-icon {
+    background: var(--bg-success-light);
+    color: var(--color-success);
+}
+
+.insight-card.opportunity .insight-icon {
+    background: var(--bg-info-light);
+    color: var(--color-info);
+}
+
+.insight-card.concern .insight-icon {
+    background: var(--bg-warning-light);
+    color: var(--color-warning);
+}
+
+.insight-card.recommendation .insight-icon {
+    background: #e0e7ff;
+    color: var(--color-primary);
+}
+
+.insight-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.insight-content {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
+
+.insight-meta {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+.insight-products {
+    color: var(--color-text-tertiary);
+    font-weight: 500;
+}
+
+.insight-priority {
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.insight-priority.high {
+    background: var(--bg-danger-light);
+    color: var(--color-danger);
+}
+
+.insight-priority.medium {
+    background: var(--bg-warning-light);
+    color: var(--color-warning);
+}
+
+.insight-priority.low {
+    background: var(--bg-success-light);
+    color: var(--color-success);
+}
+
+/* === MODAL === */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal {
+    background: white;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: white;
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-title-group h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.modal-subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.modal-close {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.modal-close:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.modal-content {
+    padding: 32px;
+}
+
+.modal-section {
+    margin-bottom: 32px;
+}
+
+.modal-section:last-child {
+    margin-bottom: 0;
+}
+
+.modal-section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.detail-item {
+    background: var(--color-background);
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+}
+
+.detail-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.detail-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.detail-value.large {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.features-list {
+    list-style: none;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.feature-item:last-child {
+    margin-bottom: 0;
+}
+
+.feature-badge {
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+}
+
+.feature-badge.mvp {
+    background: var(--bg-success-light);
+    color: var(--color-success);
+}
+
+.feature-badge.phased {
+    background: var(--bg-info-light);
+    color: var(--color-info);
+}
+
+.feature-name {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    flex: 1;
+}
+
+.business-model-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.bm-component {
+    background: var(--color-background);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-primary);
+}
+
+.bm-component-title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.bm-component-content {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
+
+.bm-component-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.bm-component-content li {
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.bm-component-content li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+/* === BUTTONS === */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid var(--color-primary);
+    background: var(--color-primary);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: var(--color-primary-light);
+    border-color: var(--color-primary-light);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(26, 54, 93, 0.2);
+}
+
+.btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(26, 54, 93, 0.2);
+}
+
+.btn.btn-secondary {
+    background: white;
+    color: var(--color-primary);
+}
+
+.btn.btn-secondary:hover {
+    background: var(--color-background);
+}
+
+.btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* === FOOTER === */
+.dashboard-footer {
+    margin-top: 48px;
+    padding: 24px;
+    background: var(--color-background);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--color-text-tertiary);
+}
+
+.footer-meta {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 12px;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+    }
+
+    .dashboard-header {
+        padding: 20px;
+    }
+
+    .header-top {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .header-meta {
+        text-align: left;
+    }
+
+    .header-title-group h1 {
+        font-size: 24px;
+    }
+
+    .key-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-content {
+        padding: 20px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .comparison-table-wrapper {
+        overflow-x: scroll;
+    }
+
+    .comparison-table {
+        font-size: 12px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 10px 12px;
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal {
+        max-height: 95vh;
+    }
+
+    .modal-header {
+        padding: 20px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .dashboard-container {
+        max-width: 100%;
+    }
+
+    .modal-overlay,
+    .btn {
+        display: none !important;
+    }
+
+    .dashboard-header {
+        border-radius: 0;
+        page-break-after: avoid;
+    }
+
+    .product-card {
+        page-break-inside: avoid;
+    }
+
+    .comparison-table {
+        page-break-inside: auto;
+    }
+
+    .comparison-table tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+}
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="dashboard-container">
+        <!-- HEADER -->
+        <header class="dashboard-header" role="banner">
+            <div class="header-top">
+                <div class="header-title-group">
+                    <h1>[PROJECT NAME]</h1>
+                    <p class="header-subtitle">Viability Assessment: Product-Market Fit & Business Model Portfolio</p>
+                </div>
+                <div class="header-meta">
+                    <div class="header-meta-item">
+                        <span class="header-meta-label">Date:</span>
+                        <span class="header-meta-value">[November 21, 2025]</span>
+                    </div>
+                    <div class="header-meta-item">
+                        <span class="header-meta-label">Status:</span>
+                        <span class="status-badge ready">✓ Complete</span>
+                    </div>
+                    <div class="header-meta-item">
+                        <span class="header-meta-label">Assessment:</span>
+                        <span class="header-meta-value">Step 12 - Viability</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="key-metrics" role="region" aria-label="Key metrics">
+                <div class="metric-card">
+                    <div class="metric-label">Products Defined</div>
+                    <div class="metric-value">[3]</div>
+                    <div class="metric-description">[2 core, 1 enhancement]</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">MVP Features</div>
+                    <div class="metric-value">[24]</div>
+                    <div class="metric-description">[Across all products]</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Need Coverage</div>
+                    <div class="metric-value">[100%]</div>
+                    <div class="metric-description">[All fundamental needs]</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Viability Score</div>
+                    <div class="metric-value">[4.2/5]</div>
+                    <div class="metric-description">[Strong viability]</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="dashboard-content" id="main-content" role="main">
+
+            <!-- Executive Summary -->
+            <section class="executive-summary" role="region" aria-labelledby="summary-heading">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title" id="summary-heading">Executive Summary</h2>
+                        <p class="section-subtitle">Strategic viability assessment across product portfolio</p>
+                    </div>
+                </div>
+                <div class="summary-content">
+                    <p>
+                        <strong>[PROJECT NAME] demonstrates strong commercial viability</strong> with [3] well-defined product configurations addressing validated customer needs from Desirability analysis and leveraging technical capabilities from Feasibility assessment. The portfolio covers [X]% of fundamental needs with coherent business models across all products.
+                    </p>
+                    <p>
+                        <strong>Product-market fit is validated</strong> through [number] MVP features (average [8] per product) with [X]% having >5 interview validation. Revenue models align with value delivery, distribution channels match client buying behavior, and cost structures support sustainable margins at scale. [Key differentiator or strategic advantage statement].
+                    </p>
+                    <p>
+                        <strong>Critical success factors</strong> include [factor 1], [factor 2], and [factor 3]. Primary recommendation: [Launch Product 1 first due to strongest validation and fastest path to revenue, followed by Products 2 and 3 in phased approach]. Total portfolio development timeline: [18-24 months to full implementation].
+                    </p>
+                </div>
+            </section>
+
+            <!-- Product Portfolio -->
+            <section class="portfolio-section" role="region" aria-labelledby="portfolio-heading">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title" id="portfolio-heading">Product Portfolio Overview</h2>
+                        <p class="section-subtitle">Product-market fit configurations with business models</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-grid">
+                    <!-- Product Card 1 -->
+                    <article class="product-card" tabindex="0" role="button" aria-label="View details for Product 1" onclick="openModal('product1')">
+                        <div class="product-header">
+                            <div>
+                                <h3 class="product-title">[Product 1 Name]</h3>
+                                <p class="product-client">Target: [Client Segment]</p>
+                            </div>
+                            <span class="product-status mvp-ready">MVP Ready</span>
+                        </div>
+                        <p class="product-description">
+                            [250-character product description explaining what client is buying and key value proposition]
+                        </p>
+                        <div class="product-metrics">
+                            <div class="product-metric">
+                                <span class="product-metric-label">MVP Features</span>
+                                <span class="product-metric-value">[8]</span>
+                                <span class="product-metric-detail">[2] available now</span>
+                            </div>
+                            <div class="product-metric">
+                                <span class="product-metric-label">Requesters</span>
+                                <span class="product-metric-value">[3]</span>
+                                <span class="product-metric-detail">[12] needs covered</span>
+                            </div>
+                        </div>
+                        <div class="product-tags">
+                            <span class="tag revenue-model">[Subscription]</span>
+                            <span class="tag distribution">[Direct Web]</span>
+                        </div>
+                    </article>
+
+                    <!-- Product Card 2 -->
+                    <article class="product-card" tabindex="0" role="button" aria-label="View details for Product 2" onclick="openModal('product2')">
+                        <div class="product-header">
+                            <div>
+                                <h3 class="product-title">[Product 2 Name]</h3>
+                                <p class="product-client">Target: [Client Segment]</p>
+                            </div>
+                            <span class="product-status in-progress">In Progress</span>
+                        </div>
+                        <p class="product-description">
+                            [250-character product description]
+                        </p>
+                        <div class="product-metrics">
+                            <div class="product-metric">
+                                <span class="product-metric-label">MVP Features</span>
+                                <span class="product-metric-value">[10]</span>
+                                <span class="product-metric-detail">[4] available now</span>
+                            </div>
+                            <div class="product-metric">
+                                <span class="product-metric-label">Requesters</span>
+                                <span class="product-metric-value">[2]</span>
+                                <span class="product-metric-detail">[8] needs covered</span>
+                            </div>
+                        </div>
+                        <div class="product-tags">
+                            <span class="tag revenue-model">[Commission]</span>
+                            <span class="tag distribution">[Sales Team]</span>
+                        </div>
+                    </article>
+
+                    <!-- Product Card 3 -->
+                    <article class="product-card" tabindex="0" role="button" aria-label="View details for Product 3" onclick="openModal('product3')">
+                        <div class="product-header">
+                            <div>
+                                <h3 class="product-title">[Product 3 Name]</h3>
+                                <p class="product-client">Target: [Client Segment]</p>
+                            </div>
+                            <span class="product-status planning">Planning</span>
+                        </div>
+                        <p class="product-description">
+                            [250-character product description]
+                        </p>
+                        <div class="product-metrics">
+                            <div class="product-metric">
+                                <span class="product-metric-label">MVP Features</span>
+                                <span class="product-metric-value">[6]</span>
+                                <span class="product-metric-detail">[0] available now</span>
+                            </div>
+                            <div class="product-metric">
+                                <span class="product-metric-label">Requesters</span>
+                                <span class="product-metric-value">[1]</span>
+                                <span class="product-metric-detail">[3] needs covered</span>
+                            </div>
+                        </div>
+                        <div class="product-tags">
+                            <span class="tag revenue-model">[License]</span>
+                            <span class="tag distribution">[Partners]</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Need Coverage Analysis -->
+            <section class="comparison-section" role="region" aria-labelledby="coverage-heading">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title" id="coverage-heading">Need Coverage Analysis</h2>
+                        <p class="section-subtitle">Fundamental needs addressed across product portfolio</p>
+                    </div>
+                </div>
+
+                <div class="comparison-table-wrapper">
+                    <table class="comparison-table" role="table" aria-label="Need coverage by product">
+                        <thead>
+                            <tr>
+                                <th scope="col">Fundamental Need</th>
+                                <th scope="col">Intensity</th>
+                                <th scope="col">Product 1</th>
+                                <th scope="col">Product 2</th>
+                                <th scope="col">Product 3</th>
+                                <th scope="col">Coverage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>[Need statement 1]</td>
+                                <td>Fundamental</td>
+                                <td><span class="check-mark">✓</span> MVP</td>
+                                <td><span class="check-mark">✓</span> MVP</td>
+                                <td><span class="cross-mark">—</span></td>
+                                <td>Strong</td>
+                            </tr>
+                            <tr>
+                                <td>[Need statement 2]</td>
+                                <td>Fundamental</td>
+                                <td><span class="check-mark">✓</span> MVP</td>
+                                <td><span class="cross-mark">—</span></td>
+                                <td><span class="check-mark">✓</span> Phased</td>
+                                <td>Partial</td>
+                            </tr>
+                            <tr>
+                                <td>[Need statement 3]</td>
+                                <td>Fundamental</td>
+                                <td><span class="cross-mark">—</span></td>
+                                <td><span class="check-mark">✓</span> MVP</td>
+                                <td><span class="check-mark">✓</span> MVP</td>
+                                <td>Strong</td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Progress Metrics -->
+            <section class="progress-section" role="region" aria-labelledby="progress-heading">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title" id="progress-heading">Portfolio Readiness</h2>
+                        <p class="section-subtitle">Validation and implementation status</p>
+                    </div>
+                </div>
+
+                <div class="progress-grid">
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="progress-label">MVP Validation</span>
+                            <span class="progress-percentage">[85%]</span>
+                        </div>
+                        <div class="progress-bar-container" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 85%;"></div>
+                        </div>
+                        <p class="progress-detail">[20/24] MVP features with >5 interview validation</p>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="progress-label">Resource Readiness</span>
+                            <span class="progress-percentage">[70%]</span>
+                        </div>
+                        <div class="progress-bar-container" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 70%;"></div>
+                        </div>
+                        <p class="progress-detail">[7/10] critical resources secured or available</p>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="progress-label">Business Model Coherence</span>
+                            <span class="progress-percentage">[95%]</span>
+                        </div>
+                        <div class="progress-bar-container" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 95%;"></div>
+                        </div>
+                        <p class="progress-detail">All products show strong internal alignment</p>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span class="progress-label">Need Coverage</span>
+                            <span class="progress-percentage">[100%]</span>
+                        </div>
+                        <div class="progress-bar-container" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar" style="width: 100%;"></div>
+                        </div>
+                        <p class="progress-detail">All [12] fundamental needs have feature coverage</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Insights -->
+            <section class="insights-section" role="region" aria-labelledby="insights-heading">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title" id="insights-heading">Strategic Insights</h2>
+                        <p class="section-subtitle">Strengths, opportunities, concerns, and recommendations</p>
+                    </div>
+                </div>
+
+                <div class="insights-grid">
+                    <!-- Strength -->
+                    <article class="insight-card strength">
+                        <div class="insight-header">
+                            <div class="insight-icon">✓</div>
+                            <h3 class="insight-title">[Strength Title]</h3>
+                        </div>
+                        <div class="insight-content">
+                            [Description of portfolio strength with specific evidence from validation data. Example: Strong validation across all Product 1 MVP features (8/8 with >5 interviews), providing high confidence in product-market fit.]
+                        </div>
+                        <div class="insight-meta">
+                            <span class="insight-products">Products: 1, 2</span>
+                            <span class="insight-priority high">High Impact</span>
+                        </div>
+                    </article>
+
+                    <!-- Opportunity -->
+                    <article class="insight-card opportunity">
+                        <div class="insight-header">
+                            <div class="insight-icon">→</div>
+                            <h3 class="insight-title">[Opportunity Title]</h3>
+                        </div>
+                        <div class="insight-content">
+                            [Description of market opportunity or strategic advantage. Example: Product 2 and 3 share 60% of cost structure, enabling portfolio efficiency and faster time-to-market for Product 3.]
+                        </div>
+                        <div class="insight-meta">
+                            <span class="insight-products">Products: 2, 3</span>
+                            <span class="insight-priority medium">Medium Impact</span>
+                        </div>
+                    </article>
+
+                    <!-- Concern -->
+                    <article class="insight-card concern">
+                        <div class="insight-header">
+                            <div class="insight-icon">!</div>
+                            <h3 class="insight-title">[Concern Title]</h3>
+                        </div>
+                        <div class="insight-content">
+                            [Description of risk or concern with mitigation strategy. Example: Product 1 pricing unvalidated ($49/month assumption). Mitigation: Test with 20 target customers Q1 before full launch.]
+                        </div>
+                        <div class="insight-meta">
+                            <span class="insight-products">Product: 1</span>
+                            <span class="insight-priority high">Needs Attention</span>
+                        </div>
+                    </article>
+
+                    <!-- Recommendation -->
+                    <article class="insight-card recommendation">
+                        <div class="insight-header">
+                            <div class="insight-icon">★</div>
+                            <h3 class="insight-title">[Recommendation Title]</h3>
+                        </div>
+                        <div class="insight-content">
+                            [Strategic recommendation with rationale. Example: Launch Product 1 in Q2 2026 (strongest validation, direct revenue), followed by Product 2 in Q4 2026 (leverages Product 1 infrastructure). Defer Product 3 to 2027.]
+                        </div>
+                        <div class="insight-meta">
+                            <span class="insight-products">All Products</span>
+                            <span class="insight-priority high">Priority Action</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer" role="contentinfo">
+            <p><strong>VIANEO Viability Assessment</strong> | Step 12: Product-Market Fit & Business Model</p>
+            <div class="footer-meta">
+                <span class="footer-item">
+                    <span>Generated:</span>
+                    <strong>[November 21, 2025]</strong>
+                </span>
+                <span class="footer-item">
+                    <span>Framework:</span>
+                    <strong>VIANEO Business Model Evaluation</strong>
+                </span>
+                <span class="footer-item">
+                    <span>Version:</span>
+                    <strong>1.0</strong>
+                </span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- MODALS -->
+    <!-- Product 1 Modal -->
+    <div class="modal-overlay" id="product1-modal" role="dialog" aria-labelledby="product1-title" aria-modal="true">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <h2 id="product1-title">[Product 1 Name]</h2>
+                    <p class="modal-subtitle">Complete Product-Market Fit & Business Model</p>
+                </div>
+                <button class="modal-close" onclick="closeModal('product1')" aria-label="Close modal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content">
+                <!-- Product Identity -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Product Identity</h3>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">Target Client</div>
+                            <div class="detail-value">[Client Segment]</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">MVP Features</div>
+                            <div class="detail-value large">[8]</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Requesters</div>
+                            <div class="detail-value">[3] personas</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Timeline</div>
+                            <div class="detail-value">[12-18] months</div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 16px; font-size: 14px; line-height: 1.6; color: var(--color-text-secondary);">
+                        [Full 250-character product description here, explaining what the client is buying, key capabilities, and value proposition]
+                    </p>
+                </div>
+
+                <!-- MVP Features -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">MVP Features</h3>
+                    <ul class="features-list">
+                        <li class="feature-item">
+                            <span class="feature-badge mvp">MVP</span>
+                            <span class="feature-name">[Feature 1 name]</span>
+                            <span style="font-size: 12px; color: var(--color-text-tertiary);">Available</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-badge mvp">MVP</span>
+                            <span class="feature-name">[Feature 2 name]</span>
+                            <span style="font-size: 12px; color: var(--color-text-tertiary);">Short term</span>
+                        </li>
+                        <!-- Add more features -->
+                    </ul>
+                </div>
+
+                <!-- Business Model -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Business Model</h3>
+                    <div class="business-model-grid">
+                        <div class="bm-component">
+                            <div class="bm-component-title">Value Proposition</div>
+                            <div class="bm-component-content">
+                                [Core positioning statement in one sentence]
+                                <ul style="margin-top: 8px;">
+                                    <li>[Competitive advantage 1]</li>
+                                    <li>[Competitive advantage 2]</li>
+                                    <li>[Competitive advantage 3]</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bm-component">
+                            <div class="bm-component-title">Revenue Stream</div>
+                            <div class="bm-component-content">
+                                <strong>[Pricing approach]:</strong> [e.g., $49/month subscription per user]<br>
+                                <strong>Type:</strong> [One-time | Recurring | Mixed]<br>
+                                <strong>Mechanism:</strong> [Description of how revenue is generated]
+                            </div>
+                        </div>
+                        <div class="bm-component">
+                            <div class="bm-component-title">Distribution Channel</div>
+                            <div class="bm-component-content">
+                                <strong>Discovery:</strong> [How clients become aware]<br>
+                                <strong>Purchase:</strong> [Where/how product is bought]<br>
+                                <strong>Intermediaries:</strong> [Direct or list types]
+                            </div>
+                        </div>
+                        <div class="bm-component">
+                            <div class="bm-component-title">Cost Structure</div>
+                            <div class="bm-component-content">
+                                <strong>Fixed:</strong> [Major fixed costs]<br>
+                                <strong>Variable:</strong> [Major variable costs]<br>
+                                <strong>Drivers:</strong> [What increases costs]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Requirements -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Resource Requirements</h3>
+                    <p style="font-size: 14px; line-height: 1.6; color: var(--color-text-secondary); margin-bottom: 12px;">
+                        <strong>Means Required:</strong> [List 3-5 key resources/capabilities from Feasibility]
+                    </p>
+                    <p style="font-size: 14px; line-height: 1.6; color: var(--color-text-secondary); margin-bottom: 12px;">
+                        <strong>Critical Partners:</strong> [List partnerships needed for MVP]
+                    </p>
+                    <p style="font-size: 14px; line-height: 1.6; color: var(--color-text-secondary);">
+                        <strong>Resource Gaps:</strong> [Any identified gaps with mitigation strategies]
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product 2 Modal (duplicate structure) -->
+    <div class="modal-overlay" id="product2-modal" role="dialog" aria-labelledby="product2-title" aria-modal="true">
+        <!-- Same structure as Product 1 modal, update with Product 2 data -->
+    </div>
+
+    <!-- Product 3 Modal (duplicate structure) -->
+    <div class="modal-overlay" id="product3-modal" role="dialog" aria-labelledby="product3-title" aria-modal="true">
+        <!-- Same structure as Product 1 modal, update with Product 3 data -->
+    </div>
+
+    <script>
+// Modal functionality
+function openModal(productId) {
+    const modal = document.getElementById(productId + '-modal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Focus trap - focus first focusable element
+    const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (focusableElements.length > 0) {
+        focusableElements[0].focus();
+    }
+}
+
+function closeModal(productId) {
+    const modal = document.getElementById(productId + '-modal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close modal on overlay click
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', function(e) {
+        if (e.target === this) {
+            const modalId = this.id.replace('-modal', '');
+            closeModal(modalId);
+        }
+    });
+});
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+            const modalId = modal.id.replace('-modal', '');
+            closeModal(modalId);
+        });
+    }
+});
+
+// Animate progress bars on load
+window.addEventListener('load', function() {
+    const progressBars = document.querySelectorAll('.progress-bar');
+    progressBars.forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => {
+            bar.style.width = width;
+        }, 100);
+    });
+});
+
+// Keyboard accessibility for product cards
+document.querySelectorAll('.product-card').forEach(card => {
+    card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.click();
+        }
+    });
+});
+    </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # VIANEO Framework - Master Repository
 
-> **Evidence-based startup evaluation framework** | 5 Dimensions | 11-Step Process | Committee-Ready Outputs
+> **Evidence-based startup evaluation framework** | 5 Dimensions | 13-Step Process | Committee-Ready Outputs
 
 ## Table of Contents
 
@@ -20,13 +20,13 @@
 
 **First-time users** - Get started in 5 minutes:
 
-1. **Read** [Framework Overview](docs/FRAMEWORK_OVERVIEW.md) - Understand the 11 steps
+1. **Read** [Framework Overview](docs/FRAMEWORK_OVERVIEW.md) - Understand the 13 steps
 2. **Start** with [Step 0: Executive Brief](prompts/step_00_executive_brief_extraction.md) - Transform raw materials into structured brief
 3. **Assess** with [Step 2: 40Q Diagnostic](prompts/step_02_diagnostic_40q.md) - Rapid comprehensive assessment
 4. **Validate** with [Step 3: Market Maturity](prompts/step_03_market_maturity_29q.md) - Score across 5 dimensions
 
 **Experienced users** - Quick reference:
-- **Prompts**: `prompts/` - All 12 evaluation prompts (Step 0-11)
+- **Prompts**: `prompts/` - All 13 evaluation prompts (Step 0-12)
 - **Templates**: `templates/` - Professional output templates
 - **Docs**: `docs/` - Methodology guides and checklists
 - **Examples**: `examples/` - Sample assessments
@@ -40,7 +40,7 @@ The **VIANEO Business Model Evaluation Framework** is a comprehensive, evidence-
 ### Core Features
 
 - **5 Critical Dimensions** - Legitimacy, Desirability, Acceptability, Feasibility, Viability
-- **11-Step Sequential Process** - From initial screening to committee-ready packages
+- **13-Step Sequential Process** - From initial screening to viability dashboards
 - **Evidence-Based Scoring** - Clear thresholds and validation requirements
 - **Professional Outputs** - Markdown, DOCX, HTML, PDF formats
 - **Reusable Templates** - Consistent evaluation across projects
@@ -51,7 +51,7 @@ The **VIANEO Business Model Evaluation Framework** is a comprehensive, evidence-
 
 ## Framework at a Glance
 
-**The 11-Step Evaluation Process:**
+**The 13-Step Evaluation Process:**
 
 | Phase | Step | Name | Time | Key Output |
 |-------|------|------|------|------------|
@@ -67,6 +67,7 @@ The **VIANEO Business Model Evaluation Framework** is a comprehensive, evidence-
 | | 9 | Value Network Map | 45-60m | Network visualization |
 | **Phase 3: Synthesis** | 10 | Diagnostic Comment | 25-35m | Executive decision brief |
 | | 11 | Features-Needs Matrix | 30-45m | MVP scope analysis |
+| **Phase 4: Viability** | 12 | Viability Assessment | 2-4h | PMF sheets, Business models, Dashboard |
 
 **Core Steps**: Steps 0, 2, and 3 are required. Others are optional based on project needs.
 
@@ -76,7 +77,7 @@ The **VIANEO Business Model Evaluation Framework** is a comprehensive, evidence-
 
 ```
 vianeo-framework/
-├── prompts/              # Step 0-11 sequential evaluation prompts
+├── prompts/              # Step 0-12 sequential evaluation prompts
 ├── docs/                 # Comprehensive documentation & guides
 │   ├── FORMAT_SPEC_*.md       # Output format specifications
 │   ├── QUICK_VALIDATION_*.md  # Quality checklists
@@ -88,7 +89,7 @@ vianeo-framework/
 ```
 
 **Key Directories:**
-- **`prompts/`** - 12 evaluation prompts (step_00 through step_11)
+- **`prompts/`** - 13 evaluation prompts (step_00 through step_12)
 - **`docs/`** - 48+ reference documents, format specs, quality checklists
 - **`templates/`** - Professional output templates for all deliverables
 - **`examples/`** - Real assessment examples (Early Stage, Promising, Growth)
