@@ -1,106 +1,424 @@
-# Step 11: Features-Needs Matrix
+# Step 11: Features-Needs Matrix Generation
+## Vianeo Business Model Evaluation Framework
+
+---
 
 ## Overview
-Comprehensive framework for mapping product/service features to validated user needs and generating prioritized development roadmaps.
 
-## Purpose
-Create a systematic connection between identified user needs and proposed solution features to ensure product-market fit.
+**Phase:** Business Model Design (First Step)
+**Duration:** 30-45 minutes
+**Prerequisites:** Steps 0-10 complete (validated needs, ecosystem analysis, diagnostic)
+**Complexity:** Medium (requires strategic thinking + technical execution)
 
-## Matrix Structure
-
-### Features Inventory
-*Template to be added for:*
-- Feature ID and name
-- Feature description
-- Technical complexity
-- Development effort
-- Dependencies
-
-### Needs Mapping
-*Framework to be added for:*
-- Need ID (from Step 7)
-- Feature-need relationships
-- Strength of connection
-- Coverage assessment
-
-### Scoring Dimensions
-*To be populated with:*
-- Need importance (from Needs Qualification Matrix)
-- Feature impact on need
-- Development cost
-- Time to market
-- Strategic value
-- Competitive differentiation
-
-## Analysis Components
-
-### Coverage Analysis
-- Which needs are well-addressed
-- Which needs have gaps
-- Over-engineered features
-- Missing features
-
-### Prioritization Framework
-- Must-have features
-- Should-have features
-- Nice-to-have features
-- Future considerations
-
-### Roadmap Generation
-- Phase 1: MVP features
-- Phase 2: Growth features
-- Phase 3: Scale features
-- Feature sequencing logic
-
-## Output Deliverables
-
-### Features-Needs Matrix
-- Visual matrix representation
-- Scoring tables
-- Gap analysis
-
-### Development Roadmap
-- Phased feature releases
-- Timeline estimates
-- Resource allocation
-- Dependencies and risks
-
-### Strategic Recommendations
-- Product strategy alignment
-- Market entry approach
-- Differentiation strategy
-- Build vs. partner decisions
+**Purpose:** Create an interactive visual matrix that maps solution features against validated customer needs, revealing strategic fit, coverage gaps, MVP boundaries, and resource priorities.
 
 ---
 
-## Output Format
+## Step Position in Framework
 
-**CRITICAL**: Follow the format specification exactly for consistent, professional outputs.
+This is the **bridge from validation (Pre-Incubation) to execution (Business Model Design)**.
 
-**Format Reference**: `docs/FORMAT_SPEC_Step11_Features_Needs_Matrix.md`
-
-Before delivering output:
-1. Generate content following the methodology in this prompt
-2. Format output according to the format specification
-3. Run the validation checklist from the format spec
-4. Only deliver if all validation checks pass
-
-### Critical Formatting Rules
-
-1. **Two-file output required** - Interactive HTML matrix (.html) + Strategic Analysis markdown (.md), both must be delivered
-2. **Conservative checkmark marking** - Only mark where feature DIRECTLY addresses need (defensible connections only, no optimistic marking)
-3. **All 10 needs from Step 7 included** - Exact opportunity classifications must match Step 7, no reclassification
-4. **Export (Ctrl+E) and Print (Ctrl+P) functional** - CSV export and print optimization must work without errors
-5. **Coverage targets enforced** - High Opportunity 100%, Expected 100%, overall 40-80% (outside range requires explanation)
-
-See the complete format specification for:
-- Interactive HTML specifications (sticky headers, color coding, SVG icons)
-- Strategic Analysis document structure (9 required sections)
-- Coverage metrics calculations (overall, by level, feature efficiency)
-- Opportunity level definitions (High/Medium/Low/Expected/Accessory)
-- Validation checklist (40+ items)
-- Common mistakes to avoid (17 items)
-- File naming conventions (dual output)
+**Follows:** Step 10 (Vianeo Diagnostic Comment & Report)
+**Enables:** Step 12+ (Technical feasibility, resource planning, go-to-market)
 
 ---
-*Note: Complete features-needs matrix generation content to be added*
+
+## Required Inputs
+
+### From Previous Steps
+
+**Step 7: Needs Qualification Matrix** (CRITICAL)
+- 10 validated customer needs
+- Opportunity level classifications (High/Medium/Low/Expected/Accessory)
+- Importance and satisfaction ratings
+
+**Step 4-5: Solution Context** (Recommended)
+- Solution description
+- Available resources
+- Requester segment information
+
+**Step 10: Vianeo Diagnostic** (Recommended)
+- Strategic recommendations
+- Risk areas to address
+
+### From User
+
+**Solution Features (5-10)**
+- Specific capabilities the solution provides
+- Action-oriented descriptions
+- Example: "Real-time inventory tracking dashboard" not "Dashboard"
+
+**Project Context**
+- Project/Client name
+- Brief description (for subtitle)
+- Industry or domain
+
+---
+
+## Outputs to Generate
+
+### Primary Output: Interactive HTML Matrix
+
+**File:** `[project-name]-features-needs-matrix.html`
+
+**Contents:**
+- Scrollable table with sticky headers
+- Color-coded opportunity levels
+- Checkmarks showing feature-need alignment
+- Export to CSV functionality (Ctrl+E)
+- Print-optimized layout (Ctrl+P)
+
+**Design Specifications:**
+- Max width: 1600px
+- Font: System fonts (-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto)
+- Colors: Primary #1a365d/#2c5282, High #0f9d58, Medium #f4b400, Low #ef6c00, Expected #1a73e8, Accessory #5f6368
+
+### Secondary Output: Strategic Analysis
+
+**File:** `[project-name]-matrix-analysis.md`
+
+**Contents:**
+- Coverage overview with metrics
+- Key findings (strengths & gaps)
+- Strategic recommendations
+- MVP scoping guidance
+- Next steps for Step 12+
+
+---
+
+## Generation Workflow
+
+### Phase 1: Gather Inputs (5-10 min)
+
+**Confirm prerequisites with user:**
+
+```
+Before creating your Features-Needs Matrix, I need to confirm:
+
+1. **Validated Needs** (from Step 7)
+   - Do you have your 10 needs with opportunity classifications?
+   - If you have Step 7 output, I can extract them automatically.
+
+2. **Solution Features** (5-10 capabilities)
+   - What are the specific features of your solution?
+   - Use action-oriented names (e.g., "Automated low-stock alerts via SMS")
+
+3. **Project Context**
+   - Project/Client name
+   - Brief description
+```
+
+**Extract needs from Step 7 if available:**
+- Need statement
+- Opportunity classification (High/Medium/Low/Expected/Accessory)
+- Order: High → Medium → Low → Expected → Accessory
+
+### Phase 2: Map Coverage (10-15 min)
+
+**For each feature-need pair, determine coverage:**
+
+**Mark checkmark (✓) ONLY when:**
+1. Feature directly solves or significantly improves the need
+2. User with this need would find this feature valuable
+3. Connection is obvious (not a stretch)
+
+**Leave empty when:**
+- Connection is indirect or tangential
+- Feature alone doesn't deliver value for this need
+- You have to rationalize the connection
+
+**Be conservative.** Over-marking diminishes strategic value.
+
+**Document as you map:**
+- Patterns emerging
+- Critical gaps (high-opportunity needs with no coverage)
+- Over-coverage areas
+
+### Phase 3: Calculate Metrics (2-3 min)
+
+**Required statistics:**
+
+```
+Total Features: [Count columns]
+Total Needs: 10 (from Step 7)
+Total Checkmarks: [Count all ✓]
+
+Coverage Rate = (Total Checkmarks / (Features × Needs)) × 100
+
+High Opportunity Coverage = [High needs with ≥1 checkmark] / [Total high needs]
+```
+
+**Target ranges:**
+- Overall Coverage: 40-80% (focused solution)
+- High Opportunity: 100% (all critical needs addressed)
+- Expected: 70%+ (table stakes met)
+- Accessory: <30% (scope discipline)
+
+### Phase 4: Build HTML (5-10 min)
+
+**Use the Step11_FeaturesNeeds_Matrix_Template.html**
+
+**Required components:**
+
+1. **Header with inline stats**
+   - Project name and subtitle
+   - Features count, Needs count, Coverage %, High Opportunity X/Y
+
+2. **Export/Print buttons**
+   - SVG icons
+   - Keyboard shortcut support
+
+3. **Matrix table**
+   - Sticky header row (top: 0, z-index: 10)
+   - Sticky first column (left: 0, z-index: 5)
+   - Corner cell (z-index: 20)
+   - Color-coded rows by opportunity level
+
+4. **SVG indicators by opportunity level:**
+   - High: Circle r="7" (largest)
+   - Medium: Circle r="5"
+   - Low: Circle r="4"
+   - Expected: Star outline (path stroke)
+   - Accessory: Circle r="3" (tiny)
+
+5. **Legend footer**
+   - All 5 opportunity levels
+   - Matching colors
+
+6. **JavaScript**
+   - CSV export function
+   - Print function
+   - Keyboard shortcuts (Ctrl+E, Ctrl+P)
+
+### Phase 5: Create Analysis (5-10 min)
+
+**Use this structure:**
+
+```markdown
+# Features-Needs Matrix Analysis
+**Project:** [Name]
+**Generated:** [Date]
+**Phase:** Business Model Design (Step 11)
+
+## Coverage Overview
+
+- **Total Features:** X
+- **Total Needs:** 10
+- **Overall Coverage:** XX%
+- **High Opportunity Needs Addressed:** X/X
+
+## Key Findings
+
+### Strengths
+- [List well-covered high-opportunity needs]
+- [Note features addressing multiple critical needs]
+- [Identify core value proposition from coverage]
+
+### Critical Gaps
+- [List high-opportunity needs with NO coverage]
+- [List expected needs with poor coverage]
+- [Note patterns in gaps]
+
+## Strategic Recommendations
+
+### Priority Development
+1. **[Feature to build]**
+   - Addresses [specific gap]
+   - Estimated effort: [sprints/weeks]
+
+### Feature Optimization
+1. **[Feature to simplify/defer]**
+   - Only addresses [low-value needs]
+   - Recommendation: [action]
+
+## MVP Definition
+
+### Must-Have Features
+Based on coverage analysis:
+- [Feature X]: Covers [High needs Y, Z]
+- [Feature A]: Covers [Expected need B]
+
+### Defer to Post-Launch
+- [Feature]: Only addresses accessory needs
+- [Feature]: Low-opportunity, resources better allocated elsewhere
+
+## Next Steps (Step 12+)
+
+1. Technical feasibility for gap-filling features
+2. Resource estimates for MVP scope
+3. Partnership strategy for non-core features
+4. Go-to-market messaging (focused on covered high-opportunity needs)
+```
+
+### Phase 6: Deliver Outputs
+
+**Save files:**
+- `[project-name]-features-needs-matrix.html`
+- `[project-name]-matrix-analysis.md`
+
+**Provide summary message:**
+
+```
+Created your Features-Needs Matrix with [X] features mapped against 10 validated customer needs.
+
+**Coverage Metrics:**
+- Overall Coverage: XX%
+- High Opportunity: X/X needs addressed
+- Critical Gaps: X needs
+
+**Files:**
+[View Interactive Matrix](computer:///path/to/file.html)
+[View Analysis Summary](computer:///path/to/file.md)
+
+**Interactive Features:**
+- Export to CSV (Ctrl+E)
+- Print-optimized layout (Ctrl+P)
+
+### Key Insights:
+1. [Most important finding]
+2. [Second key finding]
+
+### Critical Actions:
+1. [Top priority based on analysis]
+2. [Second priority]
+
+**Next Step:** Technical feasibility assessment for prioritized features
+```
+
+---
+
+## Quality Validation
+
+### Critical Checks (Must Pass)
+
+**Data Integrity:**
+- [ ] All 10 needs from Step 7 included
+- [ ] Opportunity classifications accurate
+- [ ] Checkmarks only where features genuinely address needs
+- [ ] Coverage metrics calculated correctly
+
+**Interactive Features:**
+- [ ] Export button downloads CSV
+- [ ] Print button opens dialog
+- [ ] Keyboard shortcuts work
+- [ ] Sticky headers functional
+
+**Strategic Value:**
+- [ ] High-opportunity needs with no coverage identified as critical gaps
+- [ ] Recommendations are actionable
+- [ ] MVP scope is realistic
+- [ ] Next steps enable execution
+
+### Warning Patterns
+
+**Over-marking:** If coverage >85%, likely features too broad or marking optimistic
+**Under-marking:** If coverage <30%, likely features too narrow or fundamental mismatch
+**Scattered coverage:** If no pattern visible, solution lacks strategic focus
+**Missing high-opportunity:** Any high-opportunity need with zero coverage is critical failure
+
+---
+
+## Opportunity Level Definitions
+
+### High Opportunity (Green - #0f9d58)
+- Fundamental importance to requester
+- Currently poorly satisfied
+- Large potential impact if solved
+- Core value proposition
+- **Action:** MUST address
+
+### Medium Opportunity (Yellow - #f4b400)
+- Important to requester
+- Moderate satisfaction gap
+- Competitive differentiator potential
+- **Action:** Should address
+
+### Low Opportunity (Orange - #ef6c00)
+- Secondary importance OR already well-satisfied
+- Smaller impact potential
+- Nice to have
+- **Action:** Consider if resources allow
+
+### Expected (Blue - #1a73e8)
+- Table stakes functionality
+- Must have for market entry
+- Not differentiating but required
+- **Action:** Include in MVP for legitimacy
+
+### Accessory (Gray - #5f6368)
+- Peripheral to core value
+- Luxury features or edge cases
+- Can enhance but not essential
+- **Action:** Defer until post-launch
+
+---
+
+## MVP Scoping Formula
+
+```
+MVP = Features covering (All High + All Expected)
+      minus Features only covering (Accessory + Low)
+```
+
+**Deferral priorities:**
+1. Accessory features (post-launch only)
+2. Low-opportunity features (if resources allow)
+3. Medium features not critical for differentiation
+4. Features requiring significant partnerships
+
+---
+
+## Integration Notes
+
+### Backward References
+
+**Step 7:** Source of 10 validated needs with opportunity classifications
+**Step 5:** Need definitions, requester segment information
+**Step 4:** Solution description, available resources
+**Step 10:** Strategic diagnostic, risk areas to address
+
+### Forward References
+
+**Step 12+:** Technical feasibility for prioritized features
+**Resource Planning:** Development time/cost estimates
+**Partnership Strategy:** Features to outsource or acquire
+**Go-to-Market:** Messaging focused on covered high-opportunity needs
+**Product Roadmap:** Phased releases based on priority
+
+---
+
+## Common Pitfalls
+
+1. **Over-marking coverage** - Be conservative with checkmarks
+2. **Missing opportunity classifications** - Every need needs color-coded level
+3. **Vague feature names** - "Mobile app" too generic; "Barcode scanning via camera" specific
+4. **Ignoring gaps** - Critical gaps are insights, not failures
+5. **Wrong metrics** - Double-check coverage calculations
+6. **Static headers** - Headers must be sticky for usability
+7. **No JavaScript** - Export and print are required
+8. **Missing analysis** - HTML alone isn't enough
+
+---
+
+## Reference Materials
+
+**Templates:**
+- `Step11_FeaturesNeeds_Matrix_Template.html`
+- `Step11_FeaturesNeeds_Analysis_Template.md`
+
+**Documentation:**
+- `VIANEO_Step11_Skill_Overview.md`
+- `VIANEO_Step11_Implementation_Guide.md`
+- `VIANEO_Step11_Reference_Guide.md`
+- `VIANEO_Step11_Quality_Checklist.md`
+- `VIANEO_Step11_Quick_Reference.md`
+
+**Examples:**
+- `Step11_Example_MarineData_Matrix.html`
+- `Step11_Example_MarineData_Analysis.md`
+
+---
+
+*Step 11 | Vianeo Business Model Evaluation Framework*
+*Phase: Business Model Design*
+*Version: 2.0*
