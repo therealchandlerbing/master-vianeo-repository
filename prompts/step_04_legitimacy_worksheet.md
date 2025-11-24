@@ -177,6 +177,35 @@ Mitsui transfer at EBO | $5.5M (assets transferred) | Yes | Rare Fortune 500 bac
 
 ---
 
+## Required Output: Available Means (for Step 11 Features/Means Matrix)
+
+The following must be captured in a structured format for use in Step 11:
+
+### Human Means
+List each human resource with differentiation status:
+- [Description] | Differentiating: Yes/No
+
+Example:
+- 30+ years of sales relationship to manufacturing plants | Differentiating: Yes
+- 1 developer | Differentiating: No
+
+### Physical/Intellectual Means
+List each physical or intellectual resource with differentiation status:
+- [Description] | Differentiating: Yes/No
+
+Example:
+- Beta software for log sheets and log books | Differentiating: Yes
+
+### Financial Means
+- [Amount and context]
+
+Example:
+- 60,000 dollars
+
+**Important**: These exact descriptions become column headers in the Step 11 Features/Means matrix. Write clearly and concisely.
+
+---
+
 ### 6. Differentiating Advantages: Unique Barriers to Entry
 
 ```markdown

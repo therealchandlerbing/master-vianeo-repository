@@ -103,6 +103,46 @@ Practical appendix for field research. Contains:
 
 ---
 
+## Required Output Structure
+
+### Requesters (6-10 individual roles)
+
+For each requester, capture:
+- **Name**: Role title (e.g., "Field operator", "plant manager")
+- **Organizational Context**: The organization type they belong to (e.g., "Industrial Operational Staff", "Industrial manufacturer management")
+- **Reliability**: Interview count and rating
+- **Persona link**: If persona exists
+
+Example grouping:
+| Individual Requester | Organizational Context |
+|---------------------|----------------------|
+| Field operator | Industrial Operational Staff |
+| maintenance staff | Industrial Operational Staff |
+| Board operators | Industrial Operational Staff |
+| operation specialist/manager | Industrial Operational Staff |
+| board directors | Industrial manufacturer (management) |
+| plant manager | Industrial manufacturer (management) |
+| production/business manager | Industrial manufacturer (management) |
+| financial managers | Industrial manufacturer (management) |
+| operation engineer | Industrial manufacturer (management) |
+| logistics and material analyst | Industrial manufacturer (management) |
+
+**Why this matters**:
+- Individual names become column headers in Step 7 (Needs Qualification Matrix)
+- Organizational groupings become "Potential clients" boxes in Step 9 (Value Network)
+
+### Needs (10-16 need statements)
+
+For each need:
+- **Statement**: Clear, actionable need (60-character limit for platform input)
+- **Type**: Job-to-be-done, Pain, or Expectation
+
+**Important**: These exact need statements become:
+- Row labels in Step 7 (Needs Qualification Matrix)
+- Column headers in Step 11 (Features/Needs Matrix)
+
+---
+
 ## MARKDOWN ANALYSIS FILE - COMPLETE STRUCTURE
 
 ### Section 1: INPUTS USED

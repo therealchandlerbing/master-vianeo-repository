@@ -55,6 +55,77 @@ This is the **bridge from validation (Pre-Incubation) to execution (Business Mod
 
 ---
 
+## CRITICAL: Data Dependencies
+
+Step 11 produces TWO matrix views sharing the same rows (Features) but with different columns.
+
+---
+
+### Matrix View 1: Features/Needs
+
+**Purpose**: Validate that features address validated customer needs
+
+**Upstream sources**:
+- Step 5: Need statements (become columns)
+- Step 7: Importance/Satisfaction ratings (inform color coding + requester dropdown)
+
+**Data to pull**:
+
+From Step 5:
+- ALL need statements verbatim (exact wording)
+
+From Step 7:
+- Importance ratings per need/requester (determines column color: green = Opportunity, gray = Expected)
+- Which requesters care about each need (shown in dropdown when "See requesters" toggled)
+
+**Output Format**:
+- Rows: Features (defined in this step, 10-15 features)
+- Columns: Need statements from Step 5
+- Column color: Based on Step 7 opportunity analysis
+- Cells: Checkbox (feature addresses need or not)
+- Toggle: "See requesters" shows which requesters have this need
+
+---
+
+### Matrix View 2: Features/Means
+
+**Purpose**: Validate ability to implement features with available resources
+
+**Upstream source**:
+- Step 4: Available Means (become columns)
+
+**Data to pull**:
+
+From Step 4:
+- ALL human means (exact wording)
+- ALL physical/intellectual means (exact wording)
+- Differentiation status for each (shown as heart icon: filled = differentiating, outline = not)
+
+**Output Format**:
+- Rows: Features (same as Features/Needs view)
+- Columns: Available Means from Step 4
+- Column header: Shows differentiation icon
+- Cells: Checkbox (means supports feature implementation or not)
+- Additional column: Implementation timing (Already available / Short term)
+- Toggle: "See partners" shows technical partners
+
+---
+
+### Validation Check
+
+For Features/Needs:
+- [ ] All need statements match Step 5 exactly
+- [ ] Column count matches need count from Step 5
+- [ ] Importance-based coloring matches Step 7
+- [ ] Requester dropdowns match Step 7 data
+
+For Features/Means:
+- [ ] All means match Step 4 exactly
+- [ ] Differentiation status matches Step 4
+- [ ] Column count matches total means from Step 4
+
+---
+
 ## Outputs to Generate
 
 ### Primary Output: Interactive HTML Matrix
