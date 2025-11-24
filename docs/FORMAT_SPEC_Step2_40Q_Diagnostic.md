@@ -1258,7 +1258,7 @@ Before finalizing assessment, complete this checklist:
 - `FORMAT_SPEC_Step4_Decision_Scorecard.md` - Final decision framework
 
 **Methodology Resources:**
-- VIANEO 8-Step Evaluation Framework Overview
+- VIANEO 13-Step Evaluation Framework Overview
 - Scoring calibration benchmarks
 - Stage-specific expectations guide
 
@@ -1291,7 +1291,7 @@ If you identify errors, ambiguities, or areas for improvement in this format spe
 **Document Word Count:** ~7,800 words
 **Validation Items:** 62 checks
 **Common Mistakes Documented:** 30 items
-**Template Compatibility:** VIANEO 8-Step Framework v1.0
+**Template Compatibility:** VIANEO 13-Step Framework v1.0
 
 **Document Status:** FINAL
 **Last Reviewed:** 2025-01-15

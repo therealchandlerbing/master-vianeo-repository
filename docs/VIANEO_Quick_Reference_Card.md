@@ -4,24 +4,35 @@
 
 ---
 
-## The 8-Step Workflow
+## The 13-Step Workflow
 
 ```
+Phase 1: Foundation
 Step 0: Executive Brief (20-30 min) → B1-B7 structure + maturity stage
 Step 1: Application Forms [OPTIONAL] (15-20 min) → 360 SIS or CNEN format
 Step 2: 40-Question Diagnostic (30-45 min) → Team/Tech/Mgmt/Commercial (2 docs)
 Step 3: 29-Question Market Maturity (45-60 min) → 5 Dimensional scores (3 outputs)
+
+Phase 2: Deep Dive
 Step 4: Legitimacy Deep Dive (20-30 min) → Problem/domain/team/resources (2 outputs)
 Step 5: Desirability Analysis (30-40 min) → Segments, needs, personas
-Step 6: Needs Matrix (45 min) → HTML priority heatmap
-Step 7: Ecosystem Mapping (30-45 min) → Stakeholder acceptability
-Step 8: Network Visualization (60-90 min) → Interactive HTML map
+Step 6: Persona Development (30-45 min) → Evidence-based personas
+Step 7: Needs Qualification Matrix (45-90 min) → HTML priority heatmap + report
+Step 8: Players & Influencers (30-45 min) → Ecosystem acceptability mapping
+Step 9: Value Network Map (45-60 min) → Interactive HTML network visualization
+
+Phase 3: Synthesis
+Step 10: Diagnostic Comment (25-35 min) → Executive decision brief
+Step 11: Features-Needs Matrix (30-45 min) → MVP scope analysis
+
+Phase 4: Viability
+Step 12: Viability Assessment (2-4 hours) → PMF sheets, business models, dashboard
 ```
 
 **Total Time:**
 - **Fast Track** (0,2,4,5): 90 min
-- **Standard** (0-7): 3-4 hours
-- **Complete** (0-8): 5-6 hours
+- **Standard** (0-10): 5-6 hours
+- **Complete** (0-12): 8-10 hours
 
 ---
 
@@ -40,13 +51,14 @@ Step 8: Network Visualization (60-90 min) → Interactive HTML map
 | **B7:** Team/Resources | 200 |
 | **Supplementary Notes** (each) | 250 |
 
-### Step 5-8: Needs & Ecosystem
+### Steps 5-12: Needs & Ecosystem
 
 | Field | Max Characters |
 |-------|----------------|
 | Needs Statements | 60 each |
 | Player/Segment Names | 60 each |
 | Ecosystem Notes | 250 |
+| Feature Names | 60 each |
 
 ---
 
@@ -217,11 +229,28 @@ Step 8: Network Visualization (60-90 min) → Interactive HTML map
 - [ ] Independence verified
 - [ ] Priority ranking done
 
-**Step 7 → Step 8:**
+**Step 8 → Step 9:**
 - [ ] All player types covered
 - [ ] Acceptability rated
 - [ ] Mitigation strategies noted
 - [ ] Risk assessment complete
+
+**Step 9 → Step 10:**
+- [ ] All requesters from Step 5 positioned in network
+- [ ] All players/influencers from Step 8 in visualization
+- [ ] Acceptability colors match Step 8
+- [ ] Priority targets identified (Favorable + Critical need)
+
+**Step 10 → Step 11:**
+- [ ] Executive decision brief complete
+- [ ] Key findings summarized
+- [ ] Recommendations actionable
+
+**Step 11 → Step 12:**
+- [ ] All needs from Step 5 as columns
+- [ ] All means from Step 4 as columns in Means view
+- [ ] Coverage metrics calculated
+- [ ] MVP scope defined
 
 ---
 
@@ -253,9 +282,15 @@ Step 8: Network Visualization (60-90 min) → Interactive HTML map
 "Generate 360 SIS application from Executive Brief"
 "Run 40-question diagnostic with both output documents"
 "Complete 29-question market maturity assessment"
-"Generate needs matrix HTML"
-"Map ecosystem with acceptability ratings"
-"Create network visualization"
+"Create legitimacy deep dive worksheet"
+"Generate needs/requesters analysis"
+"Develop evidence-based personas"
+"Generate needs qualification matrix HTML"
+"Map ecosystem players and influencers"
+"Create value network visualization"
+"Generate diagnostic comment brief"
+"Create features-needs matrix"
+"Complete viability assessment with PMF sheets"
 ```
 
 ---
@@ -268,17 +303,23 @@ Step 8: Network Visualization (60-90 min) → Interactive HTML map
 - Step 4: 15 min
 - Step 5: 15 min
 
-**Standard (3-4 hours):**
+**Standard (5-6 hours):**
 - Step 0: 25 min
 - Step 2: 35 min
 - Step 3: 50 min
 - Step 4: 25 min
 - Step 5: 35 min
 - Step 6: 30 min
-- Step 7: 30 min
+- Step 7: 45 min
+- Step 8: 35 min
+- Step 9: 45 min
+- Step 10: 30 min
 
-**Complete (5-6 hours):**
-- All steps + report: 6 hours
+**Complete (8-10 hours):**
+- All steps (0-12) + final report
+- Steps 0-10: 6 hours
+- Step 11: 45 min
+- Step 12: 2-4 hours
 
 ---
 
@@ -335,21 +376,22 @@ Lower to 2-3, note: "Requires validation"
 
 ### When to Use Each Path:
 
-**Fast Track:**
+**Fast Track (Steps 0, 2, 4, 5):**
 - Screening 10+ applications
 - Quick go/no-go needed
 - Limited time available
 
-**Standard:**
+**Standard (Steps 0-10):**
 - Committee-ready evaluation
 - Top 5 finalists
 - Investment decision support
 
-**Complete:**
+**Complete (Steps 0-12):**
 - Executive presentations
 - Board-level decisions
 - Series A+ due diligence
 - Demo day preparation
+- Full viability assessment
 
 ---
 

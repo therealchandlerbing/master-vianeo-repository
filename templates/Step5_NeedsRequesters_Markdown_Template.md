@@ -524,7 +524,7 @@ Document these critical data points from every interview:
 
 **Analysis Version:** 1.0
 **Template Version:** Step 5 Desirability - Needs/Requesters Analysis
-**Framework:** VIANEO 8-Step Business Model Evaluation System
+**Framework:** VIANEO 13-Step Business Model Evaluation System
 **Desirability Weight:** 25% of overall evaluation (highest weight)
 **Completed:** [YYYY-MM-DD]
 **Next Review:** [YYYY-MM-DD after customer discovery interviews]

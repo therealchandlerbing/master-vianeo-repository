@@ -420,4 +420,4 @@
 
 ---
 
-**Note:** This is Step 1 of the VIANEO 8-Step Evaluation System. Successful applications will proceed to Step 2: 40Q Assessment for deeper evaluation.
+**Note:** This is Step 1 of the VIANEO 13-Step Evaluation System. Successful applications will proceed to Step 2: 40Q Assessment for deeper evaluation.

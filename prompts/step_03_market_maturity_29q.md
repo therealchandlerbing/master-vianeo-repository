@@ -562,5 +562,5 @@ Overall Score = (Legitimacy × 0.15) + (Desirability × 0.25) + (Acceptability �
 
 **Prompt Version:** 1.0
 **Last Updated:** 2025-01-15
-**Compatible with:** VIANEO 8-Step Evaluation System
+**Compatible with:** VIANEO 13-Step Evaluation System
 **Required References:** 29Q Quick Reference, Market Maturity System Prompt, Evidence Checklist

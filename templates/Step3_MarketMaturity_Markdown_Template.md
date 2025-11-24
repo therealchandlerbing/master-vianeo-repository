@@ -641,7 +641,7 @@ Based on score and evidence quality:
 
 **Assessment Version:** 1.0
 **Template Version:** Step 3 Market Maturity Assessment
-**Framework:** VIANEO 8-Step Business Model Evaluation System
+**Framework:** VIANEO 13-Step Business Model Evaluation System
 **Completed:** [YYYY-MM-DD]
 **Next Review:** [YYYY-MM-DD - typically 30-90 days]
 

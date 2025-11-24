@@ -231,4 +231,4 @@ Example: `HealthTechAI_Step3_AssessmentResults_20250115.docx`
 
 **Template Version:** 1.0
 **Last Updated:** 2025-01-15
-**Compatible With:** VIANEO 8-Step Evaluation System, Microsoft Word 2016+, Google Docs, LibreOffice Writer
+**Compatible With:** VIANEO 13-Step Evaluation System, Microsoft Word 2016+, Google Docs, LibreOffice Writer

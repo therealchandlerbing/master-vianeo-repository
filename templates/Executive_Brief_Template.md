@@ -266,7 +266,7 @@
 ---
 
 **Notes:**
-- This Executive Brief template is part of the VIANEO 8-Step Evaluation System
+- This Executive Brief template is part of the VIANEO 13-Step Evaluation System
 - It serves as the primary intake document for evaluating innovation proposals
 - Character limits enforce clarity and conciseness
 - All claims must be supported by documented evidence
