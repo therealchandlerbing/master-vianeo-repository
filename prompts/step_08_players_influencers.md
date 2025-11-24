@@ -123,6 +123,46 @@ This is strategy, not documentation. BCG-level analysis prioritizes power and in
 
 ---
 
+## Required Output Structure
+
+### Ecosystem Players (8-15 entities)
+
+For each player:
+- **Name**: Organization or entity name (60-char limit)
+- **Type**: Supplier, Channel, Regulator, Competitor, etc.
+- **Acceptability**: Favorable (green) / Neutral (gray) / Unfavorable (orange/red)
+- **Note**: Strategic context (250-char limit)
+
+Example:
+| Player Name | Type | Acceptability |
+|------------|------|---------------|
+| raw material & utility provider | Supplier | Favorable |
+| equipment suppliers | Supplier | Neutral |
+| Industrial Insurance companies | Partner | Neutral |
+| Integrated IT system providers | Competitor | Neutral |
+| logistics & freight | Channel | Favorable |
+| government purchasers/public | Customer | Favorable |
+
+### Ecosystem Influencers (3-8 entities)
+
+For each influencer:
+- **Name**: Organization or entity name (60-char limit)
+- **Acceptability**: Favorable / Neutral / Unfavorable / Unknown (?)
+- **Note**: How they influence the ecosystem
+
+Example:
+| Influencer Name | Acceptability |
+|----------------|---------------|
+| Government Departments | Favorable |
+| Professional organisations & Institutes | Favorable |
+| Lobbying Groups | Neutral |
+| Environmental Activists | Unknown |
+| Union of Employees | Favorable |
+
+**Important**: These exact names and acceptability ratings flow directly into Step 9 (Ecosystem Value Network).
+
+---
+
 ## Critical Character Limits
 
 | Element | Maximum Characters | Enforcement Level |

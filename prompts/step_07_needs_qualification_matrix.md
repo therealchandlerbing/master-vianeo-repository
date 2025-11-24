@@ -73,6 +73,46 @@ Together, they force honest assessment of validation status and create clear acc
 
 ---
 
+## CRITICAL: Data Dependencies
+
+This step REQUIRES exact output from Step 5 (Needs/Requesters Analysis).
+
+### Data to Pull from Step 5:
+
+**Requester Segments** (become column headers):
+- Copy ALL requester names exactly as written
+- Include interview counts for reliability indicators
+- Do NOT paraphrase or reword
+
+**Need Statements** (become row labels):
+- Copy ALL need statements verbatim
+- Maintain exact wording (60-char limit preserved)
+- Do NOT shorten, rephrase, or combine
+
+### Output Format
+
+**HTML Matrix Structure**:
+- Title: "[Project Name] - Needs Qualification Matrix"
+- Subtitle: "Visual Assessment of Importance & Satisfaction Across Requester Segments"
+- Pre-validation warning banner (if no interviews conducted)
+- Legend: Importance levels (Fundamental/Important/Secondary/None/Don't Know)
+- Legend: Satisfaction levels (Very Well/Pretty Much/Rather Not/Not At All/Don't Know)
+
+**Matrix Cells**: Each cell shows two values:
+- Top: Importance level (color-coded)
+- Bottom: Satisfaction level (color-coded)
+
+**Column Headers**: Requester name + interview count
+
+### Validation Check
+- [ ] All requester names match Step 5 exactly
+- [ ] All need statements match Step 5 exactly
+- [ ] Interview counts match Step 5
+- [ ] Number of columns = number of requesters in Step 5
+- [ ] Number of rows = number of needs in Step 5
+
+---
+
 ## Output 1: Needs Qualification Matrix
 
 ### Specifications

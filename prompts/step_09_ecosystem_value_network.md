@@ -77,6 +77,66 @@ If working standalone, gather:
 
 ---
 
+## CRITICAL: Data Dependencies
+
+This step REQUIRES output from:
+- Step 5 (Needs/Requesters Analysis)
+- Step 8 (Players & Influencers)
+
+### Data to Pull from Step 5:
+
+**Requesters** (positioned in Buyers & Clients or End Users columns):
+- Copy individual requester names exactly
+- Group requesters by their organizational context
+- Requesters appear INSIDE their organizational grouping boxes
+
+Example: If Step 5 shows "Field operator" and "maintenance staff" both in "Industrial Operational Staff" context, create a box labeled "Industrial Operational Staff" containing both requesters.
+
+### Data to Pull from Step 8:
+
+**Players** (positioned across value chain columns):
+- Copy all player names exactly
+- Maintain acceptability ratings (shown as colored dots)
+- Position based on role: Suppliers on left, Channels in middle, Customers on right
+
+**Influencers** (positioned in Enablers & Influencers column):
+- Copy all influencer names exactly
+- Maintain acceptability ratings
+- Position at top of visualization
+
+### Output Format
+
+**HTML Value Network Structure**:
+- 5 columns: Enablers & Influencers | Core Product | Channels & Partners | Buyers & Clients | End Users
+- Each box shows: Organization name, description, acceptability dot
+- Nested requesters shown inside relevant organization boxes
+- Priority targets: Green background + CRITICAL/NEED badge
+
+**Legend**:
+- Organization Classification: Priority Target (green), Favorable (white), Neutral (yellow), Unfavorable (red)
+- Acceptability Status: Favorable (green dot), Neutral (orange dot), Unfavorable (red dot)
+- Need Level: CRITICAL (urgent pain), NEED (significant impact)
+
+### Positioning Logic
+
+| Data Source | Value Network Position |
+|-------------|----------------------|
+| Step 8 Influencers | Enablers & Influencers column |
+| Step 8 Players (suppliers) | Enablers column or left side |
+| Step 8 Players (channels) | Channels & Partners column |
+| Step 8 Players (partners) | Channels & Partners column |
+| Step 5 Requesters (buyers) | Buyers & Clients column |
+| Step 5 Requesters (end users) | End Users column |
+
+### Validation Check
+- [ ] All requesters from Step 5 appear in Buyers/Clients or End Users columns
+- [ ] Requesters are grouped by organizational context from Step 5
+- [ ] All players from Step 8 appear in appropriate columns
+- [ ] All influencers from Step 8 appear in Enablers & Influencers column
+- [ ] Acceptability ratings match Step 8 exactly
+
+---
+
 ## Output Priority: HTML-FIRST APPROACH
 
 ### PRIMARY OUTPUT: HTML Interactive Visualization
