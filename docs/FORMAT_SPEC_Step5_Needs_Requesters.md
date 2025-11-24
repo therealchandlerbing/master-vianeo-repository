@@ -1963,7 +1963,7 @@ Maintain cognitive health and prevent age-related mental decline         (68) ‚ù
 
 **Format Specification Version:** 1.0
 **Release Date:** 2025-01-15
-**Applicable Framework:** VIANEO 8-Step Business Model Evaluation Playbook
+**Applicable Framework:** VIANEO 13-Step Business Model Evaluation Playbook
 **Step:** 5 - Desirability: Needs/Requesters Analysis
 **Weight in Framework:** 25% (highest weight)
 **Document Length:** ~3,600 words

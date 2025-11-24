@@ -798,4 +798,4 @@ After completing Step 4, proceed to **Step 5: Desirability Analysis** (prompts/s
 
 **Template Version:** 1.0
 **Last Updated:** 2025-01-15
-**Compatible With:** VIANEO 8-Step Evaluation System
+**Compatible With:** VIANEO 13-Step Evaluation System

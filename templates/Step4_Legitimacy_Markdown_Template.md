@@ -243,7 +243,7 @@
 
 **Assessment Version:** 1.0
 **Template Version:** Step 4 Legitimacy Deep Dive
-**Framework:** VIANEO 8-Step Business Model Evaluation System
+**Framework:** VIANEO 13-Step Business Model Evaluation System
 **Completed:** [YYYY-MM-DD]
 **Next Review:** [YYYY-MM-DD]
 

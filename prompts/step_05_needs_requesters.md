@@ -1261,5 +1261,5 @@ After completing Step 5, proceed to **Step 6: Persona Development** (prompts/ste
 
 **Prompt Version:** 1.0
 **Last Updated:** 2025-01-15
-**Compatible With:** VIANEO 8-Step Evaluation System
+**Compatible With:** VIANEO 13-Step Evaluation System
 **Framework:** Vianeo Business Model Evaluation Playbook, Desirability Assessment (25% weight)

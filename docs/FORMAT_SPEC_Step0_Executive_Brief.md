@@ -2,7 +2,7 @@
 
 **Version**: 1.0
 **Purpose**: Exact format specification for Step 0 outputs to ensure consistency and professional quality across all Executive Brief extractions
-**Document Type**: Primary intake document for VIANEO 8-Step Evaluation System
+**Document Type**: Primary intake document for VIANEO 13-Step Evaluation System
 **Last Updated**: 2025-11-21
 
 ---
