@@ -163,6 +163,8 @@ graph LR
     D -->|No| F[Stop or Pivot]
     E --> G[Step 10: Diagnostic]
     E --> H[Step 11: Features-Needs]
+    G --> I[Step 12: Viability Assessment]
+    H --> I
 ```
 
 **Standard Path**:
@@ -172,6 +174,7 @@ graph LR
 4. **If passing**: Proceed to relevant deep dives (Steps 4-9)
 5. **Step 10** (Diagnostic Comment) - Executive decision brief
 6. **Step 11** (Features-Needs) - MVP scope definition
+7. **Step 12** (Viability Assessment) - PMF sheets, business models, viability dashboard
 
 ### Program/Portfolio Management
 
@@ -205,8 +208,8 @@ For company-specific evaluations:
 
 ## Common Questions
 
-**Q: Do I need to run all 11 steps?**
-No. Steps 0, 2, and 3 are core. Others (4-11) are optional based on project needs and decision requirements.
+**Q: Do I need to run all 13 steps?**
+No. Steps 0, 2, and 3 are core. Others (4-12) are optional based on project needs and decision requirements.
 
 **Q: What's the minimum for a "GO" decision?**
 Overall score ≥3.2 (weighted average) with all dimensions meeting thresholds. **Critical**: Desirability must score ≥3.5.
