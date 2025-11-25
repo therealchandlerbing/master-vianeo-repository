@@ -2,7 +2,7 @@
 
 > **Evidence-based startup evaluation framework** | 5 Dimensions | 13-Step Process | Committee-Ready Outputs
 
-[![Status](https://img.shields.io/badge/status-production--ready-brightgreen)]() [![Prompts](https://img.shields.io/badge/prompts-13%2F13%20complete-blue)]() [![Lines](https://img.shields.io/badge/content-10200%2B%20lines-orange)]()
+[![Status](https://img.shields.io/badge/status-production--ready-brightgreen)]() [![Prompts](https://img.shields.io/badge/prompts-13%2F13%20complete-blue)]() [![Tools](https://img.shields.io/badge/tools-14%2F14%20complete-purple)]() [![Lines](https://img.shields.io/badge/content-17600%2B%20lines-orange)]()
 
 ## 🎯 Repository Status
 
@@ -15,6 +15,8 @@
 - ✅ Evidence requirements and validation checklists included
 - ✅ Professional output specifications and templates integrated
 - ✅ AI assistant execution instructions added to all steps
+- ✅ **NEW: 14 Python automation tools** - Document generators, validators, and format converters
+- ✅ **7,400+ lines of automation code** for professional document outputs
 
 ## Table of Contents
 
@@ -22,6 +24,7 @@
 - [What is VIANEO?](#what-is-vianeo)
 - [Framework at a Glance](#framework-at-a-glance)
 - [Repository Structure](#repository-structure)
+- [Automation Tools](#automation-tools)
 - [Output Formatting & Design System](#output-formatting--design-system)
 - [The 5 VIANEO Dimensions](#the-5-vianeo-dimensions)
 - [Usage Workflows](#usage-workflows)
@@ -99,7 +102,11 @@ vianeo-framework/
 │   └── VIANEO_*_Guide.md      # Reference guides
 ├── templates/            # Output templates (Markdown, DOCX, HTML)
 ├── examples/             # Sample assessments by maturity stage
-├── tools/                # Automation scripts
+├── tools/                # Python automation tools (14 modules)
+│   ├── generators/            # Document generators (Executive Brief, Personas, etc.)
+│   ├── validators/            # Data validators (character limits, scores, evidence)
+│   ├── converters/            # Format converters (MD↔DOCX, data→HTML)
+│   └── core/                  # Shared constants, utilities, base validators
 └── README.md             # This file
 ```
 
@@ -112,6 +119,10 @@ vianeo-framework/
 - **`docs/`** - 64 reference documents, format specs, quality checklists
 - **`templates/`** - Professional output templates for all deliverables
 - **`examples/`** - Real assessment examples (Early Stage, Promising, Growth)
+- **`tools/`** - 14 Python automation modules with **7,400+ lines** of code
+  - Document generators for professional DOCX outputs
+  - Data validators enforcing VIANEO standards
+  - Format converters for multi-format exports
 
 ### Prompt Completeness
 
@@ -131,6 +142,51 @@ vianeo-framework/
 | 12 | Viability Assessment | ✅ Complete | 7KB | PMF sheets, business models, dashboard |
 
 **Total:** 10,215 lines of comprehensive, executable evaluation content
+
+## Automation Tools
+
+The `tools/` directory contains **14 Python modules** for automating VIANEO document generation, validation, and format conversion.
+
+### Quick Start
+
+```bash
+# Install dependencies
+pip install -r tools/requirements.txt
+
+# Generate an Executive Brief DOCX
+python tools/generators/generate_executive_brief.py -i data.yaml -o brief.docx
+
+# Validate character limits
+python tools/validators/validate_character_limits.py -i brief.yaml
+
+# Convert Markdown to professional DOCX
+python tools/converters/md_to_docx.py -i report.md -o report.docx
+```
+
+### Tool Categories
+
+| Category | Tool | Description |
+|----------|------|-------------|
+| **Generators** | `generate_executive_brief.py` | Step 0 Executive Brief → professional DOCX |
+| | `generate_personas.py` | Step 6 Persona documents with validation badges |
+| | `generate_value_chain.py` | Step 9 Value Network interactive HTML |
+| | `generate_diagnostic.py` | Step 10 Diagnostic Comment with score cards |
+| **Validators** | `validate_character_limits.py` | Enforce 60/150/250/300 char limits |
+| | `validate_score_thresholds.py` | Check dimension scores (≥3.0/≥3.5) |
+| | `validate_data_flow.py` | Verify cross-step data consistency |
+| | `validate_evidence.py` | Validate evidence IDs, quality ratings (1-5) |
+| **Converters** | `md_to_docx.py` | Markdown → styled DOCX with VIANEO formatting |
+| | `docx_to_md.py` | DOCX → Markdown for version control |
+| | `data_to_html.py` | YAML/JSON/CSV → interactive HTML dashboards |
+
+### Core Modules
+
+The `tools/core/` directory provides shared infrastructure:
+- **`constants.py`** - Character limits, score thresholds, DOCX styles, dimension definitions
+- **`utils.py`** - Validation reports, text cleaning, date formatting
+- **`validators.py`** - Base validation functions for fields, scores, and content
+
+See **[tools/README.md](tools/README.md)** for complete documentation, input formats, and usage examples.
 
 ## Output Formatting & Design System
 
@@ -293,13 +349,16 @@ This is a master reference repository. Contributions welcome via:
 
 ## Version & License
 
-**Version**: 2.0 - Production-ready with complete prompts, comprehensive reference materials, and full methodology
+**Version**: 2.1 - Production-ready with complete prompts, automation tools, and full methodology
 - All 13 steps with complete, executable content (10,200+ lines)
+- 14 Python automation tools for document generation and validation (7,400+ lines)
 - 64 reference documents, format specifications, and quality checklists
 - Professional templates for all deliverables
 - Example assessments across maturity stages
 
-**Previous Version**: 1.0 - Framework structure with placeholder content
+**Previous Versions**:
+- 2.0 - Complete prompts without automation tools
+- 1.0 - Framework structure with placeholder content
 
 **License**: Proprietary with Attribution Required - See [LICENSE](LICENSE)
 
@@ -317,6 +376,13 @@ This is a master reference repository. Contributions welcome via:
 - Output format specifications and professional templates
 - AI assistant execution instructions
 - Integration guidance between steps
+
+**Automation Tools (tools/):**
+- 4 document generators (Executive Brief, Personas, Value Chain, Diagnostic)
+- 4 data validators (character limits, scores, data flow, evidence)
+- 3 format converters (MD↔DOCX, data→HTML)
+- Shared core modules with constants, utilities, and base validators
+- Full CLI support with argparse for all tools
 
 **Reference Documentation (docs/):**
 - Format specifications for each step's outputs
@@ -345,6 +411,7 @@ This is a master reference repository. Contributions welcome via:
 - **[Assessment Workflow Guide](docs/VIANEO_Assessment_Workflow_Guide.md)** - Complete process guide
 - **[Evidence Checklist](docs/VIANEO_Evidence_Checklist.md)** - Validation requirements
 - **[Design Tokens](docs/VIANEO_Design_Tokens.md)** - Colors, typography, and code snippets for outputs
+- **[Automation Tools](tools/README.md)** - Python tools for document generation and validation
 - **[Example Assessments](examples/)** - Sample evaluations by stage
 
 ---
