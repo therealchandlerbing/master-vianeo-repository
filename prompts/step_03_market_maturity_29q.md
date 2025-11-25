@@ -327,7 +327,7 @@ Overall Score = (Legitimacy × 0.15) + (Desirability × 0.25) + (Acceptability �
 **Required Sections:**
 1. Metadata block (assessment date, project lead, TRL, assessor)
 2. Executive summary (overall score, category, key finding)
-3. Assessment results: 29-question table
+3. Assessment results: 29-question table **in numerical order (Q1-Q29)**, with dimension indicated for each question
 4. Dimension analysis (5 sections, one per dimension)
 5. Overall weighted score calculation
 6. Comparison to minimum thresholds
@@ -356,10 +356,11 @@ Overall Score = (Legitimacy × 0.15) + (Desirability × 0.25) + (Acceptability �
 2. Metadata block
 3. Executive summary
 4. Key finding
-5. Assessment results: 29-question table
-   - Columns: Question # | Score | Justification | Evidence Reference
+5. Assessment results: 29-question table **in numerical order (Q1-Q29)**
+   - Columns: Question # | Dimension | Question | Score | Justification | Evidence Reference
    - All borders, header row shaded gray
    - Question numbers and scores in bold
+   - Questions listed 1-29 in numerical sequence (not grouped by dimension)
 
 **Formatting:**
 - Font: Calibri 11pt body, 12-14pt headings
