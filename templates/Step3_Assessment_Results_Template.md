@@ -33,74 +33,51 @@
 
 ---
 
-## 29-Question Assessment Table
+## 29-Question Assessment Table (Numerical Order)
 
-### LEGITIMACY (15% weight, Threshold ≥3.0)
-
-| Q# | Question | Score | Justification (Evidence-Based) | Evidence |
-|:--:|----------|:-----:|--------------------------------|----------|
-| **1** | Have sufficient resources (human, material, financial) necessary to move the project forward | **[1-5]** | [2-3 sentences with specific evidence: team size, budget amount, materials secured, time committed] | E###, E### |
-| **8** | Have been able to verify with stakeholders that the problem is real | **[1-5]** | [2-3 sentences with specific evidence: # stakeholders consulted, who they are, what they confirmed, quotes if available] | E###, E### |
-| | **Legitimacy Dimension Score** | **[#.#]** | **(Q1 + Q8) ÷ 2** | |
-
----
-
-### DESIRABILITY (25% weight, Threshold ≥3.5) ← HIGHEST BAR
-
-| Q# | Question | Score | Justification (Evidence-Based) | Evidence |
-|:--:|----------|:-----:|--------------------------------|----------|
-| **2** | Know who the users are and what profiles they have | **[1-5]** | [2-3 sentences: # segments defined, key demographics, how segmented] | E###, E### |
-| **4** | Verified user needs through interviews, surveys, observations | **[1-5]** | [2-3 sentences: methods used, # conducted, key findings] | E###, E### |
-| **5** | Defined specific user segments with distinct needs | **[1-5]** | [2-3 sentences: # segments, how they differ, why segmented this way] | E###, E### |
-| **6** | Know the different needs (jobs to be done, pains, gains) for each user segment | **[1-5]** | [2-3 sentences: # needs per segment, examples of jobs/pains/gains] | E###, E### |
-| **7** | Verified through interviews with at least 5 people per profile that needs are expressed | **[1-5]** | [2-3 sentences: # interviews per segment, total interviews, validation findings] | E###, E### |
-| **9** | Know if user needs are high or low importance | **[1-5]** | [2-3 sentences: importance rating method (1-5 scale), results, top priorities] | E###, E### |
-| **11** | Assessed how well current solutions satisfy each user need | **[1-5]** | [2-3 sentences: satisfaction rating method (1-5 scale), alternatives tested, results] | E###, E### |
-| **12** | Identified gaps between importance and satisfaction (opportunity gaps) | **[1-5]** | [2-3 sentences: gap analysis method, high-priority needs identified, opportunity size] | E###, E### |
-| **21** | Know how our value proposition compares to existing alternatives (competitive analysis) | **[1-5]** | [2-3 sentences: competitors analyzed, testing/comparison done, differentiation identified] | E###, E### |
-| **22** | Have tested value proposition with 5+ users per segment and received feedback | **[1-5]** | [2-3 sentences: # users tested per segment, feedback method, key learnings] | E###, E### |
-| **25** | Know the positioning (how do we want to be perceived relative to alternatives) | **[1-5]** | [2-3 sentences: positioning statement, differentiation strategy, validation] | E###, E### |
-| **28** | Have validated which features/capabilities matter most to each user segment | **[1-5]** | [2-3 sentences: feature prioritization method, top features per segment, validation approach] | E###, E### |
-| | **Desirability Dimension Score** | **[#.#]** | **(Q2+Q4+Q5+Q6+Q7+Q9+Q11+Q12+Q21+Q22+Q25+Q28) ÷ 12** | |
-
----
-
-### ACCEPTABILITY (20% weight, Threshold ≥3.0)
-
-| Q# | Question | Score | Justification (Evidence-Based) | Evidence |
-|:--:|----------|:-----:|--------------------------------|----------|
-| **3** | Have mapped the ecosystem of actors (players) in the value network | **[1-5]** | [2-3 sentences: # actors mapped, roles/types, mapping method used] | E###, E### |
-| **15** | Have identified which ecosystem actors are favorable, neutral, or unfavorable to our project | **[1-5]** | [2-3 sentences: acceptability ratings assigned, # favorable/neutral/unfavorable, rationale] | E###, E### |
-| **17** | Have identified potential resistances or barriers from ecosystem actors | **[1-5]** | [2-3 sentences: specific barriers identified, from whom, significance assessment] | E###, E### |
-| **18** | Have strategies to overcome resistance or barriers | **[1-5]** | [2-3 sentences: mitigation strategies per barrier, validation of strategies, feasibility] | E###, E### |
-| **23** | Have identified partnerships needed and initiated discussions | **[1-5]** | [2-3 sentences: partners identified, discussions initiated, status/commitments] | E###, E### |
-| **24** | Know regulatory, policy, or legal requirements and have compliance plan | **[1-5]** | [2-3 sentences: requirements identified, compliance status, plan/timeline] | E###, E### |
-| | **Acceptability Dimension Score** | **[#.#]** | **(Q3+Q15+Q17+Q18+Q23+Q24) ÷ 6** | |
+| Q# | Dimension | Question | Score | Justification (Evidence-Based) | Evidence |
+|:--:|:---------:|----------|:-----:|--------------------------------|----------|
+| **1** | Legitimacy | Have sufficient resources (human, material, financial) necessary to move the project forward | **[1-5]** | [2-3 sentences with specific evidence: team size, budget amount, materials secured, time committed] | E###, E### |
+| **2** | Desirability | Know who the users are and what profiles they have | **[1-5]** | [2-3 sentences: # segments defined, key demographics, how segmented] | E###, E### |
+| **3** | Acceptability | Have mapped the ecosystem of actors (players) in the value network | **[1-5]** | [2-3 sentences: # actors mapped, roles/types, mapping method used] | E###, E### |
+| **4** | Desirability | Verified user needs through interviews, surveys, observations | **[1-5]** | [2-3 sentences: methods used, # conducted, key findings] | E###, E### |
+| **5** | Desirability | Defined specific user segments with distinct needs | **[1-5]** | [2-3 sentences: # segments, how they differ, why segmented this way] | E###, E### |
+| **6** | Desirability | Know the different needs (jobs to be done, pains, gains) for each user segment | **[1-5]** | [2-3 sentences: # needs per segment, examples of jobs/pains/gains] | E###, E### |
+| **7** | Desirability | Verified through interviews with at least 5 people per profile that needs are expressed | **[1-5]** | [2-3 sentences: # interviews per segment, total interviews, validation findings] | E###, E### |
+| **8** | Legitimacy | Have been able to verify with stakeholders that the problem is real | **[1-5]** | [2-3 sentences with specific evidence: # stakeholders consulted, who they are, what they confirmed, quotes if available] | E###, E### |
+| **9** | Desirability | Know if user needs are high or low importance | **[1-5]** | [2-3 sentences: importance rating method (1-5 scale), results, top priorities] | E###, E### |
+| **10** | Feasibility | Have identified and prioritized most impactful needs to address first | **[1-5]** | [2-3 sentences: prioritization criteria, top 3-5 needs for MVP, rationale] | E###, E### |
+| **11** | Desirability | Assessed how well current solutions satisfy each user need | **[1-5]** | [2-3 sentences: satisfaction rating method (1-5 scale), alternatives tested, results] | E###, E### |
+| **12** | Desirability | Identified gaps between importance and satisfaction (opportunity gaps) | **[1-5]** | [2-3 sentences: gap analysis method, high-priority needs identified, opportunity size] | E###, E### |
+| **13** | Viability | Have a plan for how to reach users (channels) and activate them | **[1-5]** | [2-3 sentences: channel strategy, CAC estimates/validation, activation plan] | E###, E### |
+| **14** | Viability | Have defined a clear revenue model (how we make money) | **[1-5]** | [2-3 sentences: revenue streams, pricing model, business model clarity] | E###, E### |
+| **15** | Acceptability | Have identified which ecosystem actors are favorable, neutral, or unfavorable to our project | **[1-5]** | [2-3 sentences: acceptability ratings assigned, # favorable/neutral/unfavorable, rationale] | E###, E### |
+| **16** | Feasibility | Have a committed team with complementary skills to execute | **[1-5]** | [2-3 sentences: team composition, skills coverage, time commitments (FT/PT)] | E###, E### |
+| **17** | Acceptability | Have identified potential resistances or barriers from ecosystem actors | **[1-5]** | [2-3 sentences: specific barriers identified, from whom, significance assessment] | E###, E### |
+| **18** | Acceptability | Have strategies to overcome resistance or barriers | **[1-5]** | [2-3 sentences: mitigation strategies per barrier, validation of strategies, feasibility] | E###, E### |
+| **19** | Viability | Have tested pricing with 5+ customers per segment and validated willingness to pay | **[1-5]** | [2-3 sentences: pricing tests conducted, # customers per segment, WTP validation results] | E###, E### |
+| **20** | Feasibility | Know the resources needed (team, tech, budget, time) and have access plan | **[1-5]** | [2-3 sentences: resource requirements, budget, gaps identified, access plan] | E###, E### |
+| **21** | Desirability | Know how our value proposition compares to existing alternatives (competitive analysis) | **[1-5]** | [2-3 sentences: competitors analyzed, testing/comparison done, differentiation identified] | E###, E### |
+| **22** | Desirability | Have tested value proposition with 5+ users per segment and received feedback | **[1-5]** | [2-3 sentences: # users tested per segment, feedback method, key learnings] | E###, E### |
+| **23** | Acceptability | Have identified partnerships needed and initiated discussions | **[1-5]** | [2-3 sentences: partners identified, discussions initiated, status/commitments] | E###, E### |
+| **24** | Acceptability | Know regulatory, policy, or legal requirements and have compliance plan | **[1-5]** | [2-3 sentences: requirements identified, compliance status, plan/timeline] | E###, E### |
+| **25** | Desirability | Know the positioning (how do we want to be perceived relative to alternatives) | **[1-5]** | [2-3 sentences: positioning statement, differentiation strategy, validation] | E###, E### |
+| **26** | Feasibility | Have a realistic roadmap with milestones and timeline | **[1-5]** | [2-3 sentences: roadmap scope, key milestones, timeline, validation/basis] | E###, E### |
+| **27** | Viability | Can clearly articulate our unique value proposition in one sentence | **[1-5]** | [2-3 sentences: value prop statement, clarity test, validation with users] | E###, E### |
+| **28** | Desirability | Have validated which features/capabilities matter most to each user segment | **[1-5]** | [2-3 sentences: feature prioritization method, top features per segment, validation approach] | E###, E### |
+| **29** | Feasibility | Have technical proof-of-concept or prototype demonstrating feasibility | **[1-5]** | [2-3 sentences: prototype status, testing conducted, technical feasibility demonstrated] | E###, E### |
 
 ---
 
-### FEASIBILITY (20% weight, Threshold ≥3.0)
+## Dimension Score Summary
 
-| Q# | Question | Score | Justification (Evidence-Based) | Evidence |
-|:--:|----------|:-----:|--------------------------------|----------|
-| **16** | Have a committed team with complementary skills to execute | **[1-5]** | [2-3 sentences: team composition, skills coverage, time commitments (FT/PT)] | E###, E### |
-| **20** | Know the resources needed (team, tech, budget, time) and have access plan | **[1-5]** | [2-3 sentences: resource requirements, budget, gaps identified, access plan] | E###, E### |
-| **26** | Have a realistic roadmap with milestones and timeline | **[1-5]** | [2-3 sentences: roadmap scope, key milestones, timeline, validation/basis] | E###, E### |
-| **29** | Have technical proof-of-concept or prototype demonstrating feasibility | **[1-5]** | [2-3 sentences: prototype status, testing conducted, technical feasibility demonstrated] | E###, E### |
-| **10** | Have identified and prioritized most impactful needs to address first | **[1-5]** | [2-3 sentences: prioritization criteria, top 3-5 needs for MVP, rationale] | E###, E### |
-| | **Feasibility Dimension Score** | **[#.#]** | **(Q16+Q20+Q26+Q29+Q10) ÷ 5** | |
-
----
-
-### VIABILITY (20% weight, Threshold ≥3.0)
-
-| Q# | Question | Score | Justification (Evidence-Based) | Evidence |
-|:--:|----------|:-----:|--------------------------------|----------|
-| **14** | Have defined a clear revenue model (how we make money) | **[1-5]** | [2-3 sentences: revenue streams, pricing model, business model clarity] | E###, E### |
-| **19** | Have tested pricing with 5+ customers per segment and validated willingness to pay | **[1-5]** | [2-3 sentences: pricing tests conducted, # customers per segment, WTP validation results] | E###, E### |
-| **13** | Have a plan for how to reach users (channels) and activate them | **[1-5]** | [2-3 sentences: channel strategy, CAC estimates/validation, activation plan] | E###, E### |
-| **27** | Can clearly articulate our unique value proposition in one sentence | **[1-5]** | [2-3 sentences: value prop statement, clarity test, validation with users] | E###, E### |
-| | **Viability Dimension Score** | **[#.#]** | **(Q14+Q19+Q13+Q27) ÷ 4** | |
+| Dimension | Questions | Score | Calculation |
+|-----------|-----------|:-----:|-------------|
+| **Legitimacy** (15% weight, Threshold ≥3.0) | Q1, Q8 | **[#.#]** | (Q1 + Q8) ÷ 2 |
+| **Desirability** (25% weight, Threshold ≥3.5) ← HIGHEST BAR | Q2, Q4, Q5, Q6, Q7, Q9, Q11, Q12, Q21, Q22, Q25, Q28 | **[#.#]** | (Sum of 12 scores) ÷ 12 |
+| **Acceptability** (20% weight, Threshold ≥3.0) | Q3, Q15, Q17, Q18, Q23, Q24 | **[#.#]** | (Sum of 6 scores) ÷ 6 |
+| **Feasibility** (20% weight, Threshold ≥3.0) | Q10, Q16, Q20, Q26, Q29 | **[#.#]** | (Sum of 5 scores) ÷ 5 |
+| **Viability** (20% weight, Threshold ≥3.0) | Q13, Q14, Q19, Q27 | **[#.#]** | (Sum of 4 scores) ÷ 4 |
 
 ---
 
