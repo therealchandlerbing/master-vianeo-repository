@@ -3,6 +3,10 @@
 
 ---
 
+> **Design System Reference**: For the authoritative color values, typography scales, and ready-to-use code snippets, see **[VIANEO_Design_Tokens.md](VIANEO_Design_Tokens.md)**. This guide provides Word-specific formatting instructions; the Design Tokens file is the single source of truth for all visual design decisions.
+
+---
+
 ## PURPOSE
 
 This guide provides step-by-step instructions for formatting the three Word documents in the Vianeo Desirability: Needs/Requesters analysis package. Use this to ensure consistent, professional appearance across all deliverables.
@@ -705,8 +709,9 @@ For Zapier workflows and automated document generation:
 *This formatting guide supports the Vianeo Business Model Evaluation Playbook.*
 
 *Companion documents:*
+*- **Design Tokens: `VIANEO_Design_Tokens.md`** (single source of truth for colors, typography, code)*
 *- Quick Start: `VIANEO_Desirability_Quick_Start.md`*
 *- Complete Reference: `VIANEO_Desirability_Complete_Reference.md`*
 *- Execution Guide: `prompts/step_5_needs_requesters.md`*
 
-*Version: 2.0 | Updated: November 2025*
+*Version: 2.1 | Updated: November 2025*

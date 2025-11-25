@@ -27,6 +27,19 @@ Instead of embedding all formatting details in every prompt (memory bloat), we:
 3. **Validation checklists** ensure compliance before delivery
 4. **Examples demonstrate** the format in practice
 
+### Design Tokens: Single Source of Truth
+
+**All visual design decisions are centralized in `docs/VIANEO_Design_Tokens.md`**
+
+This file defines:
+- **Color system** - Primary, status, validation, and dimension colors
+- **Typography** - Font stacks, sizes, weights for HTML and Word
+- **Spacing** - Consistent spacing scale
+- **Components** - Tables, cards, buttons, callouts
+- **Code snippets** - Ready-to-use CSS, Python, and JavaScript
+
+**Priority**: When colors or typography values conflict between documents, `VIANEO_Design_Tokens.md` is the authoritative source. Update other files to match.
+
 ### Memory Efficiency
 
 **Old Approach** (duplicated in every prompt):
@@ -49,6 +62,15 @@ Result: Prompts stay focused, specs are reusable and updatable
 ---
 
 ## Format Specification Files Created
+
+### Design System Foundation
+
+✅ **VIANEO_Design_Tokens.md** - Single source of truth for all visual design
+- Unified color palette (primary, status, validation, dimensions)
+- Typography system (fonts, sizes, weights)
+- Spacing and layout tokens
+- Ready-to-use CSS, Python, and JavaScript code
+- Accessibility requirements and validated color combinations
 
 ### High-Priority Steps (Completed)
 
