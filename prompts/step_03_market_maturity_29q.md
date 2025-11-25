@@ -57,6 +57,9 @@ Step 3 evaluates business model readiness through 29 evidence-based questions or
 
 Evaluate this startup using the 29-question framework below. Score each question 1-5, calculate weighted dimension averages, and check against thresholds. Generate three documents: Full Report (Markdown), Assessment Results (DOCX), and Dimension Analysis (DOCX). Flag any dimension below threshold as a red flag.
 
+**IMPORTANT: Output Ordering Requirement**
+When generating the assessment results table in outputs 1 and 2, display all 29 questions in **numerical order (Q1, Q2, Q3... Q29)**, NOT grouped by dimension. Include a "Dimension" column to indicate which dimension each question belongs to. Show dimension score summaries in a separate table after the main 29-question assessment.
+
 ---
 
 ## The 29 Questions by Dimension
