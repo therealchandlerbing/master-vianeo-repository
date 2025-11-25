@@ -2,7 +2,7 @@
 
 > **Evidence-based startup evaluation framework** | 5 Dimensions | 13-Step Process | Committee-Ready Outputs
 
-[![Status](https://img.shields.io/badge/status-production--ready-brightgreen)]() [![Prompts](https://img.shields.io/badge/prompts-13%2F13%20complete-blue)]() [![Lines](https://img.shields.io/badge/content-9300%2B%20lines-orange)]()
+[![Status](https://img.shields.io/badge/status-production--ready-brightgreen)]() [![Prompts](https://img.shields.io/badge/prompts-13%2F13%20complete-blue)]() [![Lines](https://img.shields.io/badge/content-10200%2B%20lines-orange)]()
 
 ## 🎯 Repository Status
 
@@ -10,7 +10,7 @@
 
 **Recent Updates (November 2025):**
 - ✅ All prompt files updated with complete, executable content
-- ✅ 8,765 lines of comprehensive methodology added
+- ✅ 10,200+ lines of comprehensive methodology across prompts
 - ✅ Full question frameworks embedded (40Q, 29Q, and all deep-dive prompts)
 - ✅ Evidence requirements and validation checklists included
 - ✅ Professional output specifications and templates integrated
@@ -104,12 +104,12 @@ vianeo-framework/
 ```
 
 **Key Directories:**
-- **`prompts/`** - 13 complete evaluation prompts (step_00 through step_12) with **9,300+ lines** of executable content
+- **`prompts/`** - 13 complete evaluation prompts (step_00 through step_12) with **10,200+ lines** of executable content
   - All 40 questions for Step 2 Diagnostic (Team, Technology, Management, Commercial)
   - All 29 questions for Step 3 Market Maturity (5 VIANEO dimensions)
   - Complete frameworks for Steps 4-12 (Legitimacy, Desirability, Acceptability, Feasibility, Viability)
   - Embedded scoring scales, evidence requirements, and quality checklists
-- **`docs/`** - 48+ reference documents, format specs, quality checklists
+- **`docs/`** - 64 reference documents, format specs, quality checklists
 - **`templates/`** - Professional output templates for all deliverables
 - **`examples/`** - Real assessment examples (Early Stage, Promising, Growth)
 
@@ -130,7 +130,7 @@ vianeo-framework/
 | 11 | Features-Needs Matrix | ✅ Complete | 12KB | MVP scope, feature prioritization |
 | 12 | Viability Assessment | ✅ Complete | 7KB | PMF sheets, business models, dashboard |
 
-**Total:** 9,314 lines of comprehensive, executable evaluation content
+**Total:** 10,215 lines of comprehensive, executable evaluation content
 
 ## Output Formatting & Design System
 
@@ -294,13 +294,19 @@ This is a master reference repository. Contributions welcome via:
 ## Version & License
 
 **Version**: 2.0 - Production-ready with complete prompts, comprehensive reference materials, and full methodology
-- All 13 steps with complete, executable content (9,300+ lines)
-- 48+ reference documents, format specifications, and quality checklists
+- All 13 steps with complete, executable content (10,200+ lines)
+- 64 reference documents, format specifications, and quality checklists
 - Professional templates for all deliverables
 - Example assessments across maturity stages
 
 **Previous Version**: 1.0 - Framework structure with placeholder content
+
 **License**: Proprietary with Attribution Required - See [LICENSE](LICENSE)
+
+**Copyright**: © 2025 VIANEO Framework and 360 Social Impact Studios. All Rights Reserved.
+
+**Required Attribution**: "VIANEO Business Model Evaluation Framework by 360 Social Impact Studios"
+
 **Contact**: Open an issue for questions or contributions
 
 ### What's Included
