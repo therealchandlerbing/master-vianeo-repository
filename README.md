@@ -22,6 +22,7 @@
 - [What is VIANEO?](#what-is-vianeo)
 - [Framework at a Glance](#framework-at-a-glance)
 - [Repository Structure](#repository-structure)
+- [Output Formatting & Design System](#output-formatting--design-system)
 - [The 5 VIANEO Dimensions](#the-5-vianeo-dimensions)
 - [Usage Workflows](#usage-workflows)
 - [Integration with Claude](#integration-with-claude)
@@ -130,6 +131,38 @@ vianeo-framework/
 | 12 | Viability Assessment | ✅ Complete | 7KB | PMF sheets, business models, dashboard |
 
 **Total:** 9,314 lines of comprehensive, executable evaluation content
+
+## Output Formatting & Design System
+
+All VIANEO outputs are designed to be **client-ready and committee-presentable**. A unified design system ensures consistency across all deliverables.
+
+### Design Tokens (Single Source of Truth)
+
+**[VIANEO_Design_Tokens.md](docs/VIANEO_Design_Tokens.md)** defines all visual standards:
+
+| Category | What's Defined |
+|----------|----------------|
+| **Color System** | Primary palette, status colors, validation levels, dimension colors |
+| **Typography** | Font stacks, size scales for HTML and Word, weights |
+| **Components** | Tables, cards, callouts, buttons |
+| **Code Snippets** | Ready-to-use CSS, Python, and JavaScript |
+
+### Output Formats
+
+| Format | Use Case | Key Reference |
+|--------|----------|---------------|
+| **Markdown** | Reports, analysis documents | Prompt outputs |
+| **DOCX/PDF** | Client presentations, committee briefs | [Document Formatting Guide](docs/VIANEO_Document_Formatting_Guide.md) |
+| **HTML** | Interactive matrices, dashboards | Templates in `templates/*.html` |
+
+### Formatting Resources
+
+- **[VIANEO_Design_Tokens.md](docs/VIANEO_Design_Tokens.md)** - Colors, typography, spacing, code snippets
+- **[VIANEO_Document_Formatting_Guide.md](docs/VIANEO_Document_Formatting_Guide.md)** - Word/PDF styling instructions
+- **[FORMATTING_STRATEGY.md](docs/FORMATTING_STRATEGY.md)** - Centralized format specification approach
+- **FORMAT_SPEC_*.md** files - Step-specific output formats
+
+**Note**: Existing HTML templates have embedded styles. Design tokens primarily target DOCX/PDF outputs for new documents.
 
 ## The 5 VIANEO Dimensions
 
@@ -305,6 +338,7 @@ This is a master reference repository. Contributions welcome via:
 - **[Quick Reference Card](docs/VIANEO_Quick_Reference_Card.md)** - One-page cheat sheet
 - **[Assessment Workflow Guide](docs/VIANEO_Assessment_Workflow_Guide.md)** - Complete process guide
 - **[Evidence Checklist](docs/VIANEO_Evidence_Checklist.md)** - Validation requirements
+- **[Design Tokens](docs/VIANEO_Design_Tokens.md)** - Colors, typography, and code snippets for outputs
 - **[Example Assessments](examples/)** - Sample evaluations by stage
 
 ---
