@@ -300,8 +300,8 @@ This is a master reference repository. Contributions welcome via:
 - Example assessments across maturity stages
 
 **Previous Version**: 1.0 - Framework structure with placeholder content
-**License**: [To be determined]
-**Contact**: [Contact information to be added]
+**License**: Proprietary with Attribution Required - See [LICENSE](LICENSE)
+**Contact**: Open an issue for questions or contributions
 
 ### What's Included
 

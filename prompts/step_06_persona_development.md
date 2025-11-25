@@ -425,7 +425,7 @@ Before proceeding to Step 7, verify:
 
 ---
 
-**Version:** 1.0
+**Version:** 2.0
 **Framework:** VIANEO Business Model Evaluation Methodology
 **Last Updated:** November 2025
-**Part of:** Complete 9-Step Evaluation System
+**Part of:** Complete 13-Step Evaluation System (Steps 0-12)

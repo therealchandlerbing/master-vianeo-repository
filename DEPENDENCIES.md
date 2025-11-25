@@ -226,6 +226,6 @@ After updates, validate with a test project:
 
 ---
 
-**Document Version:** 1.0
-**Last Updated:** 2025-01-15
-**Compatible With:** VIANEO 12-Step Evaluation System
+**Document Version:** 2.0
+**Last Updated:** November 2025
+**Compatible With:** VIANEO 13-Step Evaluation System (Steps 0-12)
