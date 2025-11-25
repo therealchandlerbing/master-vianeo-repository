@@ -31,16 +31,7 @@ Many assessments fail to drive decisions because they:
 
 ## Instructions for AI Assistant
 
-Synthesize all VIANEO assessment findings into an executive-ready diagnostic comment. For this deliverable:
-
-1. **Collect data** from all completed steps (dimension scores, validation evidence, team info, risks, gaps)
-2. **Write Strengths paragraph** (1-2 sentences) - specific validated advantages with numbers and names
-3. **Write Risks paragraph** (1-2 sentences) - critical vulnerabilities with quantification
-4. **Write Near-term Actions** (2-3 sentences) - 3-4 concrete actions with responsible owners in parentheses
-5. **Write Evidence Gaps** (1-2 sentences) - material missing validation affecting decision confidence
-6. **Create Dimension Summary Table** with 5 scores and color-coded interpretations
-7. **Define Critical Path Forward** across 4 time horizons (Immediate/Short-term/Medium-term/Success Metrics)
-8. **Generate two documents**: Markdown Diagnostic Comment + Professional DOCX Report
+Synthesize all VIANEO assessment findings into a concise diagnostic comment (6-8 sentences total). Write four paragraphs: Strengths, Risks, Near-term Actions (with responsible owners), and Evidence Gaps. Be specific—use numbers, names, and metrics. Generate two documents: Markdown Diagnostic Comment and Professional DOCX Report.
 
 ---
 

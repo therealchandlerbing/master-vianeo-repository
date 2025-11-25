@@ -29,16 +29,7 @@ This is strategy, not documentation. BCG-level analysis prioritizes power and in
 
 ## Instructions for AI Assistant
 
-Map the ecosystem acceptability by analyzing stakeholders who will support, resist, or influence the innovation. For this analysis:
-
-1. **Identify 8-10 Ecosystem Players** (suppliers, channels, competitors, partners) with acceptability ratings
-2. **Identify 8-10 Ecosystem Influencers** (regulators, associations, media, activists) with acceptability ratings
-3. **Classify Acceptability** as Favorable (green), Neutral (gray), or Unfavorable (red) for each
-4. **Write Strategic Implications** for each stakeholder (250-char limit)
-5. **Analyze Risks** by priority (High: Unfavorable + High Power, Medium, Low)
-6. **Calculate Ecosystem Readiness Score** (1-5 scale with evidence)
-7. **Generate two documents**: Professional 2-page DOCX + Comprehensive Markdown analysis
-8. **Recommend engagement strategies** for favorable, neutral, and unfavorable stakeholders
+Identify the 8-10 most critical Players and 8-10 most influential Influencers in the ecosystem. Classify each as Favorable, Neutral, or Unfavorable. Follow character limits (60 chars for names, 250 chars for strategic notes). Generate two documents: Professional 2-page DOCX and Comprehensive Markdown analysis.
 
 ---
 

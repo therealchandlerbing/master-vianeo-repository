@@ -30,16 +30,7 @@ From previous steps:
 
 ## Instructions for AI Assistant
 
-Create a comprehensive Legitimacy Worksheet based on the provided materials. For each section:
-
-1. **Extract Core Information** (Project Genesis, Problem, Field of Application) within character limits
-2. **Assess Human Resources** - List 4-8 team members with differentiator status and notes
-3. **Assess Physical/Intellectual Resources** - List 4-10 assets with differentiator status
-4. **Assess Financial Resources** - Document funding sources, runway, and dependencies
-5. **Flag red flags** (missing domain expertise, part-time team, no proprietary assets, low runway)
-6. **Calculate evaluation criteria scores** for each resource category
-7. **Generate two documents**: Markdown worksheet + DOCX formatted version
-8. **Prepare Available Means output** for use in Step 11 (Features/Means Matrix)
+Using the Executive Brief and 40Q Diagnostic, complete the Legitimacy Worksheet structure below. Extract core project information within character limits, assess all three resource categories (Human, Physical/Intellectual, Financial) with differentiator status, and generate two documents: Markdown worksheet and DOCX formatted version.
 
 ---
 
