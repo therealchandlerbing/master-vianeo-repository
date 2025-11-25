@@ -39,6 +39,21 @@ Together, they force honest assessment of validation status and create clear acc
 
 ---
 
+## Instructions for AI Assistant
+
+Transform the Needs/Requesters analysis from Step 5 into a visual qualification matrix. For each deliverable:
+
+1. **Import data exactly from Step 5**: All requester names and need statements verbatim (do not paraphrase)
+2. **Rate Importance** for each need/segment combination (Fundamental/Important/Secondary/None/Don't Know)
+3. **Rate Satisfaction** with existing solutions (Very Well/Pretty Much/Rather Not/Not At All/N/A)
+4. **Identify Opportunity Zones**: Fundamental + Not At All = Critical Priority
+5. **Create HTML Matrix** (landscape, color-coded) with validation notice if pre-validation
+6. **Generate Analysis Report** (9-12 pages) with strategic recommendations
+7. **Assign ownership and deadlines** for validation activities
+8. **Include footer** with evidence basis and recommended next steps
+
+---
+
 ## Required Inputs
 
 **From Step 5 (Desirability Analysis):**

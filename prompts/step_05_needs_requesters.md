@@ -53,6 +53,21 @@ From previous steps:
 
 ---
 
+## Instructions for AI Assistant
+
+Conduct a comprehensive Desirability analysis based on the provided materials. For each section:
+
+1. **Identify 6-10 Requesters** with specific role titles, descriptions, and reliability ratings
+2. **Document 10-16 Needs** categorized as Tasks, Pains, or Expectations (60-char limit each)
+3. **Analyze 5-6 Existing Solutions** with specific limitations and gaps
+4. **Assess Evidence Quality** - Be ruthlessly honest about validation status and interview counts
+5. **Rate Requester Reliability** based on interview depth and evidence strength
+6. **Provide Strategic Recommendations** with 3 priority actions for immediate validation
+7. **Generate four documents**: Master Markdown + DOCX Part 1 (Core Analysis) + DOCX Part 2 (Strategic Analysis) + DOCX Part 3 (Interview Guide)
+8. **Flag all assumptions** that require validation through customer interviews
+
+---
+
 ## Output Structure: FOUR-FILE PACKAGE
 
 ### Output 1: Markdown Analysis File (MASTER DOCUMENT)

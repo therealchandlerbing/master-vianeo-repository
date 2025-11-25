@@ -23,6 +23,21 @@ This is the **bridge from validation (Pre-Incubation) to execution (Business Mod
 
 ---
 
+## Instructions for AI Assistant
+
+Create an interactive Features-Needs Matrix mapping solution capabilities to validated customer needs. For this deliverable:
+
+1. **Import needs exactly from Step 5** and opportunity classifications from Step 7 (do not paraphrase)
+2. **Import means exactly from Step 4** with differentiator status for Features/Means view
+3. **Define 10-15 solution features** with action-oriented descriptions
+4. **Map feature-need coverage** - mark checkmark only when feature directly addresses need
+5. **Color-code columns** by opportunity level (High=green, Medium=yellow, Low=orange, Expected=blue, Accessory=gray)
+6. **Generate HTML Matrix** (primary) with scrollable table, sticky headers, and export functionality
+7. **Generate Strategic Analysis** (markdown) with coverage metrics, gaps, and MVP scoping guidance
+8. **Validate data consistency**: Need statements and means must match source steps exactly
+
+---
+
 ## Required Inputs
 
 ### From Previous Steps

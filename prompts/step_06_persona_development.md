@@ -63,6 +63,21 @@ Persona development bridges the gap between:
 
 ---
 
+## Instructions for AI Assistant
+
+Create evidence-based user personas from the provided interview data and research. For each persona:
+
+1. **Create 3-5 distinct personas** representing key requester segments from Step 5
+2. **Document validation status** with interview counts and date ranges (use colored badges)
+3. **Complete all persona fields**: First name, Age, Life/Motivations, Personality/Values, Field of Application details
+4. **List Activities and Challenges**: 4-6 Tasks, 4-6 Pains, 4-6 Expectations (60-char limit each)
+5. **Describe Current Solutions** they use and why they fail (2-3 sentences)
+6. **Apply validation badges**: Green (5+ interviews), Orange (1-4 interviews), Red (0 interviews)
+7. **Generate professional DOCX** (3-11 pages) with Cover Page, Evidence Base Summary, and Individual Personas
+8. **Flag personas requiring additional validation** and recommend interview targets
+
+---
+
 ## Comprehensive Documentation System
 
 This step uses a **three-document system** for complete guidance:

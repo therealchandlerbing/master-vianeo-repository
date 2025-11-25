@@ -20,6 +20,21 @@ The Ecosystem Value Network Map transforms stakeholder data into strategic actio
 
 ---
 
+## Instructions for AI Assistant
+
+Create an interactive Value Network Map that visualizes ecosystem positioning and identifies priority targets. For this visualization:
+
+1. **Import data exactly from Steps 5 and 8**: Requesters, Players, and Influencers with exact names and ratings
+2. **Position stakeholders across 5 columns**: Enablers → Product → Channels → Buyers → End Users
+3. **Show Acceptability status** using colored dots (green/orange/red) for each organization
+4. **Identify Need Levels** for requesters (CRITICAL/Important/None)
+5. **Highlight Priority Targets** (Favorable + Critical/Important needs = green background)
+6. **Generate HTML visualization** (primary output) - presentation-ready, 1900px × 1100px
+7. **Include professional legend** explaining visual encoding
+8. **Validate data consistency**: All names and ratings must match source steps exactly
+
+---
+
 ## Documentation Package
 
 A comprehensive Value Network Map Documentation Package is available at:

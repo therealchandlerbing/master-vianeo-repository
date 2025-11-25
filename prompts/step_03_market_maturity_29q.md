@@ -53,6 +53,20 @@ Step 3 evaluates business model readiness through 29 evidence-based questions or
 
 ---
 
+## Instructions for AI Assistant
+
+Evaluate this startup using the 29-question market maturity framework. For each question:
+
+1. **Score 1-5** using the scale above (1=Don't know, 5=Absolutely)
+2. **Provide brief evidence** citation from available materials
+3. **Calculate dimension scores** (weighted averages for each of the 5 dimensions)
+4. **Check thresholds** (Legitimacy ≥3.0, Desirability ≥3.5, Acceptability ≥3.0, Feasibility ≥3.0, Viability ≥3.0, Overall ≥3.2)
+5. **Identify red flags** (any dimension below threshold, "Don't Know" responses)
+6. **Generate three documents**: Full Report (Markdown), Assessment Results (DOCX), Dimension Analysis (DOCX)
+7. **List "Evidence Gaps"** for all questions scored as "Don't Know"
+
+---
+
 ## The 29 Questions by Dimension
 
 ### LEGITIMACY: Foundation and Problem Validation (2 questions, 15% weight)

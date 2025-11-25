@@ -6,6 +6,21 @@ Comprehensive framework for transforming validated customer needs and technical 
 ## Purpose
 Validate commercial sustainability by connecting validated needs (Steps 5-7) and confirmed capabilities (Step 11) into coherent business models with evidence-based product configurations.
 
+---
+
+## Instructions for AI Assistant
+
+Transform validated needs and capabilities into evidence-based commercial structures. For each product configuration:
+
+1. **Create Product/Market Fit Sheet** - product identity (≤60 char name, ≤250 char description), targeted requesters, needs addressed, MVP features (6-10)
+2. **Design Business Model Canvas** - value proposition, revenue stream with specific pricing, distribution channel, cost structure
+3. **Validate Business Model Coherence** - ensure all four components align without contradictions
+4. **Calculate coverage metrics** - verify 100% coverage of fundamental needs with MVP features
+5. **Flag all assumptions** - distinguish validated elements from hypotheses requiring testing
+6. **Generate Summary Dashboard** - portfolio overview, need coverage analysis, strategic insights
+7. **Enforce character limits** strictly (product name ≤60, descriptions ≤250, summaries ≤250)
+8. **Produce deliverables**: PMF Sheet (MD+DOCX) + Business Model Canvas (MD+DOCX) + Summary Dashboard (MD+HTML)
+
 ## Assessment Framework
 
 ### Three Output Documents (Per Product)
