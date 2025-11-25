@@ -300,7 +300,7 @@ This is a master reference repository. Contributions welcome via:
 - Example assessments across maturity stages
 
 **Previous Version**: 1.0 - Framework structure with placeholder content
-**License**: MIT License - See [LICENSE](LICENSE)
+**License**: Proprietary with Attribution Required - See [LICENSE](LICENSE)
 **Contact**: Open an issue for questions or contributions
 
 ### What's Included
