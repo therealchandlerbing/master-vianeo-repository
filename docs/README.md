@@ -4,29 +4,50 @@ This directory contains comprehensive documentation for the VIANEO framework.
 
 ## Structure
 
-### `/skill_files/`
-Individual skill documentation for each evaluation step. These files provide detailed guidance on executing each step of the VIANEO framework.
+All documentation files are organized at the root level of this directory, with one subdirectory for specialized Step 11 content.
 
-### `/guides/`
-Complete reference guides covering:
-- Complete Evaluation Skill guides
-- Comprehensive Reference Guides
-- Step-specific documentation (Steps 0-11)
-- AI safety guidelines
+### Root Level Files
 
-### `/quick_reference/`
-Quick reference cards and system overviews for rapid consultation during evaluations.
+| Category | Files | Purpose |
+|----------|-------|---------|
+| **Framework Guides** | `FRAMEWORK_OVERVIEW.md`, `VIANEO_System_Overview.md` | Core methodology and system documentation |
+| **Design System** | `VIANEO_Design_Tokens.md`, `VIANEO_Document_Formatting_Guide.md`, `FORMATTING_STRATEGY.md` | Visual standards and formatting |
+| **Quick References** | `VIANEO_Quick_Start_Card.md`, `VIANEO_Quick_Reference_Card.md`, `VIANEO_29Question_Quick_Reference.md` | Rapid consultation during evaluations |
+| **Format Specifications** | `FORMAT_SPEC_Step*.md` | Output format specs for each step |
+| **Quality Checklists** | `QUICK_VALIDATION_*.md` | Validation checklists per step |
+| **Step-Specific Guides** | `VIANEO_Diagnostic_*.md`, `VIANEO_Persona_*.md`, `VIANEO_Desirability_*.md`, `VIANEO_Step*_*.md` | Deep-dive guidance for specific steps |
+| **Safety & Workflow** | `AI_Guardrails.md`, `VIANEO_Assessment_Workflow_Guide.md`, `VIANEO_Evidence_Checklist.md` | Process and safety guidelines |
 
-## Content to be Added
+### `/step11/` Subdirectory
 
-Documentation will be populated from the vianeo-platform-tools repository, including:
+Specialized documentation for the complex Step 11 Features-Needs Matrix:
+- `README.md` - Overview
+- `QUICK-REFERENCE-step11.md` - Quick reference
+- `IMPLEMENTATION-GUIDE-step11.md` - Implementation guide
+- `DATA-PLANNING-WORKSHEET-step11.md` - Data planning
+- `step11-features-needs-SKILL.md` - Skill file
+- `vianeo-step11-matrix-styles.css` - Matrix styling
 
-- Master guides
-- Quick reference cards
-- System overviews
-- Step-specific documentation
-- Step 11 complete skill package (7 files)
-- AI safety guidelines
+## Key Documents by Use Case
+
+### Getting Started
+1. `FRAMEWORK_OVERVIEW.md` - Understand the 13-step process
+2. `VIANEO_Quick_Start_Card.md` - One-page reference
+3. `VIANEO_System_Overview.md` - Complete system documentation
+
+### During Evaluations
+1. `VIANEO_Quick_Reference_Card.md` - Scoring guidance
+2. `VIANEO_Evidence_Checklist.md` - Evidence requirements
+3. `QUICK_VALIDATION_*.md` - Step-specific quality checks
+
+### Creating Outputs
+1. `VIANEO_Design_Tokens.md` - Colors, typography, code snippets
+2. `VIANEO_Document_Formatting_Guide.md` - Word/PDF styling
+3. `FORMAT_SPEC_*.md` - Step-specific output formats
+
+### AI Integration
+1. `AI_Guardrails.md` - Safety guidelines for AI-assisted evaluation
+2. `VIANEO_Assessment_Workflow_Guide.md` - End-to-end process
 
 ## Usage
 

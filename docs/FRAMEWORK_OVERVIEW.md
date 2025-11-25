@@ -1,6 +1,6 @@
 # VIANEO Framework - Complete Overview
 
-> Detailed descriptions of all 11 evaluation steps
+> Detailed descriptions of all 13 evaluation steps (Steps 0-12)
 
 ## Table of Contents
 
@@ -14,13 +14,13 @@
 
 ## Overview
 
-The VIANEO Framework provides a systematic 11-step process for evaluating startup and innovation projects. This document provides comprehensive details on each step.
+The VIANEO Framework provides a systematic **13-step process (Steps 0-12)** for evaluating startup and innovation projects. This document provides comprehensive details on each step.
 
 **Core Steps**: Steps 0, 2, and 3 are essential. All others are optional based on project needs.
 
 **Total Time**:
 - Minimum path (Steps 0, 2, 3): ~90-135 minutes
-- Full evaluation (all 11 steps): ~6-8 hours
+- Full evaluation (all 13 steps): ~6-8 hours
 
 ---
 
@@ -437,7 +437,7 @@ These steps provide detailed validation of specific dimensions. Run selectively 
 - Step 3: 29Q Market Maturity (45-60m)
 
 ### Comprehensive Evaluation Path
-**All 11 steps** = ~6-8 hours
+**All 13 steps (0-12)** = ~6-8 hours
 - Phase 1 (0-3): 90-135 minutes
 - Phase 2 (4-9): 4-6 hours
 - Phase 3 (10-11): 55-80 minutes
@@ -480,5 +480,5 @@ These steps provide detailed validation of specific dimensions. Run selectively 
 
 ---
 
-**Last Updated**: 2025-01-15
-**Framework Version**: 1.0
+**Last Updated**: November 2025
+**Framework Version**: 2.0
