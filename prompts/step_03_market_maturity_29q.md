@@ -53,6 +53,12 @@ Step 3 evaluates business model readiness through 29 evidence-based questions or
 
 ---
 
+## Instructions for AI Assistant
+
+Evaluate this startup using the 29-question framework below. Score each question 1-5, calculate weighted dimension averages, and check against thresholds. Generate three documents: Full Report (Markdown), Assessment Results (DOCX), and Dimension Analysis (DOCX). Flag any dimension below threshold as a red flag.
+
+---
+
 ## The 29 Questions by Dimension
 
 ### LEGITIMACY: Foundation and Problem Validation (2 questions, 15% weight)

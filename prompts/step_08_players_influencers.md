@@ -27,6 +27,12 @@ This is strategy, not documentation. BCG-level analysis prioritizes power and in
 
 ---
 
+## Instructions for AI Assistant
+
+Identify the 8-10 most critical Players and 8-10 most influential Influencers in the ecosystem. Classify each as Favorable, Neutral, or Unfavorable. Follow character limits (60 chars for names, 250 chars for strategic notes). Generate two documents: Professional 2-page DOCX and Comprehensive Markdown analysis.
+
+---
+
 ## Required Inputs
 
 ### From Previous VIANEO Steps:

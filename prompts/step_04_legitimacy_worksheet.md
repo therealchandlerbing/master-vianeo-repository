@@ -28,6 +28,12 @@ From previous steps:
 
 ---
 
+## Instructions for AI Assistant
+
+Using the Executive Brief and 40Q Diagnostic, complete the Legitimacy Worksheet structure below. Extract core project information within character limits, assess all three resource categories (Human, Physical/Intellectual, Financial) with differentiator status, and generate two documents: Markdown worksheet and DOCX formatted version.
+
+---
+
 ## Output Structure
 
 ### 1. Document Header

@@ -53,6 +53,12 @@ From previous steps:
 
 ---
 
+## Instructions for AI Assistant
+
+Conduct a Desirability analysis identifying 6-10 Requesters and 10-16 Needs (Tasks, Pains, Expectations). Be ruthlessly honest about validation status—if no interviews exist, say so explicitly. Generate four documents: Master Markdown, DOCX Part 1 (Core Analysis), DOCX Part 2 (Strategic Analysis), and DOCX Part 3 (Interview Guide).
+
+---
+
 ## Output Structure: FOUR-FILE PACKAGE
 
 ### Output 1: Markdown Analysis File (MASTER DOCUMENT)

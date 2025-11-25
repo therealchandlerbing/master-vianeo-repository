@@ -20,6 +20,12 @@ The Ecosystem Value Network Map transforms stakeholder data into strategic actio
 
 ---
 
+## Instructions for AI Assistant
+
+Create an HTML Value Network Map using data from Steps 5 (Requesters) and 8 (Players/Influencers). Import all names and acceptability ratings exactly as written. Position stakeholders across 5 columns (Enablers → Product → Channels → Buyers → End Users). Highlight Priority Targets where Favorable organizations contain requesters with Critical or Important needs.
+
+---
+
 ## Documentation Package
 
 A comprehensive Value Network Map Documentation Package is available at:

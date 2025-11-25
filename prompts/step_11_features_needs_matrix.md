@@ -23,6 +23,12 @@ This is the **bridge from validation (Pre-Incubation) to execution (Business Mod
 
 ---
 
+## Instructions for AI Assistant
+
+Create a Features-Needs Matrix mapping 10-15 solution features against validated needs from Step 5. Import need statements and means exactly as written—do not paraphrase. Mark coverage only when a feature directly addresses a need. Generate two outputs: Interactive HTML Matrix and Strategic Analysis (markdown) with coverage metrics and MVP guidance.
+
+---
+
 ## Required Inputs
 
 ### From Previous Steps

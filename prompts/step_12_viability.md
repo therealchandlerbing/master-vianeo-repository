@@ -6,6 +6,12 @@ Comprehensive framework for transforming validated customer needs and technical 
 ## Purpose
 Validate commercial sustainability by connecting validated needs (Steps 5-7) and confirmed capabilities (Step 11) into coherent business models with evidence-based product configurations.
 
+---
+
+## Instructions for AI Assistant
+
+Transform validated needs (Steps 5-7) and confirmed capabilities (Step 11) into commercial structures. For each product, create a Product/Market Fit Sheet and Business Model Canvas. Ensure 100% coverage of fundamental needs with MVP features. Flag all unvalidated assumptions. Generate deliverables per the output format below.
+
 ## Assessment Framework
 
 ### Three Output Documents (Per Product)

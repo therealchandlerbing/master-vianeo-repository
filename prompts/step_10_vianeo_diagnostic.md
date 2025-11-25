@@ -29,6 +29,12 @@ Many assessments fail to drive decisions because they:
 
 ---
 
+## Instructions for AI Assistant
+
+Synthesize all VIANEO assessment findings into a concise diagnostic comment (6-8 sentences total). Write four paragraphs: Strengths, Risks, Near-term Actions (with responsible owners), and Evidence Gaps. Be specific—use numbers, names, and metrics. Generate two documents: Markdown Diagnostic Comment and Professional DOCX Report.
+
+---
+
 ## Required Inputs
 
 ### Essential Data

@@ -39,6 +39,12 @@ Together, they force honest assessment of validation status and create clear acc
 
 ---
 
+## Instructions for AI Assistant
+
+Using output from Step 5, create a Needs Qualification Matrix. Import all requester names and need statements exactly as written—do not paraphrase. Rate Importance and Satisfaction for each combination using the scales below. Generate two deliverables: HTML Matrix (landscape, color-coded) and Analysis Report (9-12 pages).
+
+---
+
 ## Required Inputs
 
 **From Step 5 (Desirability Analysis):**
