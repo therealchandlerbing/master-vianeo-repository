@@ -1,6 +1,7 @@
 VIANEO Framework - Proprietary License with Attribution
 
-Copyright (c) 2025 VIANEO Framework. All Rights Reserved.
+Copyright (c) 2025 VIANEO Framework and 360 Social Impact Studios.
+All Rights Reserved.
 
 ---
 
@@ -9,7 +10,8 @@ TERMS OF USE
 1. OWNERSHIP
    This framework, including all documentation, methodologies, prompts,
    templates, and associated materials ("the Framework"), is the
-   proprietary intellectual property of VIANEO Framework.
+   proprietary intellectual property of VIANEO Framework and
+   360 Social Impact Studios.
 
 2. PERMITTED USE
    You may use this Framework for:
@@ -18,9 +20,10 @@ TERMS OF USE
    - Personal learning and development
 
 3. ATTRIBUTION REQUIRED
-   Any use of this Framework requires visible attribution:
+   Any use of this Framework requires visible attribution to both
+   copyright holders:
 
-   "VIANEO Business Model Evaluation Framework"
+   "VIANEO Business Model Evaluation Framework by 360 Social Impact Studios"
 
    This attribution must appear in:
    - Any documents or outputs generated using the Framework
@@ -37,18 +40,19 @@ TERMS OF USE
 
 5. COMMERCIAL USE
    Commercial use (consulting, training, SaaS products) requires a
-   separate commercial license. Contact the copyright holder for
+   separate commercial license. Contact the copyright holders for
    licensing inquiries.
 
 6. MODIFICATIONS
    Modifications for internal use are permitted, provided:
    - Original attribution is maintained
    - Modified versions are not distributed without permission
-   - The "VIANEO" name is not used to endorse derivative works
+   - The "VIANEO" and "360 Social Impact Studios" names are not used
+     to endorse derivative works without permission
 
 7. NO WARRANTY
    THE FRAMEWORK IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND,
-   EXPRESS OR IMPLIED. THE COPYRIGHT HOLDER SHALL NOT BE LIABLE FOR
+   EXPRESS OR IMPLIED. THE COPYRIGHT HOLDERS SHALL NOT BE LIABLE FOR
    ANY DAMAGES ARISING FROM USE OF THIS FRAMEWORK.
 
 8. TERMINATION
@@ -59,6 +63,7 @@ TERMS OF USE
 ---
 
 For licensing inquiries or permissions:
-Open an issue in this repository or contact the copyright holder.
+Open an issue in this repository or contact the copyright holders.
 
 VIANEO® is a trademark of VIANEO Framework.
+360 Social Impact Studios® is a trademark of 360 Social Impact Studios.
