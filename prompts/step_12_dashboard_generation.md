@@ -136,7 +136,7 @@ Using completed PMF Sheets (Step 12a) and Business Model Canvases (Step 12b), ge
 ```css
 --color-mvp-ready: #10b981;
 --color-in-progress: #3b82f6;
---color-planning: #8b5cf6;
+--color-planning: #f59e0b;
 ```
 
 ### Typography
@@ -216,10 +216,18 @@ Using completed PMF Sheets (Step 12a) and Business Model Canvases (Step 12b), ge
 
 ```css
 @media print {
-    /* Hide buttons, modals */
-    /* Remove shadows */
-    /* Ensure page breaks */
-    /* Full width layout */
+    .btn, .modal-overlay, .section-actions {
+        display: none;
+    }
+    .product-card, .insight-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+    }
+    body {
+        color: black;
+        background: white;
+    }
 }
 ```
 

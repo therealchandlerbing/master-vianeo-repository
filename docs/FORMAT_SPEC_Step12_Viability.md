@@ -154,11 +154,6 @@
 - Important needs coverage: [X]/[Total] = [%]
 - Overall PMF strength: [High/Medium/Low]
 
-### Business Model Coherence
-- [ ] Value prop deliverable by MVP features ✓
-- [ ] All coherence checks pass ✓
-- [ ] Overall: [Coherent/Minor adjustments/Major concerns]
-
 ---
 
 ## Document Metadata
@@ -424,7 +419,7 @@
         </main>
 
         <!-- Footer -->
-        <footer><!-- Metadata --></footer>
+        <footer>[Footer with metadata]</footer>
     </div>
 
     <!-- Product Modals -->

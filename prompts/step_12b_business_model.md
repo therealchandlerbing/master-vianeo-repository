@@ -159,9 +159,13 @@ If intermediaries:
 
 #### Geographic Strategy
 
-- Phase 1: Initial markets with channel focus
-- Phase 2: Expansion with variations
-- Regional considerations
+- **Phase 1 ([Timeframe]):** [Initial markets]
+  - **Channel Focus:** [Primary channels for this geography]
+  - **Rationale:** [Why start here]
+- **Phase 2 ([Timeframe]):** [Expansion markets]
+  - **Channel Focus:** [Any channel variations]
+  - **Rationale:** [Expansion logic]
+- **Regional Considerations:** [Any differences in distribution approach by geography]
 
 #### Platform Input (250 chars max)
 
@@ -345,6 +349,14 @@ Verify character counts for all four components.
 
 ## Next Steps
 [Validation activities needed]
+
+---
+
+## Document Metadata
+**Based On**: Step 12a (PMF Sheet), Steps 5-11
+**Feeds Into**: Step 13 (Financial Modeling)
+**Status**: [Draft | Review | Final]
+**Date**: [YYYY-MM-DD]
 ```
 
 ---
