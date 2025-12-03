@@ -1,64 +1,92 @@
 # Quick Validation Guide: Step 12 - Viability Assessment
 
 **Purpose**: Fast 5-minute quality check before delivery
-**Pass Criteria**: All ✓ boxes must be checked
+**Pass Criteria**: All critical items must be checked
 **Dimension**: Viability (20% of VIANEO score)
 
 ---
 
-## 1. STRUCTURE (6 items)
+## 1. STRUCTURE (4 items)
 
-- [ ] PMF (Product-Market Fit) sheets complete
-- [ ] Business Model Canvas documented
-- [ ] Viability Dashboard generated (HTML)
-- [ ] Financial projections included
-- [ ] Unit economics calculated
-- [ ] Risk assessment documented
+- [ ] PMF Sheet(s) complete (one per product)
+- [ ] Business Model Canvas(es) complete (one per product)
+- [ ] Viability Summary Dashboard generated (markdown)
+- [ ] Interactive Viability Dashboard generated (HTML)
 
-## 2. PMF SHEETS (6 items)
+---
 
-- [ ] Value Proposition clearly articulated
-- [ ] Customer Segments defined (from Step 5/6)
-- [ ] Problem-Solution fit documented
-- [ ] Evidence of willingness to pay
-- [ ] Competitive positioning clear
-- [ ] Fit score calculated (1-5)
+## 2. PMF SHEET - Product Identity (4 items)
 
-## 3. BUSINESS MODEL CANVAS (9 items)
+- [ ] Product name within 60 characters
+- [ ] Product description within 250 characters
+- [ ] Target client specified
+- [ ] Character counts verified
 
-**All 9 sections complete:**
-- [ ] Customer Segments
-- [ ] Value Propositions
-- [ ] Channels
-- [ ] Customer Relationships
-- [ ] Revenue Streams
-- [ ] Key Resources
-- [ ] Key Activities
-- [ ] Key Partnerships
-- [ ] Cost Structure
+---
 
-## 4. FINANCIAL PROJECTIONS (5 items)
+## 3. PMF SHEET - Market Validation (5 items)
 
-- [ ] Revenue projections (3-year minimum)
-- [ ] Cost projections (3-year minimum)
-- [ ] Break-even analysis
-- [ ] Cash flow forecast
-- [ ] Assumptions documented and realistic
+- [ ] 2-4 targeted requesters with profiles
+- [ ] 5-10 primary needs addressed
+- [ ] Intensity levels assigned (Fundamental/Important/Secondary)
+- [ ] Validation levels documented (>5 interviewed / <5 / Not yet)
+- [ ] 100% fundamental needs have feature coverage
 
-## 5. UNIT ECONOMICS (5 items - CRITICAL)
+---
 
-- [ ] CAC (Customer Acquisition Cost) calculated
-- [ ] LTV (Lifetime Value) calculated
-- [ ] LTV:CAC ratio documented (target ≥3:1)
-- [ ] Payback period calculated
-- [ ] Gross margin documented
+## 4. PMF SHEET - Solution Configuration (5 items)
 
-## 6. VIABILITY DASHBOARD (4 items)
+- [ ] 6-10 MVP features defined
+- [ ] Each MVP feature maps to validated need
+- [ ] Timeline for each feature (Available/Short/Mid/Long term)
+- [ ] MVP coverage check passes all criteria
+- [ ] Phased features documented (or "None")
 
-- [ ] Key metrics visualized
-- [ ] Status indicators (Green/Yellow/Red)
-- [ ] Trend indicators where applicable
-- [ ] Interactive HTML format
+---
+
+## 5. PMF SHEET - Resources (3 items)
+
+- [ ] Means required listed
+- [ ] Critical partners identified
+- [ ] Resource gaps with mitigation strategies
+
+---
+
+## 6. BUSINESS MODEL - 4 Components (4 items)
+
+- [ ] Value Proposition complete with platform input (250 chars)
+- [ ] Revenue Stream complete with platform input (250 chars)
+- [ ] Distribution Channel complete with platform input (250 chars)
+- [ ] Cost Structure complete with platform input (250 chars)
+
+---
+
+## 7. BUSINESS MODEL - Coherence Validation (5 items)
+
+- [ ] Value-Features alignment checked
+- [ ] Value-Revenue alignment checked
+- [ ] Revenue-Distribution alignment checked
+- [ ] Distribution-Costs alignment checked
+- [ ] Costs-Revenue alignment checked
+
+---
+
+## 8. BUSINESS MODEL - Quality (4 items)
+
+- [ ] Pricing specific (NOT "TBD" or "competitive")
+- [ ] All 4 platform inputs within 250 characters
+- [ ] Red flag assessment completed
+- [ ] Coherence summary provided
+
+---
+
+## 9. DASHBOARDS (5 items)
+
+- [ ] Executive summary accurate
+- [ ] Product portfolio overview complete
+- [ ] Need coverage analysis included
+- [ ] Progress metrics calculated
+- [ ] Strategic insights (strengths/opportunities/concerns/recommendations)
 
 ---
 
@@ -66,19 +94,20 @@
 
 | Checks Passed | Decision |
 |--------------|----------|
-| 35/35 (100%) | ✅ **APPROVED** - Deliver immediately |
-| 30-34 (86-97%) | ⚠️ **FIX MINOR** - Quick corrections needed |
-| 25-29 (71-83%) | ❌ **REVISE** - Significant issues, rework required |
-| <25 (<71%) | 🛑 **REJECT** - Does not meet minimum standards |
+| 39/39 (100%) | **APPROVED** - Deliver immediately |
+| 35-38 (90-97%) | **FIX MINOR** - Quick corrections needed |
+| 30-34 (77-87%) | **REVISE** - Significant issues, rework required |
+| <30 (<77%) | **REJECT** - Does not meet minimum standards |
 
 ---
 
 ## FASTEST CHECKS (Do These First)
 
 **30-second scan:**
-1. Unit economics → LTV:CAC ratio present and ≥3:1 (or explained if lower)
-2. Business Model Canvas → All 9 boxes filled
-3. Revenue projections → 3 years minimum with assumptions
+1. **MVP Features** → 6-10 per product (not more, not fewer)
+2. **Fundamental Coverage** → 100% of fundamental needs have MVP features
+3. **Platform Inputs** → All 4 business model summaries within 250 chars
+4. **Coherence** → No red flags in alignment checks
 
 **If any fail → Stop and fix before full review**
 
@@ -87,161 +116,173 @@
 ## INSTANT RED FLAGS
 
 **Stop immediately if you see:**
-- ❌ No unit economics calculated
-- ❌ LTV:CAC ratio <1:1 without explanation
-- ❌ "Hockey stick" revenue without justification
-- ❌ Missing cost structure
-- ❌ No break-even timeline
-- ❌ Business Model Canvas incomplete
-- ❌ Assumptions not documented
-- ❌ Projections without basis in evidence
+- [ ] MVP feature count outside 6-10 range
+- [ ] Fundamental needs without feature coverage
+- [ ] Platform inputs over 250 characters
+- [ ] "TBD" or vague pricing in Revenue Stream
+- [ ] Missing coherence validation
+- [ ] Features not mapped to validated needs
+- [ ] Requesters not traced to Step 6 personas
+- [ ] Needs not traced to Step 7 matrix
 
 ---
 
 ## COMMON FIXES (2-minute corrections)
 
-**Missing unit economics?**
-Calculate these minimums:
-- CAC = Total acquisition cost / New customers
-- LTV = Average revenue per customer × Customer lifetime
-- LTV:CAC = LTV / CAC (target ≥3:1)
-- Payback = CAC / Monthly revenue per customer
+**MVP features outside range?**
+- Too many: Combine related features or defer to phased
+- Too few: Review Step 11 for additional validated capabilities
 
-**LTV:CAC ratio too low?**
-- Document path to improvement
-- Identify specific levers (reduce CAC, increase LTV)
-- Note if early-stage with expected improvement
+**Fundamental needs uncovered?**
+- Identify missing features from Step 11
+- Or justify why need cannot be addressed in MVP
 
-**Revenue projections unrealistic?**
-- Base on bottom-up calculation
-- Customer count × Price × Conversion rate
-- Document growth rate assumptions
-- Compare to industry benchmarks
+**Platform inputs over limit?**
+- Condense without losing specificity
+- Remove redundant words
+- Focus on differentiating elements
 
-**Missing assumptions?**
-List assumptions for:
-- Customer acquisition rate
-- Pricing stability
-- Churn rate
-- Cost growth
-- Market conditions
+**Coherence issues?**
+- Identify misaligned component pair
+- Adjust one component to align
+- Document if intentional trade-off
 
 ---
 
-## UNIT ECONOMICS BENCHMARKS
+## CHARACTER LIMITS (Quick Reference)
 
-| Metric | Healthy | Concerning | Critical |
-|--------|---------|------------|----------|
-| **LTV:CAC** | ≥3:1 | 2:1 - 3:1 | <2:1 |
-| **Payback Period** | <12 months | 12-18 months | >18 months |
-| **Gross Margin** | >70% (SaaS) | 50-70% | <50% |
-| **Churn (Monthly)** | <2% | 2-5% | >5% |
-
----
-
-## BUSINESS MODEL VALIDATION
-
-**For each Business Model Canvas section:**
-
-| Section | Must Include | Evidence Required |
-|---------|-------------|-------------------|
-| Customer Segments | Specific personas | From Step 5/6 |
-| Value Propositions | Differentiated value | From Step 4 |
-| Channels | Specific distribution | From Step 8 |
-| Customer Relationships | Engagement model | Defined clearly |
-| Revenue Streams | Pricing model | Tested with customers |
-| Key Resources | Core assets | From Step 4 means |
-| Key Activities | Core operations | Defined clearly |
-| Key Partnerships | Critical partners | From Step 8 |
-| Cost Structure | Major cost drivers | Realistic estimates |
+| Element | Limit | Check |
+|---------|-------|-------|
+| Product name | 60 chars | Copy to counter tool |
+| Product description | 250 chars | Copy to counter tool |
+| Value proposition | 250 chars | Copy to counter tool |
+| Revenue stream | 250 chars | Copy to counter tool |
+| Distribution channel | 250 chars | Copy to counter tool |
+| Cost structure | 250 chars | Copy to counter tool |
 
 ---
 
-## FINANCIAL PROJECTION REQUIREMENTS
+## VALIDATION BENCHMARKS
 
-**3-Year Projections Must Include:**
+### PMF Sheet Quality
 
-### Year 1 (Monthly Detail)
-- [ ] Revenue by month
-- [ ] Costs by month
-- [ ] Customer count by month
-- [ ] Cash position by month
+| Metric | Target | Concerning | Critical |
+|--------|--------|------------|----------|
+| **MVP Features** | 6-10 | 5 or 11-12 | <5 or >12 |
+| **Fundamental Coverage** | 100% | 80-99% | <80% |
+| **High Validation (>5)** | >50% MVP | 30-50% MVP | <30% MVP |
+| **Requesters** | 2-4 | 1 or 5 | 0 or >5 |
 
-### Years 2-3 (Quarterly or Annual)
-- [ ] Revenue projections
-- [ ] Cost projections
-- [ ] Profitability timeline
-- [ ] Funding requirements
+### Business Model Quality
 
-### Key Assumptions (Documented)
-- [ ] Customer acquisition rate
-- [ ] Pricing assumptions
-- [ ] Churn rate
-- [ ] Cost growth rate
-- [ ] Market size assumptions
+| Metric | Target | Concerning | Critical |
+|--------|--------|------------|----------|
+| **Platform Inputs** | All 4 complete | 3 complete | <3 complete |
+| **Character Compliance** | All within 250 | 1 over limit | Multiple over |
+| **Coherence Checks** | All pass | 1-2 minor gaps | 3+ gaps |
+| **Pricing Specificity** | Concrete examples | Ranges only | "TBD" |
 
 ---
 
-## VIABILITY DASHBOARD METRICS
+## COHERENCE VALIDATION QUICK CHECK
 
-**Required metrics on dashboard:**
+**For each check, verify alignment:**
 
-| Category | Metrics |
-|----------|---------|
-| **Growth** | MRR/ARR, Customer count, Growth rate |
-| **Economics** | LTV, CAC, LTV:CAC, Gross margin |
-| **Efficiency** | Payback period, Burn rate, Runway |
-| **Health** | Churn rate, NPS (if available), Retention |
-
-**Color coding:**
-- Green: On track / Healthy
-- Yellow: Needs attention / Below target
-- Red: Critical / Off track
+| Check | Question | Pass If |
+|-------|----------|---------|
+| Value-Features | Can MVP deliver value claims? | All advantages map to features |
+| Value-Revenue | Does pricing reflect value? | Premium value = premium price |
+| Revenue-Distribution | Does channel match complexity? | High-touch for complex, self-serve for simple |
+| Distribution-Costs | Are CAC costs included? | Marketing/sales costs cover chosen channels |
+| Costs-Revenue | Can revenue support costs? | Path to positive margin exists |
 
 ---
 
-## RISK ASSESSMENT REQUIREMENTS
+## COMMON RED FLAG COMBINATIONS
 
-**Must document risks in these categories:**
+**Immediate concern if you see:**
 
-| Risk Category | Examples | Mitigation Required |
-|---------------|----------|---------------------|
-| **Market** | Competition, market size | Yes |
-| **Financial** | Funding, cash flow | Yes |
-| **Operational** | Team, execution | Yes |
-| **Technical** | Product, technology | Yes |
-| **Regulatory** | Compliance, legal | If applicable |
+| Red Flag Combination | Issue |
+|---------------------|-------|
+| Premium value + low price | Underpriced |
+| Self-serve channel + enterprise product | Mismatched distribution |
+| High CAC channels + no marketing costs | Incomplete cost structure |
+| Complex product + no support costs | Missing operational costs |
+| Recurring revenue + no churn assumption | Unrealistic projections |
+
+---
+
+## DASHBOARD VALIDATION
+
+### Markdown Dashboard
+- [ ] Executive summary present
+- [ ] Product table complete
+- [ ] Need coverage matrix accurate
+- [ ] Progress metrics calculated
+- [ ] Insights include all 4 categories
+
+### HTML Dashboard
+- [ ] Renders correctly in browser
+- [ ] Product cards display properly
+- [ ] Modals open/close correctly
+- [ ] Progress bars animated
+- [ ] Mobile responsive
+- [ ] Accessibility (skip link, ARIA labels)
 
 ---
 
 ## OUTPUT FILES CHECKLIST
 
-**Must deliver:**
-- [ ] PMF Sheet (Markdown or DOCX)
-- [ ] Business Model Canvas (Markdown or visual)
-- [ ] Financial Projections (Markdown + spreadsheet reference)
-- [ ] Viability Dashboard (HTML)
-- [ ] Risk Assessment (within analysis)
+**Must deliver (per product):**
+- [ ] `[ProductName]_PMF_Sheet.md`
+- [ ] `[ProductName]_Business_Model.md`
+
+**Must deliver (portfolio):**
+- [ ] `[ProjectName]_Viability_Summary.md`
+- [ ] `[ProjectName]_Viability_Dashboard.html`
+
+**Optional:**
+- [ ] `.docx` versions if professional formatting requested
+- [ ] `[ProjectName]_Platform_Inputs.md` for Vianeo entry
 
 ---
 
-## INTEGRATION WITH VIANEO DIMENSIONS
+## INTEGRATION CHECK
 
-**Viability assessment synthesizes:**
-- **Legitimacy (Step 4)**: Problem worth solving economically?
-- **Desirability (Step 5-7)**: Enough customers willing to pay?
-- **Acceptability (Step 8-9)**: Ecosystem supports business model?
-- **Feasibility (Step 4, 10)**: Team can execute the model?
+**Verify traceability:**
+- [ ] Requesters → Step 6 personas
+- [ ] Needs → Step 7 qualification matrix
+- [ ] Features → Step 11 feature library
+- [ ] Resources → Step 11 means/partners
+- [ ] Distribution → Steps 8-9 ecosystem
 
-**Viability score requires:**
-- Sustainable unit economics (LTV:CAC ≥3:1)
-- Realistic path to profitability
-- Manageable risk profile
-- Adequate funding/runway
+---
+
+## VIABILITY SCORE COMPONENTS
+
+**Step 12 contributes to Viability (20% weight):**
+
+| Component | Weight | Source |
+|-----------|--------|--------|
+| PMF Strength | ~40% | Need coverage, validation levels |
+| Business Model Coherence | ~30% | Alignment checks, no red flags |
+| Resource Readiness | ~20% | Gaps mitigated, partners secured |
+| Validation Quality | ~10% | >5 interviewed percentages |
+
+**Threshold: ≥3.0 / 5.0 to pass**
 
 ---
 
 **Time Budget**: 5 minutes maximum for this validation
-**Templates**: `templates/Step12_PMF_Template.md`, `templates/Step12_Business_Model_Template.md`, `templates/Step12_Viability_Dashboard.html`
 
-**Scoring Impact**: Directly affects Viability dimension (20% weight, ≥3.0 threshold)
+**Templates**:
+- `templates/Step12_PMF_Template.md`
+- `templates/Step12_Business_Model_Template.md`
+- `templates/Step12_Dashboard_Template.md`
+- `templates/Step12_Viability_Dashboard.html`
+
+**Related Prompts**:
+- `prompts/step_12_viability.md` - Overview
+- `prompts/step_12a_product_market_fit.md` - PMF generation
+- `prompts/step_12b_business_model.md` - Business model generation
+- `prompts/step_12_dashboard_generation.md` - Dashboard generation
