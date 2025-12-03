@@ -99,7 +99,7 @@ Table format:
 
 **MVP Summary**:
 - Total MVP features (target: 6-10)
-- Available now / Short term / Mid term counts
+- Available now / Short term counts
 - High validation (>5) percentage
 
 **MVP Coverage Check**:
@@ -243,11 +243,14 @@ Every claim must cite source:
 3. **Clinical Staff**: Needs objective assessment tools
 
 ## MVP Features (8 total)
-1. Personalized exercise engine - Fundamental needs 1,2 - Available
-2. Progress tracking dashboard - Fundamental need 3 - Short term
-3. Caregiver notification system - Important needs 4,5 - Short term
-4. Clinical assessment integration - Fundamental need 6 - Short term
-[etc.]
+
+| Feature Name | Needs Covered | Timeline | MVP Rationale |
+|---|---|---|---|
+| Personalized exercise engine | Fundamental needs 1,2 | Available | Core to training |
+| Progress tracking dashboard | Fundamental need 3 | Short term | Key for caregivers |
+| Caregiver notification system | Important needs 4,5 | Short term | Drives engagement |
+| Clinical assessment integration | Fundamental need 6 | Short term | Clinical validation |
+| [etc.] | | | |
 
 ## Resource Requirements
 - Mobile development team (secured)

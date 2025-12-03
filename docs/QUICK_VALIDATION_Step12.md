@@ -116,14 +116,14 @@
 ## INSTANT RED FLAGS
 
 **Stop immediately if you see:**
-- [ ] MVP feature count outside 6-10 range
-- [ ] Fundamental needs without feature coverage
-- [ ] Platform inputs over 250 characters
-- [ ] "TBD" or vague pricing in Revenue Stream
-- [ ] Missing coherence validation
-- [ ] Features not mapped to validated needs
-- [ ] Requesters not traced to Step 6 personas
-- [ ] Needs not traced to Step 7 matrix
+- MVP feature count outside 6-10 range
+- Fundamental needs without feature coverage
+- Platform inputs over 250 characters
+- "TBD" or vague pricing in Revenue Stream
+- Missing coherence validation
+- Features not mapped to validated needs
+- Requesters not traced to Step 6 personas
+- Needs not traced to Step 7 matrix
 
 ---
 
