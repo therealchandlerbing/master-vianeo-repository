@@ -244,13 +244,13 @@ Every claim must cite source:
 
 ## MVP Features (8 total)
 
-| Feature Name | Needs Covered | Timeline | MVP Rationale |
-|---|---|---|---|
-| Personalized exercise engine | Fundamental needs 1,2 | Available | Core to training |
-| Progress tracking dashboard | Fundamental need 3 | Short term | Key for caregivers |
-| Caregiver notification system | Important needs 4,5 | Short term | Drives engagement |
-| Clinical assessment integration | Fundamental need 6 | Short term | Clinical validation |
-| [etc.] | | | |
+| Feature Name | Timeline | Needs Covered | Validation | MVP Rationale |
+|---|---|---|---|---|
+| Personalized exercise engine | Available | Fundamental needs 1,2 | >5 interviewed | Core to training |
+| Progress tracking dashboard | Short term | Fundamental need 3 | >5 interviewed | Key for caregivers |
+| Caregiver notification system | Short term | Important needs 4,5 | >5 interviewed | Drives engagement |
+| Clinical assessment integration | Short term | Fundamental need 6 | >5 interviewed | Clinical validation |
+| [etc.] | | | | |
 
 ## Resource Requirements
 - Mobile development team (secured)
