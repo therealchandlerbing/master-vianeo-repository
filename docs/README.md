@@ -12,6 +12,7 @@ All documentation files are organized at the root level of this directory, with 
 |----------|-------|---------|
 | **Framework Guides** | `FRAMEWORK_OVERVIEW.md`, `VIANEO_System_Overview.md` | Core methodology and system documentation |
 | **Design System** | `VIANEO_Design_Tokens.md`, `VIANEO_Document_Formatting_Guide.md`, `FORMATTING_STRATEGY.md` | Visual standards and formatting |
+| **Final Deliverables** | `VIANEO_Executive_Report_Formatting_Guide.md`, `VIANEO_Diagnostic_Comment_Formatting_Guide.md` | End-of-sprint report formatting |
 | **Quick References** | `VIANEO_Quick_Start_Card.md`, `VIANEO_Quick_Reference_Card.md`, `VIANEO_29Question_Quick_Reference.md` | Rapid consultation during evaluations |
 | **Format Specifications** | `FORMAT_SPEC_Step*.md` | Output format specs for each step |
 | **Quality Checklists** | `QUICK_VALIDATION_*.md` | Validation checklists per step |
@@ -44,6 +45,10 @@ Specialized documentation for the complex Step 11 Features-Needs Matrix:
 1. `VIANEO_Design_Tokens.md` - Colors, typography, code snippets
 2. `VIANEO_Document_Formatting_Guide.md` - Word/PDF styling
 3. `FORMAT_SPEC_*.md` - Step-specific output formats
+
+### Final Sprint Deliverables
+1. `VIANEO_Executive_Report_Formatting_Guide.md` - Comprehensive 12-18 page sprint summary
+2. `VIANEO_Diagnostic_Comment_Formatting_Guide.md` - Standalone 2-4 page assessment
 
 ### AI Integration
 1. `AI_Guardrails.md` - Safety guidelines for AI-assisted evaluation
