@@ -1,8 +1,19 @@
 # Vianeo Executive Report: Formatting Guide
 
+Comprehensive styling guidance for the 12-18 page Executive Report deliverable. Use this document when generating DOCX output from the prompts or when applying manual formatting in Word.
+
 **Document Type:** Multi-section professional report with cover page
 **Typical Length:** 12-18 pages
 **Use Case:** Final deliverable for Vianeo validation sprint completion
+
+---
+
+## Quick Links
+
+- [Design Tokens](VIANEO_Design_Tokens.md) - Canonical colors, typography, spacing
+- [Diagnostic Comment Formatting Guide](VIANEO_Diagnostic_Comment_Formatting_Guide.md) - Companion 2-4 page assessment format
+- [Step 10 Format Specification](FORMAT_SPEC_Step10_Diagnostic_Comment.md) - Data model feeding this report
+- [Diagnostic DOCX Formatting](VIANEO_Diagnostic_DOCX_Formatting.md) - Layout and margin details
 
 ---
 
@@ -24,8 +35,11 @@ The Vianeo Executive Report is a comprehensive document summarizing an entire va
 
 ## Color Palette
 
+> **Hex format:** Use hex values **without the `#` prefix** in DOCX code. Word APIs expect the raw 6-character string (e.g., `1B4F72`).
+
 ```javascript
-const COLORS = {
+// COLORS object used by generators
+export const COLORS = {
   primary: "1B4F72",      // Deep blue - headers, titles, key emphasis
   secondary: "2874A6",    // Medium blue - subheaders, table headers
   accent: "27AE60",       // Green - success states, positive scores
@@ -607,13 +621,15 @@ Before generating the document:
 
 ---
 
-## Related Documents
+## Resource Cross-References
 
-- **[VIANEO_Diagnostic_Comment_Formatting_Guide.md](VIANEO_Diagnostic_Comment_Formatting_Guide.md)** - Standalone diagnostic format
-- **[VIANEO_Design_Tokens.md](VIANEO_Design_Tokens.md)** - Design system reference
-- **[VIANEO_Document_Formatting_Guide.md](VIANEO_Document_Formatting_Guide.md)** - General document formatting
-- **[VIANEO_Diagnostic_DOCX_Formatting.md](VIANEO_Diagnostic_DOCX_Formatting.md)** - Step 10 DOCX specifications
-- **[FORMAT_SPEC_Step10_Diagnostic_Comment.md](FORMAT_SPEC_Step10_Diagnostic_Comment.md)** - Step 10 format specification
+- **[Diagnostic Comment Formatting Guide](VIANEO_Diagnostic_Comment_Formatting_Guide.md)** - Standalone 2-4 page assessment format
+- **[Design Tokens](VIANEO_Design_Tokens.md)** - Canonical colors, typography, spacing values
+- **[Diagnostic DOCX Formatting](VIANEO_Diagnostic_DOCX_Formatting.md)** - Step 10 DOCX specifications
+- **[Quality Control](QUICK_VALIDATION_Step10.md)** - Validation checklist
+- **[Template Snippets](../tools/generators)** - Code references using these values
+
+Use these resources alongside the palette and spacing guidance above to keep Executive Report exports consistent and error-free.
 
 ---
 

@@ -528,12 +528,26 @@ After completing the evaluation steps, two primary deliverables can be generated
 
 ---
 
+## Final Deliverables
+
+**Executive Report**
+- **Output**: Professional DOCX (12-18 pages)
+- **Format Guide**: [Executive Report Formatting Guide](VIANEO_Executive_Report_Formatting_Guide.md)
+
+**Diagnostic Comment**
+- **Output**: Professional DOCX (2-4 pages)
+- **Format Guide**: [Diagnostic Comment Formatting Guide](VIANEO_Diagnostic_Comment_Formatting_Guide.md)
+
+---
+
 ## Related Resources
 
 - **[Main README](../README.md)** - Repository overview
 - **[Quick Reference Card](VIANEO_Quick_Reference_Card.md)** - One-page cheat sheet
 - **[Assessment Workflow Guide](VIANEO_Assessment_Workflow_Guide.md)** - Process details
 - **[Evidence Checklist](VIANEO_Evidence_Checklist.md)** - Validation standards
+- **[Executive Report Formatting Guide](VIANEO_Executive_Report_Formatting_Guide.md)** - Sprint summary formatting
+- **[Diagnostic Comment Formatting Guide](VIANEO_Diagnostic_Comment_Formatting_Guide.md)** - Assessment formatting
 - **[All Prompts](../prompts/)** - Step-by-step instructions
 - **[Templates](../templates/)** - Output formats
 - **[Examples](../examples/)** - Sample assessments
