@@ -8,6 +8,7 @@
 - [Phase 1: Foundation & Screening (Steps 0-3)](#phase-1-foundation--screening-steps-0-3)
 - [Phase 2: Deep Dive Validation (Steps 4-9)](#phase-2-deep-dive-validation-steps-4-9)
 - [Phase 3: Synthesis & Decision Support (Steps 10-11)](#phase-3-synthesis--decision-support-steps-10-11)
+- [Phase 4: Final Deliverables](#phase-4-final-deliverables)
 - [Quick Reference Summary](#quick-reference-summary)
 
 ---
@@ -428,6 +429,65 @@ These steps provide detailed validation of specific dimensions. Run selectively 
 
 ---
 
+## Phase 4: Final Deliverables
+
+After completing the evaluation steps, two primary deliverables can be generated to summarize the validation sprint findings.
+
+### Executive Report
+
+**Purpose**: Comprehensive multi-section report summarizing the entire validation sprint
+
+**When to Generate**:
+- At the end of a Vianeo Sprint (after Steps 11 and 12)
+- Before each of the 4 client reviews (as internal documentation)
+- As final deliverable for committee presentations
+
+**Contents**:
+- Cover page with project metadata
+- Executive summary with score overview
+- Dimension breakdown table
+- Session-by-session sprint overview
+- Deliverables completed matrix
+- Final diagnostic comment (strengths and gaps)
+- Post-Vianeo roadmap
+- Key metrics to track
+- Risk factors assessment
+- Final assessment and attribution
+
+**Outputs**:
+- Professional DOCX (12-18 pages)
+
+**Format Guide**: [Executive Report Formatting Guide](VIANEO_Executive_Report_Formatting_Guide.md)
+
+---
+
+### Diagnostic Comment (Standalone)
+
+**Purpose**: Concise assessment document for quick-reference evaluation summary
+
+**When to Generate**:
+- As a standalone deliverable after any evaluation step
+- Before client reviews as internal documentation
+- As a companion to the full Executive Report
+- For stakeholders who need quick summary
+
+**Contents**:
+- Score summary table (Market Maturity and Overall VIANEO)
+- Dimension breakdown (5 dimensions with scores and status)
+- Strengths confirmed through validation
+- Critical gaps requiring action
+- Summary assessment callout
+- Recommendations and next steps
+
+**Outputs**:
+- Professional DOCX (2-4 pages)
+
+**Format Guide**: [Diagnostic Comment Formatting Guide](VIANEO_Diagnostic_Comment_Formatting_Guide.md)
+
+**Note**: This standalone Diagnostic Comment complements the Step 10 Diagnostic Comment but is formatted as a final deliverable rather than a step output.
+
+---
+
 ## Quick Reference Summary
 
 ### Minimum Evaluation Path
@@ -468,12 +528,26 @@ These steps provide detailed validation of specific dimensions. Run selectively 
 
 ---
 
+## Final Deliverables
+
+**Executive Report**
+- **Output**: Professional DOCX (12-18 pages)
+- **Format Guide**: [Executive Report Formatting Guide](VIANEO_Executive_Report_Formatting_Guide.md)
+
+**Diagnostic Comment**
+- **Output**: Professional DOCX (2-4 pages)
+- **Format Guide**: [Diagnostic Comment Formatting Guide](VIANEO_Diagnostic_Comment_Formatting_Guide.md)
+
+---
+
 ## Related Resources
 
 - **[Main README](../README.md)** - Repository overview
 - **[Quick Reference Card](VIANEO_Quick_Reference_Card.md)** - One-page cheat sheet
 - **[Assessment Workflow Guide](VIANEO_Assessment_Workflow_Guide.md)** - Process details
 - **[Evidence Checklist](VIANEO_Evidence_Checklist.md)** - Validation standards
+- **[Executive Report Formatting Guide](VIANEO_Executive_Report_Formatting_Guide.md)** - Sprint summary formatting
+- **[Diagnostic Comment Formatting Guide](VIANEO_Diagnostic_Comment_Formatting_Guide.md)** - Assessment formatting
 - **[All Prompts](../prompts/)** - Step-by-step instructions
 - **[Templates](../templates/)** - Output formats
 - **[Examples](../examples/)** - Sample assessments

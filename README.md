@@ -86,6 +86,8 @@ The **VIANEO Business Model Evaluation Framework** is a comprehensive, evidence-
 | **Phase 3: Synthesis** | 10 | Diagnostic Comment | 25-35m | Executive decision brief |
 | | 11 | Features-Needs Matrix | 30-45m | MVP scope analysis |
 | **Phase 4: Viability** | 12 | Viability Assessment | 2-4h | PMF sheets, Business models, Dashboard |
+| **Final Deliverables** | - | Executive Report | 1-2h | Comprehensive sprint summary (12-18 pages) |
+| | - | Diagnostic Comment | 30-45m | Standalone assessment (2-4 pages) |
 
 **Core Steps**: Steps 0, 2, and 3 are required. Others are optional based on project needs.
 
@@ -217,6 +219,11 @@ All VIANEO outputs are designed to be **client-ready and committee-presentable**
 - **[VIANEO_Document_Formatting_Guide.md](docs/VIANEO_Document_Formatting_Guide.md)** - Word/PDF styling instructions
 - **[FORMATTING_STRATEGY.md](docs/FORMATTING_STRATEGY.md)** - Centralized format specification approach
 - **FORMAT_SPEC_*.md** files - Step-specific output formats
+
+### Final Deliverable Guides
+
+- **[VIANEO_Executive_Report_Formatting_Guide.md](docs/VIANEO_Executive_Report_Formatting_Guide.md)** - Comprehensive 12-18 page sprint summary with cover page
+- **[VIANEO_Diagnostic_Comment_Formatting_Guide.md](docs/VIANEO_Diagnostic_Comment_Formatting_Guide.md)** - Standalone 2-4 page assessment document
 
 **Note**: Existing HTML templates have embedded styles. Design tokens primarily target DOCX/PDF outputs for new documents.
 
@@ -411,6 +418,8 @@ This is a master reference repository. Contributions welcome via:
 - **[Assessment Workflow Guide](docs/VIANEO_Assessment_Workflow_Guide.md)** - Complete process guide
 - **[Evidence Checklist](docs/VIANEO_Evidence_Checklist.md)** - Validation requirements
 - **[Design Tokens](docs/VIANEO_Design_Tokens.md)** - Colors, typography, and code snippets for outputs
+- **[Executive Report Formatting Guide](docs/VIANEO_Executive_Report_Formatting_Guide.md)** - Final sprint summary formatting
+- **[Diagnostic Comment Formatting Guide](docs/VIANEO_Diagnostic_Comment_Formatting_Guide.md)** - Standalone assessment formatting
 - **[Automation Tools](tools/README.md)** - Python tools for document generation and validation
 - **[Example Assessments](examples/)** - Sample evaluations by stage
 
