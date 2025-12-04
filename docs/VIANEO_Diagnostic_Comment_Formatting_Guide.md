@@ -588,7 +588,7 @@ new TableRow({
   children: [
     new TableCell({
       borders: cellBorders,
-      width: { size: WIDTH, type: WidthType.DXA },
+      width: { size: 4680, type: WidthType.DXA }, // Example width
       shading: { fill: COLORS.secondary, type: ShadingType.CLEAR },
       children: [
         new Paragraph({

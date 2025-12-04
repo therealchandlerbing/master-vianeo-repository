@@ -457,7 +457,7 @@ After completing the evaluation steps, two primary deliverables can be generated
 **Outputs**:
 - Professional DOCX (12-18 pages)
 
-**Format Guide**: [`docs/VIANEO_Executive_Report_Formatting_Guide.md`](VIANEO_Executive_Report_Formatting_Guide.md)
+**Format Guide**: [Executive Report Formatting Guide](VIANEO_Executive_Report_Formatting_Guide.md)
 
 ---
 
@@ -482,7 +482,7 @@ After completing the evaluation steps, two primary deliverables can be generated
 **Outputs**:
 - Professional DOCX (2-4 pages)
 
-**Format Guide**: [`docs/VIANEO_Diagnostic_Comment_Formatting_Guide.md`](VIANEO_Diagnostic_Comment_Formatting_Guide.md)
+**Format Guide**: [Diagnostic Comment Formatting Guide](VIANEO_Diagnostic_Comment_Formatting_Guide.md)
 
 **Note**: This standalone Diagnostic Comment complements the Step 10 Diagnostic Comment but is formatted as a final deliverable rather than a step output.
 

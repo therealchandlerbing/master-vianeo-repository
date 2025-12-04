@@ -42,17 +42,17 @@ const COLORS = {
 
 | Element | Color | Hex Code |
 |---------|-------|----------|
-| Document title | Primary | #1B4F72 |
-| H1 headers | Primary | #1B4F72 |
-| H2 headers | Secondary | #2874A6 |
-| H3 headers | Dark | #2C3E50 |
-| Body text | Dark | #2C3E50 |
-| Metadata/dates | Gray | #7F8C8D |
-| Passing scores | Accent (green) | #27AE60 |
-| Warning/moderate | Warning (orange) | #F39C12 |
-| Failing scores | Danger (red) | #E74C3C |
-| Table header backgrounds | Primary or Secondary | #1B4F72 or #2874A6 |
-| Table header text | White | #FFFFFF |
+| Document title | Primary | 1B4F72 |
+| H1 headers | Primary | 1B4F72 |
+| H2 headers | Secondary | 2874A6 |
+| H3 headers | Dark | 2C3E50 |
+| Body text | Dark | 2C3E50 |
+| Metadata/dates | Gray | 7F8C8D |
+| Passing scores | Accent (green) | 27AE60 |
+| Warning/moderate | Warning (orange) | F39C12 |
+| Failing scores | Danger (red) | E74C3C |
+| Table header backgrounds | Primary or Secondary | 1B4F72 or 2874A6 |
+| Table header text | White | FFFFFF |
 
 ---
 
@@ -127,14 +127,16 @@ page: {
 
 **Spacing Pattern:**
 ```javascript
-// Large top margin
-new Paragraph({ spacing: { before: 2400 }, children: [] }),
+// Example of large top margin
+new Paragraph({ spacing: { before: 2400 }, children: [] });
 
-// Between major elements
-spacing: { before: 400-800 }  // varies by importance
+// Example of spacing between major elements
+// Use a value between 400 and 800 depending on importance
+new Paragraph({ spacing: { before: 600 }, children: [] });
 
-// Between related items
-spacing: { before: 100-200 }
+// Example of spacing between related items
+// Use a value between 100 and 200
+new Paragraph({ spacing: { before: 150 }, children: [] });
 ```
 
 ### Section 2: Main Content (Separate Section with Headers/Footers)
@@ -256,7 +258,7 @@ new TableRow({
   children: [
     new TableCell({
       borders: cellBorders,
-      width: { size: WIDTH, type: WidthType.DXA },
+      width: { size: 4680, type: WidthType.DXA }, // Example width
       shading: { fill: COLORS.primary, type: ShadingType.CLEAR },
       children: [
         new Paragraph({
@@ -283,8 +285,8 @@ new TableRow({
   children: [
     new TableCell({
       borders: cellBorders,
-      width: { size: WIDTH, type: WidthType.DXA },
-      shading: { fill: conditionalColor, type: ShadingType.CLEAR },
+      width: { size: 4680, type: WidthType.DXA }, // Example width
+      shading: { fill: "D5F5E3", type: ShadingType.CLEAR }, // Example: light green for passing
       children: [
         new Paragraph({
           alignment: AlignmentType.CENTER,  // or LEFT for text
