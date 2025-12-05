@@ -82,7 +82,7 @@ Include this standardized block in every prompt:
 | 9 | Steps 5, 8 outputs |
 | 10 | Steps 2-5 minimum; Steps 6-9 enhance |
 | 11 | Steps 4, 5, 7 outputs |
-| 12 | Steps 5, 6, 11 outputs; all prior steps |
+| 12 | Steps 5, 6, & 11 outputs (mandatory); all other prior step outputs (recommended) |
 
 ---
 
@@ -138,7 +138,7 @@ Use this consistent naming pattern for all outputs:
 
 ### Naming Rules
 
-1. **ProjectName**: Use CamelCase, no spaces (e.g., `HealthTech`, `RaylAI`)
+1. **ProjectName**: Use PascalCase (e.g., `HealthTech`), with acronyms fully capitalized (e.g., `RaylAI`)
 2. **Date**: ISO format YYYY-MM-DD
 3. **StepNumber**: Two digits with leading zero (00-12)
 4. **DeliverableName**: Descriptive, underscores for spaces
@@ -299,7 +299,7 @@ Margins: 1 inch all sides
 
 ```css
 /* Primary Color Palette */
---color-primary: #1a365d;
+--color-primary: #1B365D;
 --color-primary-light: #2c5282;
 --color-surface: #ffffff;
 --color-background: #f7fafc;
@@ -337,27 +337,16 @@ These rules prevent data inconsistency:
 
 ### Data Flow Diagram
 
-```
-Step 0 (Brief) → All Steps
-         ↓
-Step 2 (40Q) → Step 3, 10, 12
-         ↓
-Step 3 (29Q) → Steps 4-12
-         ↓
-Step 4 (Legitimacy) → Steps 5, 11
-         ↓
-Step 5 (Requesters) → Steps 6, 7, 9, 11, 12b
-         ↓
-Step 6 (Personas) → Steps 7, 12b
-         ↓
-Step 7 (Needs Matrix) → Steps 11, 12
-         ↓
-Step 8 (Players) → Step 9
-         ↓
-Step 9 (Value Network) → Steps 10, 12
-         ↓
-Steps 10-12 (Synthesis & Viability)
-```
+- **Step 0 (Brief):** Input to all other steps.
+- **Step 2 (40Q):** Input to Steps 3, 10, 12.
+- **Step 3 (29Q):** Input to Steps 4-12.
+- **Step 4 (Legitimacy):** Input to Steps 5, 11.
+- **Step 5 (Requesters):** Input to Steps 6, 7, 9, 11, 12b.
+- **Step 6 (Personas):** Input to Steps 7, 12b.
+- **Step 7 (Needs Matrix):** Input to Steps 11, 12.
+- **Step 8 (Players):** Input to Step 9.
+- **Step 9 (Value Network):** Input to Steps 10, 12.
+- **Steps 10-12:** Synthesis steps that consume outputs from multiple prior steps.
 
 ### Dependency Validation
 
