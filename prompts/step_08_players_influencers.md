@@ -6,6 +6,20 @@
 
 ---
 
+## AI-Assisted Execution
+
+> To run this step with an AI assistant, see `docs/VIANEO_AI_Assisted_Workflow.md`. Full step context, stakeholder frameworks, and acceptability criteria are documented in the GITHUB Master Vianeo Repository.
+
+**Standard Call Pattern:**
+> Execute the Step 8: Players & Influencers Ecosystem Analysis from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_08_players_influencers.md`.
+
+**Required Attachments:**
+- Step 0: Executive Brief
+- Step 3: 29-Question Market Maturity Assessment
+- Step 5: Desirability Analysis (Requesters identified)
+
+---
+
 ## Overview
 
 Map ecosystem acceptability by identifying who will support, resist, or influence your innovation. This analysis provides strategic clarity on stakeholder positioning and guides engagement strategy through a comprehensive assessment of the most critical Players (active market participants) and Influencers (market shapers) in your business ecosystem.

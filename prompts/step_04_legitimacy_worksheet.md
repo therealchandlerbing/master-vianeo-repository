@@ -6,6 +6,20 @@
 
 ---
 
+## AI-Assisted Execution
+
+> To run this step with an AI assistant, see `docs/VIANEO_AI_Assisted_Workflow.md`. Full step context, resource assessment frameworks, and scoring criteria are documented in the GITHUB Master Vianeo Repository.
+
+**Standard Call Pattern:**
+> Execute the Step 4: Legitimacy Deep Dive Worksheet from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_04_legitimacy_worksheet.md`.
+
+**Required Attachments:**
+- Step 0: Executive Brief
+- Step 2: 40-Question Diagnostic results
+- Team bios and organizational information
+
+---
+
 ## Overview
 
 The Legitimacy Assessment validates the foundational justification for the business by examining:

@@ -6,6 +6,19 @@
 
 ---
 
+## AI-Assisted Execution
+
+> To run this step with an AI assistant, see `docs/VIANEO_AI_Assisted_Workflow.md`. Full step context, templates, and examples are documented in the GITHUB Master Vianeo Repository.
+
+**Standard Call Pattern:**
+> Execute the Step 0: Executive Brief Extraction from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_00_executive_brief_extraction.md`.
+
+**Required Attachments:**
+- Raw application materials (PDF, DOCX, or text)
+- Any supporting documents (pitch decks, business plans, etc.)
+
+---
+
 ## Overview
 
 Step 0 extracts and structures startup/project information into a standardized Executive Brief format with **strict character limits** to ensure clarity and conciseness. This brief becomes the foundation for all subsequent evaluation steps.

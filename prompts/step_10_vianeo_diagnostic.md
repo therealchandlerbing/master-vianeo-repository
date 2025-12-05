@@ -6,6 +6,22 @@
 
 ---
 
+## AI-Assisted Execution
+
+> To run this step with an AI assistant, see `docs/VIANEO_AI_Assisted_Workflow.md`. Full step context, diagnostic frameworks, and quality standards are documented in the GITHUB Master Vianeo Repository.
+
+**Standard Call Pattern:**
+> Execute the Step 10: Vianeo Diagnostic Comment & Report from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_10_vianeo_diagnostic.md`.
+
+**Required Attachments:**
+- Step 2: 40-Question Diagnostic results
+- Step 3: 29-Question Market Maturity Assessment
+- Step 4: Legitimacy Worksheet
+- Step 5: Desirability Analysis
+- Steps 6-9 outputs (optional but enhance insights)
+
+---
+
 ## Overview
 
 Step 10 transforms your complete Vianeo assessment into an executive-ready diagnostic comment that synthesizes findings into actionable insights for stakeholders and investors.
