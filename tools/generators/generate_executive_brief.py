@@ -20,18 +20,6 @@ from datetime import datetime
 from typing import Dict, Any, Optional, List
 from dataclasses import dataclass, field
 
-try:
-    from docx import Document
-    from docx.shared import Pt, Inches, RGBColor
-    from docx.enum.text import WD_ALIGN_PARAGRAPH
-    from docx.enum.table import WD_TABLE_ALIGNMENT
-    from docx.oxml.ns import qn
-    from docx.oxml import OxmlElement
-    DOCX_AVAILABLE = True
-except ImportError:
-    DOCX_AVAILABLE = False
-    print("Warning: python-docx not installed. Install with: pip install python-docx")
-
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
@@ -44,6 +32,19 @@ from core.utils import (
     load_data_file,
     ValidationReport
 )
+from generators.base import BaseDocumentGenerator, is_docx_available, DOCX_AVAILABLE
+
+# Import python-docx components if available
+if DOCX_AVAILABLE:
+    from docx import Document
+    from docx.shared import Pt, Inches, RGBColor
+    from docx.enum.text import WD_ALIGN_PARAGRAPH
+    from docx.enum.table import WD_TABLE_ALIGNMENT
+    from docx.oxml.ns import qn
+    from docx.oxml import OxmlElement
+else:
+    # Type hint stub when python-docx not available
+    Document = None
 
 
 # =============================================================================
@@ -116,12 +117,12 @@ class ExecutiveBriefData:
 # DOCX GENERATION
 # =============================================================================
 
-class ExecutiveBriefGenerator:
+class ExecutiveBriefGenerator(BaseDocumentGenerator):
     """Generator for VIANEO Executive Brief documents."""
 
     def __init__(self, data: ExecutiveBriefData):
+        super().__init__()
         self.data = data
-        self.styles = DocxStyles()
 
     def generate_docx(self, output_path: Path) -> bool:
         """
@@ -133,7 +134,7 @@ class ExecutiveBriefGenerator:
         Returns:
             True if successful, False otherwise
         """
-        if not DOCX_AVAILABLE:
+        if not is_docx_available():
             print("Error: python-docx not installed")
             return False
 
@@ -158,66 +159,8 @@ class ExecutiveBriefGenerator:
         doc.save(str(output_path))
         return True
 
-    def _setup_document(self, doc: Document) -> None:
-        """Set up document formatting."""
-        # Set margins
-        for section in doc.sections:
-            section.top_margin = Inches(1)
-            section.bottom_margin = Inches(1)
-            section.left_margin = Inches(1)
-            section.right_margin = Inches(1)
-
-    def _add_styled_heading(
-        self,
-        doc: Document,
-        text: str,
-        level: int = 1
-    ) -> None:
-        """Add a styled heading."""
-        heading = doc.add_heading(text, level=level)
-
-        # Style the heading
-        for run in heading.runs:
-            run.font.name = self.styles.FONT_FAMILY
-            run.font.color.rgb = RGBColor.from_string(self.styles.PRIMARY_BLUE)
-
-    def _add_styled_paragraph(
-        self,
-        doc: Document,
-        text: str,
-        bold_label: Optional[str] = None
-    ) -> None:
-        """Add a styled paragraph with optional bold label."""
-        para = doc.add_paragraph()
-
-        if bold_label:
-            run = para.add_run(f"{bold_label}: ")
-            run.bold = True
-            run.font.name = self.styles.FONT_FAMILY
-            run.font.size = Pt(self.styles.BODY_SIZE)
-
-        run = para.add_run(clean_text(text))
-        run.font.name = self.styles.FONT_FAMILY
-        run.font.size = Pt(self.styles.BODY_SIZE)
-        run.font.color.rgb = RGBColor.from_string(self.styles.BODY_GRAY)
-
-    def _add_character_count(
-        self,
-        doc: Document,
-        text: str,
-        limit: int,
-        field_name: str
-    ) -> None:
-        """Add character count indicator."""
-        count = len(text)
-        status = "OK" if count <= limit else "OVER"
-        color = self.styles.GREEN_HIGHLIGHT if count <= limit else self.styles.RED_HIGHLIGHT
-
-        para = doc.add_paragraph()
-        run = para.add_run(f"[{field_name}: {count}/{limit} characters - {status}]")
-        run.font.size = Pt(9)
-        run.font.color.rgb = RGBColor.from_string(self.styles.LIGHT_GRAY)
-        run.italic = True
+    # Note: _setup_document(), _add_styled_heading(), _add_styled_paragraph(),
+    # _add_character_count(), and _add_checklist() are inherited from BaseDocumentGenerator
 
     def _add_header(self, doc: Document) -> None:
         """Add document header."""
@@ -513,14 +456,6 @@ class ExecutiveBriefGenerator:
             row_cells[4].text = evidence.get('description', '')
             row_cells[5].text = evidence.get('date', '')
 
-    def _add_checklist(self, doc: Document, items: List[str]) -> None:
-        """Add quality checklist."""
-        self._add_styled_heading(doc, "Quality Checklist", level=4)
-        for item in items:
-            para = doc.add_paragraph()
-            para.add_run(f"[ ] {item}")
-            para.style = 'List Bullet'
-
 
 # =============================================================================
 # MARKDOWN GENERATION
@@ -811,7 +746,7 @@ def generate_executive_brief(
     outputs = {}
 
     # Generate DOCX
-    if output_format in ["docx", "both"] and DOCX_AVAILABLE:
+    if output_format in ["docx", "both"] and is_docx_available():
         docx_path = output_path.with_suffix('.docx')
         generator = ExecutiveBriefGenerator(data)
         if generator.generate_docx(docx_path):

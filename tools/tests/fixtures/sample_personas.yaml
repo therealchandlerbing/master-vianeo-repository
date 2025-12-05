@@ -1,0 +1,105 @@
+# Sample Persona document data for testing
+# This file can be used to test the persona generator
+
+company_name: "DataCapture Pro"
+project_subtitle: "User Research Phase 1 - Q1 2025"
+prepared_date: "January 2025"
+research_overview: "Conducted 15 user interviews across 3 distinct segments. Primary focus on data entry clerks (8 interviews), supervisors (4 interviews), and IT decision-makers (3 interviews)."
+critical_gaps: "Need additional validation for enterprise buyer journey; only 3 IT decision-maker interviews conducted to date."
+
+personas:
+  - first_name: "Sarah"
+    age: 35
+    life_motivations: "Career advancement while maintaining work-life balance"
+    personality_values: "Detail-oriented, values efficiency, prefers structured workflows"
+    thinks_feels: "Frustrated by repetitive tasks that could be automated"
+    observes: "Colleagues struggling with same manual processes"
+    does: "Manual data entry averaging 4 hours daily"
+    others_say: "Sarah is the go-to person for accuracy"
+    tasks:
+      - "Enter invoice data into ERP system"
+      - "Verify customer records accuracy"
+      - "Generate weekly compliance reports"
+      - "Cross-reference shipping documents"
+      - "Update inventory databases"
+      - "Process expense reimbursements"
+    pains:
+      - "Repetitive typing causes RSI symptoms"
+      - "Errors require time-consuming corrections"
+      - "No time for higher-value work"
+      - "System downtime loses hours of work"
+      - "Multiple logins across systems"
+      - "Inconsistent data formats from vendors"
+    expectations:
+      - "Reduce data entry time by 50%"
+      - "Eliminate manual re-keying"
+      - "Fewer errors and corrections"
+      - "More time for analysis work"
+    current_solutions_description: "Uses Excel templates and copy-paste workflows"
+    current_tools:
+      - name: "Excel"
+        limitation: "Manual and error-prone"
+      - name: "Legacy ERP"
+        limitation: "No OCR or smart input"
+    interview_count: 8
+    interview_date_range: "Jan 5-15, 2025"
+
+  - first_name: "Michael"
+    age: 45
+    life_motivations: "Team productivity and meeting departmental KPIs"
+    personality_values: "Results-driven, appreciates measurable improvements"
+    thinks_feels: "Concerned about team burnout from repetitive work"
+    observes: "High turnover in data entry positions"
+    does: "Manages team of 10 data entry specialists"
+    others_say: "Michael fights for resources for his team"
+    tasks:
+      - "Review team output quality"
+      - "Assign daily workload"
+      - "Report accuracy metrics weekly"
+      - "Train new team members"
+      - "Handle escalated errors"
+    pains:
+      - "Difficulty retaining skilled staff"
+      - "Quality vs quantity tradeoffs"
+      - "Manual QC is time-consuming"
+      - "No real-time visibility into progress"
+    expectations:
+      - "20% improvement in throughput"
+      - "Reduce training time for new hires"
+      - "Better quality metrics dashboard"
+    current_solutions_description: "Uses sampling-based QC and Excel dashboards"
+    current_tools:
+      - name: "Excel Dashboards"
+        limitation: "Manual updates required"
+      - name: "Email"
+        limitation: "Work assignment via email chains"
+    interview_count: 4
+    interview_date_range: "Jan 10-18, 2025"
+
+  - first_name: "David"
+    age: 52
+    life_motivations: "Digital transformation and operational excellence"
+    personality_values: "Strategic thinker, risk-aware, seeks proven solutions"
+    thinks_feels: "Pressure to modernize while controlling costs"
+    observes: "Competitors gaining efficiency through automation"
+    does: "Evaluates and approves IT investments"
+    others_say: "David needs solid ROI before approving projects"
+    tasks:
+      - "Review vendor proposals"
+      - "Calculate ROI for IT projects"
+      - "Ensure security compliance"
+      - "Manage IT budget allocation"
+    pains:
+      - "Limited budget for new tools"
+      - "Integration complexity fears"
+      - "Security and compliance concerns"
+    expectations:
+      - "Clear 12-month ROI projection"
+      - "Minimal IT support burden"
+      - "Enterprise security standards"
+    current_solutions_description: "Evaluating multiple automation vendors"
+    current_tools:
+      - name: "ServiceNow"
+        limitation: "Limited document processing"
+    interview_count: 3
+    interview_date_range: "Jan 12-20, 2025"
