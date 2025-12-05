@@ -52,7 +52,38 @@ Some steps must be grounded in Vianeo platform data to avoid hallucinations. Use
 
 ---
 
-## 3. Entity Guardrail Reference
+## 3. Output Formats
+
+### Default Output Format: DOCX
+
+**DOCX is the default output format** for all document deliverables (except HTML visualizations). This allows for:
+- Client review and editing before finalization
+- Professional formatting for committee presentations
+- Easy collaboration and track changes
+
+### Output Format Hierarchy
+
+| Format | Use Case | When to Generate |
+|--------|----------|------------------|
+| **DOCX** | Primary deliverable | Always (default) |
+| **Markdown** | Version control, AI processing | Always (alongside DOCX) |
+| **HTML** | Interactive visualizations (Steps 7, 9, 11, 12) | When step specifies |
+| **PDF** | Final locked deliverables | Only upon explicit request |
+
+### PDF Conversion
+
+PDF should only be generated **upon explicit user request** after the document has been reviewed and finalized. Typical workflow:
+
+1. Generate DOCX (default)
+2. User reviews and makes edits in DOCX
+3. User requests PDF conversion when finalized
+4. Generate PDF from final DOCX
+
+> **Do not automatically generate PDF.** The user may need to make edits before sharing with clients.
+
+---
+
+## 4. Entity Guardrail Reference
 
 ### Why Guardrails Matter
 
@@ -80,17 +111,18 @@ You MAY propose new features in Step 11, but:
 
 ---
 
-## 4. Step Execution Quick Reference
+## 5. Step Execution Quick Reference
 
 ### Phase 1: Foundation & Screening
 
 #### Step 0a: Canvas Extraction
 ```
-> Execute the Step 0: Canvas Extraction from the GITHUB vianeo-platform-tools
-> repository, synced to this project's files.
-> Use the prompt called `prompts/step_00_canvas_extraction.md`.
+> Execute the Step 0a: Canvas Extraction from the GITHUB Master Vianeo
+> Repository, synced to this project's files.
+> Use the prompt called `prompts/step_00a_canvas_extraction.md`.
 ```
-**Attach:** Initial Vianeo canvas (if partially complete), key venture documents
+**Attach:** Raw venture materials (pitch deck, business plan), Vianeo canvas screenshot (if available)
+**Output:** Platform-aligned canvas entries
 
 #### Step 0b: Executive Brief Extraction
 ```
@@ -246,7 +278,7 @@ You MAY propose new features in Step 11, but:
 
 ---
 
-## 5. Troubleshooting
+## 6. Troubleshooting
 
 ### AI Inventing Entities
 
@@ -277,7 +309,7 @@ You MAY propose new features in Step 11, but:
 
 ---
 
-## 6. Version History
+## 7. Version History
 
 | Version | Date | Changes |
 |---------|------|---------|

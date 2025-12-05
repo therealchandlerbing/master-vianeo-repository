@@ -32,6 +32,28 @@ In addition to the HTML visualization, generate explicit data tables for easy pl
 |-------------|-----------|-----------|----------|-------|
 | [exact name] | [exact name] | Information/Value/Payment/Influence | High/Medium/Low | [context] |
 
+**Table 3: Connection Paths (Column-to-Column Mapping)**
+
+This table explicitly shows how value flows between value chain positions (columns):
+
+| From Column | From Entity | Connection Type | To Column | To Entity | Value Flow Description |
+|-------------|-------------|-----------------|-----------|-----------|------------------------|
+| Enablers | [Org A] | provides funding to | Product | [Core Solution] | Capital enables product development |
+| Product | [Core Solution] | distributed via | Channels | [Partner B] | Product reaches market through distribution |
+| Channels | [Partner B] | serves | Buyers | [Customer Org] | Channel delivers to purchasing decision-makers |
+| Buyers | [Customer Org] | deploys for | End Users | [User Segment] | Buyer enables end user access |
+
+**Connection Types:**
+- `provides funding to` - Capital flow (typically Enabler → Product)
+- `provides technology to` - Technical enablement (Enabler → Product)
+- `distributed via` - Go-to-market path (Product → Channel)
+- `serves` - Customer relationship (Channel → Buyer)
+- `deploys for` - Usage enablement (Buyer → End User)
+- `influences` - Non-transactional impact (Influencer → any position)
+- `regulated by` - Compliance relationship (Influencer → any position)
+
+> **PURPOSE:** This table allows innovation analysts to directly map connections in the Vianeo platform without manual deduction. Each row represents one arrow/edge in the visual network.
+
 **Entity Guardrails:**
 
 > **CRITICAL: Only use listed entity names. Do NOT invent new entities.**

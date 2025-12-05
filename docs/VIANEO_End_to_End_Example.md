@@ -39,23 +39,23 @@ See `docs/VIANEO_AI_Assisted_Workflow.md` for complete details.
 
 Step 0 has two substeps that must be completed in order.
 
-#### Step 0a: Canvas Extraction (Vianeo Platform Tools)
+#### Step 0a: Canvas Extraction
 
 **Purpose:** Create initial Vianeo canvas aligned with platform structure
 
 **Inputs:**
 - Raw venture materials (pitch deck, business plan)
-- Access to Vianeo platform for this project
+- Screenshot of empty/partial Vianeo canvas (if available)
 
 **Execution (AI-assisted):**
-> Execute the Step 0: Canvas Extraction from the GITHUB vianeo-platform-tools repository, synced to this project's files. Use the prompt called `prompts/step_00_canvas_extraction.md`.
+> Execute the Step 0a: Canvas Extraction from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_00a_canvas_extraction.md`.
 
 Upload or paste:
 - The project's initial Vianeo canvas (if partially complete)
 - Key venture documents as context
 
 **Outputs:**
-- Complete, platform-aligned canvas for the venture
+- Complete, platform-aligned canvas entries (ready for platform input)
 - Foundation for all subsequent steps
 
 **Save output to:** `projects/[project-name]/outputs/step_00a_canvas_extraction.md`
