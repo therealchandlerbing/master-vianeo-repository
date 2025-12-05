@@ -11,7 +11,7 @@
 
 **Required Inputs:**
 - Step 12 Initial: Viability Assessment (with gate recommendation)
-- Step 12a: Viability Pathways
+- Step 12a: Product Market Fit Sheet
 - Step 12b: Business Models per Segment
 - Numeric viability indicators and thresholds (if available)
 
