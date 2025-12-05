@@ -1,4 +1,4 @@
-# STEP 6: Needs Qualification Matrix & Analysis Report
+# STEP 7: Needs Qualification Matrix & Analysis Report
 
 **Time Required:** 45-90 minutes
 **Output:** TWO deliverables - (1) Needs Qualification Matrix (Landscape HTML/PDF), (2) Comprehensive Analysis Report (Portrait HTML/PDF, 9-12 pages)
@@ -6,9 +6,33 @@
 
 ---
 
+## AI-Assisted Execution
+
+> To run this step with an AI assistant, see `docs/VIANEO_AI_Assisted_Workflow.md`.
+
+**Standard Call Pattern:**
+> Execute the Step 7: Needs Qualification Matrix from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_07_needs_qualification_matrix.md`.
+
+**Required Attachments:**
+- Screenshot of the Needs/Requesters table from the Vianeo platform
+
+**Entity Guardrails:**
+
+> **CRITICAL: Do NOT create any new needs or requesters.**
+>
+> - Every row must correspond to a need in the attached table
+> - Every column must correspond to a requester in the attached table
+> - Copy need statements EXACTLY as shown (60-char limit preserved)
+> - Copy requester names EXACTLY as shown
+> - If the screenshot shows 10 needs and 6 requesters, your matrix has EXACTLY 10 rows and 6 columns
+> - Do NOT paraphrase, abbreviate, or combine needs
+> - Do NOT add "inferred" or "implied" needs
+
+---
+
 ## Overview
 
-Step 6 transforms the Needs/Requesters analysis from Step 5 into two powerful visual and strategic deliverables:
+Step 7 transforms the Needs/Requesters analysis from Step 5 into two powerful visual and strategic deliverables:
 
 1. **Needs Qualification Matrix** - Visual dashboard showing importance vs. satisfaction across all segment/need combinations
 2. **Needs Analysis Report** - Comprehensive 9-12 page strategic analysis with actionable recommendations

@@ -39,15 +39,19 @@
 **First-time users** - Get started in 5 minutes:
 
 1. **Read** [Framework Overview](docs/FRAMEWORK_OVERVIEW.md) - Understand the 13 steps
-2. **Start** with [Step 0: Executive Brief](prompts/step_00_executive_brief_extraction.md) - Transform raw materials into structured brief
-3. **Assess** with [Step 2: 40Q Diagnostic](prompts/step_02_diagnostic_40q.md) - Rapid comprehensive assessment
-4. **Validate** with [Step 3: Market Maturity](prompts/step_03_market_maturity_29q.md) - Score across 5 dimensions
+2. **Follow** [AI-Assisted Workflow Guide](docs/VIANEO_AI_Assisted_Workflow.md) - Standard execution patterns with AI
+3. **Run** [End-to-End Example](docs/VIANEO_End_to_End_Example.md) - Complete walkthrough of all steps
+4. **Start** with [Step 0: Executive Brief](prompts/step_00_executive_brief_extraction.md) - Transform raw materials into structured brief
+
+**AI-Assisted Execution Pattern:**
+> Execute the [Step Number and Title] from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called [exact prompt filename].
 
 **Experienced users** - Quick reference:
 - **Prompts**: `prompts/` - All 13 evaluation prompts (Step 0-12)
 - **Templates**: `templates/` - Professional output templates
 - **Docs**: `docs/` - Methodology guides and checklists
 - **Examples**: `examples/` - Sample assessments
+- **AI Workflow**: `docs/VIANEO_AI_Assisted_Workflow.md` - Step-specific attachments and guardrails
 
 ---
 

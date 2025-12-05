@@ -6,12 +6,14 @@ This document defines critical data flow requirements between sprint steps.
 
 | Downstream | Upstream | Data That Must Match |
 |------------|----------|---------------------|
+| Step 6 | Step 5 | Requesters (personas derived from requester list) |
 | Step 7 | Step 5 | Requesters (columns), Needs (rows) |
 | Step 9 | Step 5 | Requesters (inside org boxes in Buyers/End Users) |
 | Step 9 | Step 8 | Players (value chain nodes), Influencers (top nodes), Acceptability |
 | Step 11 (Needs) | Step 5 | Needs (columns) |
 | Step 11 (Needs) | Step 7 | Importance/Satisfaction (column colors, requester dropdowns) |
 | Step 11 (Means) | Step 4 | Means (columns), Differentiation status |
+| Step 12b | Steps 5/6 | Requester segments (separate business model per segment) |
 
 ## Visual Flow
 
@@ -21,16 +23,19 @@ LEGITIMACY              DESIRABILITY                 ACCEPTABILITY
 Step 4                   Step 5                       Step 8
 (Problem/Means)      (Needs/Requesters)         (Players/Influencers)
     |                        |                            |
-    |               +--------+--------+                   |
-    |               |        |        |                   |
-    |               v        |        |                   |
-    |           Step 7       |        |                   |
-    |    (Needs Qualification)|       |                   |
-    |               |        |        |                   |
-    |               |        |        |                   |
-    v               v        v        v                   v
-Step 11         Step 11    Step 9    Step 9            Step 9
-(Means view)   (Needs view) (Requesters) (Players)  (Influencers)
+    |               +--------+--------+--------+          |
+    |               |        |        |        |          |
+    |               v        v        |        |          |
+    |           Step 6   Step 7       |        |          |
+    |          (Personas) (Needs Qual)|        |          |
+    |               |        |        |        |          |
+    |               v        |        |        |          |
+    |           Step 12b     |        |        |          |
+    |     (Business Models)  |        |        |          |
+    |               |        |        |        |          |
+    v               v        v        v        v          v
+Step 11         Step 11    Step 9    Step 9   Step 9   Step 9
+(Means view)   (Needs view) (Requesters)(Requesters)(Players)(Influencers)
 ```
 
 ## Detailed Data Flow
@@ -51,6 +56,23 @@ Step 11         Step 11    Step 9    Step 9            Step 9
 - 30+ years of sales relationship to manufacturing plants | Differentiating: Yes
 - Beta software for log sheets and log books | Differentiating: Yes
 - 1 developer | Differentiating: No
+
+### Step 5 -> Step 6 (Persona Development)
+
+**What flows:**
+- Individual Requester names (personas are derived from these)
+- Organizational Context (provides persona context)
+- Interview data per requester segment
+
+**Exact matching required:**
+- Personas MUST be derived exclusively from Step 5 Requesters
+- Do NOT invent new personas that don't exist in Requesters list
+- Requester names must be used exactly as they appear
+- Each persona maps to one or more requesters
+
+**Guardrail:**
+> AI assistants should not create personas for roles not in the Requesters list.
+> If Step 5 shows 6 requesters, personas represent those 6 (or a subset), not new roles.
 
 ### Step 5 -> Step 7 (Needs Qualification Matrix)
 
