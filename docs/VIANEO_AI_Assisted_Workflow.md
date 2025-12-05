@@ -272,7 +272,7 @@ You MAY propose new features in Step 11, but:
 ```
 > Execute the Step 12 Final: Viability Dashboard Generation from the GITHUB
 > Master Vianeo Repository, synced to this project's files.
-> Use the prompt called `prompts/step_12_final_dashboard_generation.md`.
+> Use the prompt called `prompts/step_12_final_viability_dashboard.md`.
 ```
 **Attach:** All Step 12 substep outputs
 

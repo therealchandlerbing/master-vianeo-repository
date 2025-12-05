@@ -8,15 +8,19 @@
 
 **✅ PRODUCTION READY** - All 13 evaluation prompts are complete with comprehensive reference materials, scoring frameworks, and quality checklists. This repository contains everything needed to conduct rigorous, evidence-based startup evaluations.
 
-**Recent Updates (November 2025):**
+**Recent Updates (December 2025):**
+- ✅ **NEW: Decision-oriented Step 11-12 workflow** - Restructured for clear gate recommendations
+  - Step 12 now includes: Initial Assessment → Viability Pathways → Business Models → Dashboard
+  - Step 11 enhanced with entity validation and consistency checks
+- ✅ **AI-Assisted Workflow Guide** with entity guardrails and step-specific attachments
 - ✅ All prompt files updated with complete, executable content
-- ✅ 10,200+ lines of comprehensive methodology across prompts
+- ✅ 11,900+ lines of comprehensive methodology across prompts
 - ✅ Full question frameworks embedded (40Q, 29Q, and all deep-dive prompts)
 - ✅ Evidence requirements and validation checklists included
 - ✅ Professional output specifications and templates integrated
 - ✅ AI assistant execution instructions added to all steps
-- ✅ **NEW: 14 Python automation tools** - Document generators, validators, and format converters
-- ✅ **7,400+ lines of automation code** for professional document outputs
+- ✅ 14 Python automation tools - Document generators, validators, and format converters
+- ✅ 7,400+ lines of automation code for professional document outputs
 
 ## Table of Contents
 
@@ -89,7 +93,7 @@ The **VIANEO Business Model Evaluation Framework** is a comprehensive, evidence-
 | | 9 | Value Network Map | 45-60m | Network visualization |
 | **Phase 3: Synthesis** | 10 | Diagnostic Comment | 25-35m | Executive decision brief |
 | | 11 | Features-Needs Matrix | 30-45m | MVP scope analysis |
-| **Phase 4: Viability** | 12 | Viability Assessment | 2-4h | PMF sheets, Business models, Dashboard |
+| **Phase 4: Viability** | 12 | Viability Assessment | 2-4h | Initial assessment, Pathways, Business models, Dashboard |
 | **Final Deliverables** | - | Executive Report | 1-2h | Comprehensive sprint summary (12-18 pages) |
 | | - | Diagnostic Comment | 30-45m | Standalone assessment (2-4 pages) |
 
@@ -144,10 +148,13 @@ vianeo-framework/
 | 8 | Players/Influencers | ✅ Complete | 42KB | Ecosystem mapping, stakeholder analysis |
 | 9 | Value Network | ✅ Complete | 30KB | Network visualization, value flows |
 | 10 | Diagnostic Comment | ✅ Complete | 18KB | Executive decision brief |
-| 11 | Features-Needs Matrix | ✅ Complete | 12KB | MVP scope, feature prioritization |
-| 12 | Viability Assessment | ✅ Complete | 7KB | PMF sheets, business models, dashboard |
+| 11 | Features-Needs Matrix | ✅ Complete | 12KB | MVP scope, feature prioritization, entity validation |
+| 12 | Initial Viability Assessment | ✅ Complete | 10KB | Gate recommendation (Go/Conditional/Hold/No) |
+| 12a | Viability Pathways | ✅ Complete | 5KB | Strategic pathway exploration |
+| 12b | Business Model | ✅ Complete | 12KB | Segment-specific business models |
+| 12 Final | Viability Dashboard | ✅ Complete | 12KB | Summary dashboard synthesis |
 
-**Total:** 10,215 lines of comprehensive, executable evaluation content
+**Total:** 11,900+ lines of comprehensive, executable evaluation content
 
 ## Automation Tools
 
@@ -273,8 +280,12 @@ graph LR
 3. **Step 3** (29Q Market Maturity) - Comprehensive VIANEO scoring
 4. **If passing**: Proceed to relevant deep dives (Steps 4-9)
 5. **Step 10** (Diagnostic Comment) - Executive decision brief
-6. **Step 11** (Features-Needs) - MVP scope definition
-7. **Step 12** (Viability Assessment) - PMF sheets, business models, viability dashboard
+6. **Step 11** (Features-Needs Matrix) - MVP scope definition with entity validation
+7. **Step 12** (Viability Assessment) - Multi-stage decision workflow:
+   - 12 Initial: Gate recommendation (Go/Conditional Go/Hold/No Go)
+   - 12a: Viability pathway exploration
+   - 12b: Segment-specific business models
+   - 12 Final: Summary viability dashboard
 
 ### Program/Portfolio Management
 
@@ -360,14 +371,17 @@ This is a master reference repository. Contributions welcome via:
 
 ## Version & License
 
-**Version**: 2.1 - Production-ready with complete prompts, automation tools, and full methodology
-- All 13 steps with complete, executable content (10,200+ lines)
+**Version**: 2.2 - Decision-oriented workflow with entity guardrails
+- All 13 steps with complete, executable content (11,900+ lines)
+- Restructured Step 12 viability workflow (Initial → Pathways → Business Models → Dashboard)
+- Enhanced Step 11 with entity validation and consistency checks
 - 14 Python automation tools for document generation and validation (7,400+ lines)
-- 64 reference documents, format specifications, and quality checklists
+- 64+ reference documents, format specifications, and quality checklists
 - Professional templates for all deliverables
 - Example assessments across maturity stages
 
 **Previous Versions**:
+- 2.1 - Complete prompts with automation tools (14 modules)
 - 2.0 - Complete prompts without automation tools
 - 1.0 - Framework structure with placeholder content
 
@@ -420,6 +434,7 @@ This is a master reference repository. Contributions welcome via:
 - **[Framework Overview](docs/FRAMEWORK_OVERVIEW.md)** - Detailed step descriptions
 - **[Quick Reference Card](docs/VIANEO_Quick_Reference_Card.md)** - One-page cheat sheet
 - **[Assessment Workflow Guide](docs/VIANEO_Assessment_Workflow_Guide.md)** - Complete process guide
+- **[AI-Assisted Workflow Guide](docs/VIANEO_AI_Assisted_Workflow.md)** - Step-specific attachments and entity guardrails
 - **[Evidence Checklist](docs/VIANEO_Evidence_Checklist.md)** - Validation requirements
 - **[Design Tokens](docs/VIANEO_Design_Tokens.md)** - Colors, typography, and code snippets for outputs
 - **[Executive Report Formatting Guide](docs/VIANEO_Executive_Report_Formatting_Guide.md)** - Final sprint summary formatting
