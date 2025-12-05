@@ -1,59 +1,160 @@
-# Step 12: Viability Assessment
+# Step 12 Initial: Viability Assessment
+
+---
+
+## AI-Assisted Execution
+
+> To run this step with an AI assistant, see `docs/VIANEO_AI_Assisted_Workflow.md`.
+
+**Standard Call Pattern:**
+> Execute the Step 12 Initial: Viability Assessment from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_12_initial_viability_assessment.md`.
+
+**Required Inputs:**
+- Step 0: Executive Brief
+- Step 2: 40-Question Diagnostic scores
+- Step 3: Market Maturity scores
+- Steps 4, 5, 7, 8, 9, 11: Deep dive outputs and matrices
+- Any validation threshold reports
+
+---
 
 ## Overview
-Comprehensive framework for transforming validated customer needs and technical capabilities into commercial structures, producing Product/Market Fit sheets, Business Model Canvases, and interactive viability dashboards.
+
+Synthesize all prior evaluation steps into a decision-ready viability assessment. This is NOT about building business models (that's Step 12b) - this is about assessing current viability status and providing a gate recommendation.
 
 ## Purpose
-Validate commercial sustainability by connecting validated needs (Steps 5-7) and confirmed capabilities (Step 11) into coherent business models with evidence-based product configurations.
+
+Produce a structured viability assessment that:
+1. Summarizes key dimension scores and signals
+2. Identifies strengths and assets
+3. Documents risks and weaknesses
+4. Lists key assumptions and open questions
+5. **Provides a clear gate recommendation (Go / Conditional Go / Hold / No Go)**
 
 ---
 
 ## Instructions for AI Assistant
 
-Transform validated needs (Steps 5-7) and confirmed capabilities (Step 11) into commercial structures. For each product, create a Product/Market Fit Sheet and Business Model Canvas. Ensure 100% coverage of fundamental needs with MVP features. Flag all unvalidated assumptions. Generate deliverables per the output format below.
+You are a Vianeo viability analyst. Synthesize the earlier steps into a decision-ready summary. You must not change any numeric scores or raw outputs - you interpret and synthesize them. Keep the total output within 2-3 pages equivalent.
 
-## Assessment Framework
+## Output Structure
 
-### Three Output Documents (Per Product)
+### 1. Viability Snapshot
 
-#### 1. Product/Market Fit Sheet
-- Product identity (name, description)
-- Targeted requesters (2-4 personas from Step 6)
-- Primary needs addressed (5-10 needs from Step 7)
-- Product features (6-10 MVP + phased)
-- Resource requirements and gaps
-- Coverage validation matrix
+Produce a compact summary readable in under one minute:
 
-#### 2. Business Model Canvas
-- Value proposition (competitive advantages)
-- Revenue stream (pricing, monetization)
-- Distribution channel (discovery, purchase)
-- Cost structure (development, operations, scaling)
-- Coherence validation across components
+**Context paragraph**: Sector, stage, target customers (2-3 sentences)
 
-#### 3. Summary Dashboard
-- Portfolio overview (all products)
-- Need coverage analysis
-- Strategic insights (strengths, opportunities, concerns, recommendations)
-- Launch sequencing and roadmap
+**Dimension Scores Table**:
 
-## Core Philosophy
+| Dimension | Score / Level | Source Step | Threshold Status | Notes |
+|-----------|---------------|-------------|------------------|-------|
+| Desirability | [from Step 3] | Step 2/3 | Meets / Below | |
+| Feasibility | [from Step 3] | Step 2/3 | Meets / Below | |
+| Viability | [from Step 3] | Step 2/3 | Meets / Below | |
+| Legitimacy | [from Step 3] | Step 3/4 | Meets / Below | |
+| Acceptability | [from Step 3] | Step 3/8 | Meets / Below | |
 
-**Evidence-based configuration, not aspirational planning.**
+> **CRITICAL**: Take these numbers from the inputs. Do not invent scores.
 
-Only include:
-- ✅ Validated features (from Step 11)
-- ✅ Validated clients (from Steps 5-7)
-- ✅ Validated needs (from Step 7)
-- ⚠️ Assumptions explicitly flagged
+---
+
+### 2. Strengths and Assets
+
+Summarize 3-7 strongest elements, grouped by theme:
+- Market opportunity and needs coverage
+- Solution and means differentiation
+- Ecosystem and partnerships
+- Team and execution
+
+For each item:
+- Cite which step(s) support this conclusion
+- Tie strengths to concrete evidence (not generic praise)
+
+---
+
+### 3. Risks and Weaknesses
+
+Summarize 3-7 most important weaknesses or risks, grouped by theme:
+- Weak problem-market fit signals
+- Fragile or incomplete business logic
+- Ecosystem blocking points
+- Regulatory or technical risk
+- Go-to-market challenges
+
+For each risk:
+- Link back to specific evidence:
+  - Under-satisfied needs or low importance needs
+  - Gaps in features relative to high-priority needs
+  - Negative or uncertain signals from Step 9 (network)
+  - Red flags in Step 2 and Step 3
+- Use the language of uncertainty when evidence is weak
+
+---
+
+### 4. Key Assumptions and Open Questions
+
+**Key Assumptions** (numbered list):
+1. [Assumption 1]
+   - Why it matters for viability
+   - Which step(s) it comes from
+2. [Assumption 2]
+   - ...
+
+**Open Questions** (numbered list):
+1. [Question 1]
+   - Data or experiments needed
+2. [Question 2]
+   - ...
+
+Focus on items that could change the viability outcome if they turn out differently.
+
+---
+
+### 5. Gate Recommendation
+
+Provide a clear recommendation:
+
+| Recommendation | When to Use |
+|----------------|-------------|
+| **Go** | All thresholds met, strengths outweigh risks, next steps clear |
+| **Conditional Go** | Mostly positive but specific conditions must be met first |
+| **Hold** | Significant uncertainties requiring validation before proceeding |
+| **No Go** | Fundamental issues that cannot be resolved within reasonable constraints |
+
+**Format**:
+```markdown
+**Recommendation:** [Go / Conditional Go / Hold / No Go]
+
+**Conditions (if applicable):**
+1. Validate [assumption X] with [type of test or evidence]
+2. Secure [type of partner] to unblock [identified constraint]
+3. Clarify [specific business model uncertainty]
+```
+
+Base the recommendation on:
+- Whether thresholds are met
+- The balance between strengths and risks
+- The reversibility and cost of next steps
+
+---
 
 ## Essential Inputs
+
+### From Steps 2-3 (Diagnostic & Market Maturity)
+- Dimension scores (Legitimacy, Desirability, Acceptability, Feasibility, Viability)
+- Threshold status for each dimension
+- Key flags and concerns
 
 ### From Desirability Analysis (Steps 5-7)
 - Validated client segments
 - Requester personas with evidence
 - Needs qualification matrices with intensity ratings
 - Interview validation counts per need
+
+### From Steps 8-9 (Ecosystem)
+- Player and influencer acceptability ratings
+- Network risk signals
 
 ### From Feasibility (Step 11)
 - Feature library with timelines

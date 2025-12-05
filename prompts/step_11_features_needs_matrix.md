@@ -97,7 +97,49 @@ This is the **bridge from validation (Pre-Incubation) to execution (Business Mod
 
 ## Instructions for AI Assistant
 
-Create a Features-Needs Matrix mapping 10-15 solution features against validated needs from Step 5. Import need statements and means exactly as written—do not paraphrase. Mark coverage only when a feature directly addresses a need. Generate two outputs: Interactive HTML Matrix and Strategic Analysis (markdown) with coverage metrics and MVP guidance.
+Create a Features-Needs Matrix mapping 10-15 solution features against validated needs from Step 5. Import need statements and means exactly as written—do not paraphrase. Mark coverage only when a feature directly addresses a need.
+
+You must be conservative and avoid hallucinating new entities. When something is missing, describe it in notes rather than silently creating it.
+
+---
+
+## Output Overview
+
+Produce the following in order:
+
+1. **Entity Summary** - Confirm all entities before generating matrices
+2. **View 1: Features-Needs Matrix** - How features address needs
+3. **View 2: Features-Means Matrix** - Which means support features (if requested)
+4. **Consistency Checks** - Verify no forbidden changes were made
+5. **Notes and Suggestions** - Any proposed changes (separate from main output)
+
+---
+
+### Entity Summary (Required First Step)
+
+Before generating matrices, output a short entity summary:
+
+```markdown
+### Entity Summary
+
+**Needs (from platform screenshot)**
+- [Need 1 - exact wording]
+- [Need 2 - exact wording]
+- ...
+
+**Features**
+- [Feature A] (Existing)
+- [Feature B] (Existing)
+- [Feature C] (New - proposed)
+- ...
+
+**Means (from platform screenshot)** (for View 2 only)
+- [Mean 1 - exact wording]
+- [Mean 2 - exact wording]
+- ...
+```
+
+Use the exact names from the attachments. Mark features as `Existing` or `New`.
 
 ---
 
@@ -464,6 +506,46 @@ Created your Features-Needs Matrix with [X] features mapped against 10 validated
 **Under-marking:** If coverage <30%, likely features too narrow or fundamental mismatch
 **Scattered coverage:** If no pattern visible, solution lacks strategic focus
 **Missing high-opportunity:** Any high-opportunity need with zero coverage is critical failure
+
+---
+
+## Consistency Checks (Required Output)
+
+Before finishing, add a short checklist confirming no forbidden changes were made:
+
+```markdown
+### Consistency Checks
+
+- [ ] All needs in View 1 match the platform needs list exactly
+- [ ] All means in View 2 match the platform means list exactly
+- [ ] No new needs or means were created
+- [ ] All features from the platform are present and marked as Existing
+- [ ] Any proposed new features are clearly marked as New
+- [ ] View 1 and View 2 use the same feature rows in the same order
+```
+
+**Tick boxes only if the statement is true.** If any check fails, explain why in the notes section.
+
+---
+
+## Notes and Suggestions (Separate Section)
+
+If, based on your expert judgment, you believe that:
+- New needs should be created
+- New means should be defined
+- Some existing entities should be renamed or merged
+
+**Do NOT change the matrices.** Instead, add a final section:
+
+```markdown
+### Notes and Suggestions (do not implement automatically)
+
+1. [Suggestion 1 - what and why]
+2. [Suggestion 2 - what and why]
+...
+```
+
+These notes are for the human innovation analyst and must NOT be used to modify the Vianeo platform automatically.
 
 ---
 

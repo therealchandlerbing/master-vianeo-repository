@@ -1,18 +1,110 @@
-# Step 12: Viability Dashboard Generation
+# Step 12 Final: Viability Dashboard Generation
+
+---
+
+## AI-Assisted Execution
+
+> To run this step with an AI assistant, see `docs/VIANEO_AI_Assisted_Workflow.md`.
+
+**Standard Call Pattern:**
+> Execute the Step 12 Final: Viability Dashboard Generation from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_12_final_viability_dashboard.md`.
+
+**Required Inputs:**
+- Step 12 Initial: Viability Assessment (with gate recommendation)
+- Step 12a: Viability Pathways
+- Step 12b: Business Models per Segment
+- Numeric viability indicators and thresholds (if available)
+
+---
 
 ## Overview
 
-Transform Step 12 Viability Assessment outputs (PMF Sheets and Business Model Canvases) into professional HTML dashboards for executive stakeholders, investment committees, and board presentations.
+Transform Step 12 viability outputs into a **dashboard specification** that can be translated into slides, platform views, or HTML dashboards. Focus on decision-ready summaries per segment.
 
 ## Purpose
 
-Generate presentation-grade interactive dashboards that visualize product-market fit validation, business model coherence, and portfolio-level viability insights.
+Generate presentation-grade dashboards that visualize:
+- **Per-segment viability status** with indicator tables
+- **Cross-segment comparison** for portfolio decisions
+- **Recommended next steps** in concise format
 
 ---
 
 ## Instructions for AI Assistant
 
-Using completed PMF Sheets (Step 12a) and Business Model Canvases (Step 12b), generate a comprehensive Viability Dashboard. Include portfolio metrics, product cards with modals, need coverage analysis, progress indicators, and strategic insights. Follow the design specifications exactly. Output as responsive, accessible HTML.
+You are a Vianeo dashboard designer. Using completed Step 12 Initial, 12a, and 12b outputs, generate a viability dashboard specification. You must not change any numeric indicators - you present them. Focus on per-segment clarity and cross-segment comparison.
+
+---
+
+## Output Structure
+
+### 1. One-Slide Summary
+
+Produce content that fits on one slide:
+- A headline sentence stating viability status
+- 3 bullet points:
+  - Top strength
+  - Top risk
+  - Top opportunity or pathway
+
+---
+
+### 2. Per-Segment Dashboard Table
+
+For each targeted segment, output:
+
+```markdown
+## Segment: [Segment name]
+
+### Segment Viability Dashboard
+
+| Indicator | Value | Threshold / Target | Status | Source Step(s) |
+|-----------|-------|-------------------|--------|----------------|
+| Desirability score | [from inputs] | [threshold] | Meets / Below | Step 2, Step 3 |
+| Feasibility score | [from inputs] | [threshold] | Meets / Below | Step 2, Step 3 |
+| Viability (economics) indicator | [from inputs] | [threshold] | Meets / Below | Step 12 Initial / 12b |
+| Key network risk | [rating] | N/A | Low / Medium / High | Step 9 |
+| Business model readiness | [rating] | N/A | Low / Medium / High | Step 12b |
+```
+
+**Guidelines:**
+- Use only indicators that are actually available
+- If some indicators are not provided, leave Value cell empty and mark Status as "Not assessed"
+- Do NOT invent scores
+
+---
+
+### 3. Cross-Segment Comparison
+
+Create a summary table:
+
+```markdown
+### Cross-Segment Comparison
+
+| Segment | Overall Viability (qualitative) | Main Revenue Potential | Main Risk Level | Recommended Stance |
+|---------|--------------------------------|------------------------|-----------------|-------------------|
+| Segment A | [High / Medium / Low] | [Brief description] | [Low / Medium / High] | Go / Conditional / Hold / No Go |
+| Segment B | [High / Medium / Low] | [Brief description] | [Low / Medium / High] | Go / Conditional / Hold / No Go |
+| ... | ... | ... | ... | ... |
+```
+
+**Base qualitative judgments on:**
+- Numeric indicators from inputs
+- Business model strength from Step 12b
+- Risk profile from earlier steps
+
+Do NOT introduce new segments. Work only with segments from Steps 5/6.
+
+---
+
+### 4. Recommended Next Steps
+
+In 1-2 short paragraphs, describe:
+- What should happen next in the next 1-3 months for this project
+- How this differs by segment, if relevant
+- Which experiments or validations should be prioritized
+
+Keep the language concise and decision-oriented. This section should be directly reusable in an Executive Report or Diagnostic Comment.
 
 ---
 
@@ -32,7 +124,7 @@ Using completed PMF Sheets (Step 12a) and Business Model Canvases (Step 12b), ge
 
 ---
 
-## Dashboard Structure
+## HTML Dashboard Structure (Optional)
 
 ### 1. Header Section
 
