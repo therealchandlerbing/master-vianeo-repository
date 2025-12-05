@@ -155,7 +155,7 @@ vianeo-framework/
 | 12b | Business Model | ✅ Complete | 12KB | Segment-specific business models |
 | 12 Final | Viability Dashboard | ✅ Complete | 12KB | Summary dashboard synthesis |
 
-**Total:** 12,000+ lines of comprehensive, executable evaluation content across 14 prompts
+**Total:** 12,000+ lines of comprehensive, executable evaluation content across 16 prompt files
 
 ## Automation Tools
 
