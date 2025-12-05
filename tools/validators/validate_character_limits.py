@@ -32,8 +32,7 @@ from core.utils import (
     count_characters,
     ValidationResult,
     ValidationReport,
-    load_yaml,
-    load_json,
+    load_data_file,
     extract_sections,
     extract_table
 )
@@ -383,29 +382,24 @@ def validate_character_limits(
     if data is None and input_path is not None:
         input_path = Path(input_path)
 
-        if input_path.suffix in ['.yaml', '.yml']:
-            data = load_yaml(input_path)
-            # Auto-detect type from data keys
-            if doc_type == 'auto':
-                if 'problem_description' in data:
-                    doc_type = 'executive_brief'
-                elif 'personas' in data:
-                    doc_type = 'persona'
-                elif 'enablers_influencers' in data:
-                    doc_type = 'value_network'
-                else:
-                    doc_type = 'generic'
-
-        elif input_path.suffix == '.json':
-            data = load_json(input_path)
-
-        elif input_path.suffix == '.md':
+        if input_path.suffix == '.md':
             with open(input_path, 'r', encoding='utf-8') as f:
                 markdown = f.read()
             return validator.validate_markdown(markdown, doc_type)
 
-        else:
-            raise ValueError(f"Unsupported file type: {input_path.suffix}")
+        # Load YAML or JSON
+        data = load_data_file(input_path)
+
+        # Auto-detect type from data keys
+        if doc_type == 'auto':
+            if 'problem_description' in data:
+                doc_type = 'executive_brief'
+            elif 'personas' in data:
+                doc_type = 'persona'
+            elif 'enablers_influencers' in data:
+                doc_type = 'value_network'
+            else:
+                doc_type = 'generic'
 
     # Validate based on document type
     if doc_type == 'executive_brief':

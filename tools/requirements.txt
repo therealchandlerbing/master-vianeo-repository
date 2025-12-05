@@ -8,8 +8,6 @@ jinja2>=3.1.0                # Template engine for document generation
 
 # Data Processing & Validation
 pyyaml>=6.0                  # YAML configuration and data files
-jsonschema>=4.17.0           # JSON schema validation
-pydantic>=2.0.0              # Data validation and settings management
 
 # HTML Generation
 beautifulsoup4>=4.12.0       # HTML parsing and generation
@@ -17,11 +15,10 @@ lxml>=4.9.0                  # XML/HTML processing (BeautifulSoup backend)
 
 # Utilities
 python-dateutil>=2.8.0       # Date parsing and manipulation
-click>=8.1.0                 # CLI interface for tools
 rich>=13.0.0                 # Rich terminal output and tables
-pathlib>=1.0.1               # Path handling (backport for older Python)
 
 # Development (optional)
 pytest>=7.0.0                # Testing framework
 pytest-cov>=4.0.0            # Test coverage
 black>=23.0.0                # Code formatting
+mypy>=1.0.0                  # Static type checking
