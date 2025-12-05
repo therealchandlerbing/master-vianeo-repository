@@ -478,13 +478,18 @@ class ValidationResult:
 
     is_valid: bool
     message: str
-    field: str = ""
+    field_name: str = ""
     severity: str = "error"  # error, warning, info
     details: Dict[str, Any] = field(default_factory=dict)
 
+    # Alias for backwards compatibility
+    @property
+    def field(self) -> str:
+        return self.field_name
+
     def __str__(self) -> str:
         prefix = {"error": "ERROR", "warning": "WARN", "info": "INFO"}
-        return f"[{prefix.get(self.severity, 'INFO')}] {self.field}: {self.message}"
+        return f"[{prefix.get(self.severity, 'INFO')}] {self.field_name}: {self.message}"
 
 
 @dataclass
@@ -516,7 +521,7 @@ class ValidationReport:
         """Add an error result."""
         self.add(ValidationResult(
             is_valid=False,
-            field=field,
+            field_name=field,
             message=message,
             severity="error",
             details=details
@@ -526,7 +531,7 @@ class ValidationReport:
         """Add a warning result."""
         self.add(ValidationResult(
             is_valid=True,
-            field=field,
+            field_name=field,
             message=message,
             severity="warning",
             details=details
@@ -536,7 +541,7 @@ class ValidationReport:
         """Add a success result."""
         self.add(ValidationResult(
             is_valid=True,
-            field=field,
+            field_name=field,
             message=message,
             severity="info",
             details=details

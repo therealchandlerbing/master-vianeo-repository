@@ -39,7 +39,7 @@ def validate_required_field(
     if value is None:
         return ValidationResult(
             is_valid=False,
-            field=field_name,
+            field_name=field_name,
             message=f"Required field is missing",
             severity="error"
         )
@@ -47,14 +47,14 @@ def validate_required_field(
     if not allow_empty and isinstance(value, str) and not value.strip():
         return ValidationResult(
             is_valid=False,
-            field=field_name,
+            field_name=field_name,
             message=f"Required field is empty",
             severity="error"
         )
 
     return ValidationResult(
         is_valid=True,
-        field=field_name,
+        field_name=field_name,
         message="Present and non-empty",
         severity="info"
     )
@@ -71,7 +71,7 @@ def validate_char_limit(
     if count <= limit:
         return ValidationResult(
             is_valid=True,
-            field=field_name,
+            field_name=field_name,
             message=f"{count}/{limit} characters",
             severity="info",
             details={"count": count, "limit": limit}
@@ -80,7 +80,7 @@ def validate_char_limit(
         over = count - limit
         return ValidationResult(
             is_valid=False,
-            field=field_name,
+            field_name=field_name,
             message=f"{count}/{limit} characters (over by {over})",
             severity="error",
             details={"count": count, "limit": limit, "over": over}
@@ -97,14 +97,14 @@ def validate_pattern(
     if re.match(pattern, text):
         return ValidationResult(
             is_valid=True,
-            field=field_name,
+            field_name=field_name,
             message=f"Matches {pattern_description}",
             severity="info"
         )
     else:
         return ValidationResult(
             is_valid=False,
-            field=field_name,
+            field_name=field_name,
             message=f"Does not match {pattern_description}",
             severity="error",
             details={"value": text, "expected_pattern": pattern}
@@ -122,7 +122,7 @@ def validate_score_range(
         status = ScoreThresholds.get_status_keyword(score)
         return ValidationResult(
             is_valid=True,
-            field=field_name,
+            field_name=field_name,
             message=f"{score:.1f}/5 - {status}",
             severity="info",
             details={"score": score, "status": status}
@@ -130,7 +130,7 @@ def validate_score_range(
     else:
         return ValidationResult(
             is_valid=False,
-            field=field_name,
+            field_name=field_name,
             message=f"Score {score} outside valid range ({min_score}-{max_score})",
             severity="error",
             details={"score": score, "min": min_score, "max": max_score}
@@ -147,7 +147,7 @@ def validate_score_threshold(
     if score >= threshold:
         return ValidationResult(
             is_valid=True,
-            field=field_name,
+            field_name=field_name,
             message=f"{dimension} score {score:.1f} meets threshold ({threshold})",
             severity="info"
         )
@@ -155,7 +155,7 @@ def validate_score_threshold(
         gap = threshold - score
         return ValidationResult(
             is_valid=False,
-            field=field_name,
+            field_name=field_name,
             message=f"{dimension} score {score:.1f} below threshold ({threshold}, gap: {gap:.1f})",
             severity="warning",
             details={"score": score, "threshold": threshold, "gap": gap}
@@ -175,14 +175,14 @@ def validate_list_count(
         if count >= min_count:
             return ValidationResult(
                 is_valid=True,
-                field=field_name,
+                field_name=field_name,
                 message=f"{count} items (min: {min_count})",
                 severity="info"
             )
         else:
             return ValidationResult(
                 is_valid=False,
-                field=field_name,
+                field_name=field_name,
                 message=f"Only {count} items (need at least {min_count})",
                 severity="error"
             )
@@ -190,14 +190,14 @@ def validate_list_count(
         if min_count <= count <= max_count:
             return ValidationResult(
                 is_valid=True,
-                field=field_name,
+                field_name=field_name,
                 message=f"{count} items (range: {min_count}-{max_count})",
                 severity="info"
             )
         else:
             return ValidationResult(
                 is_valid=False,
-                field=field_name,
+                field_name=field_name,
                 message=f"{count} items outside range ({min_count}-{max_count})",
                 severity="error"
             )
@@ -212,13 +212,13 @@ def validate_no_em_dashes(text: str, field_name: str) -> ValidationResult:
     if '—' in text or '–' in text:
         return ValidationResult(
             is_valid=False,
-            field=field_name,
+            field_name=field_name,
             message="Contains em dash or en dash (not allowed)",
             severity="error"
         )
     return ValidationResult(
         is_valid=True,
-        field=field_name,
+        field_name=field_name,
         message="No em/en dashes found",
         severity="info"
     )
@@ -237,7 +237,7 @@ def validate_solution_neutral(text: str, field_name: str) -> ValidationResult:
     if found_words:
         return ValidationResult(
             is_valid=False,
-            field=field_name,
+            field_name=field_name,
             message=f"Contains solution language: {', '.join(found_words)}",
             severity="error",
             details={"found_words": found_words}
@@ -245,7 +245,7 @@ def validate_solution_neutral(text: str, field_name: str) -> ValidationResult:
 
     return ValidationResult(
         is_valid=True,
-        field=field_name,
+        field_name=field_name,
         message="Solution-neutral language",
         severity="info"
     )
@@ -259,7 +259,7 @@ def validate_quantification(text: str, field_name: str, min_numbers: int = 2) ->
     if len(numbers) >= min_numbers:
         return ValidationResult(
             is_valid=True,
-            field=field_name,
+            field_name=field_name,
             message=f"Contains {len(numbers)} quantified values",
             severity="info",
             details={"numbers_found": numbers}
@@ -267,7 +267,7 @@ def validate_quantification(text: str, field_name: str, min_numbers: int = 2) ->
     else:
         return ValidationResult(
             is_valid=False,
-            field=field_name,
+            field_name=field_name,
             message=f"Only {len(numbers)} numbers (need at least {min_numbers})",
             severity="error",
             details={"numbers_found": numbers, "required": min_numbers}
@@ -292,7 +292,7 @@ def validate_no_vague_terms(text: str, field_name: str) -> ValidationResult:
     if found_terms:
         return ValidationResult(
             is_valid=False,
-            field=field_name,
+            field_name=field_name,
             message=f"Contains vague terms: {', '.join(found_terms)}",
             severity="warning",
             details={"found_terms": found_terms}
@@ -300,7 +300,7 @@ def validate_no_vague_terms(text: str, field_name: str) -> ValidationResult:
 
     return ValidationResult(
         is_valid=True,
-        field=field_name,
+        field_name=field_name,
         message="No vague terms found",
         severity="info"
     )
