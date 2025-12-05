@@ -351,9 +351,10 @@ def load_data_file(path: Union[str, Path]) -> Dict[str, Any]:
     if not path.exists():
         raise FileNotFoundError(f"Data file not found: {path}")
 
-    if path.suffix in ['.yaml', '.yml']:
+    suffix = path.suffix.lower()
+    if suffix in ['.yaml', '.yml']:
         return load_yaml(path)
-    elif path.suffix == '.json':
+    elif suffix == '.json':
         return load_json(path)
     else:
         raise ValueError(
