@@ -121,7 +121,6 @@ Define 6-10 MVP features from Step 11:
 - **Total MVP Features**: [Number] *(target: 6-10)*
 - **Available Now**: [Count]
 - **Short-term (0-6 mo)**: [Count]
-- **Mid-term (6-18 mo)**: [Count if any in MVP]
 - **High Validation (>5)**: [Count]/[Total]
 
 **MVP Coverage Check**:
