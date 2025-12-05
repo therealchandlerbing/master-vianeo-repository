@@ -318,7 +318,7 @@ Step 12 is split into four substeps for clarity.
 **Purpose:** Synthesize key scores and signals (desirability, feasibility, viability)
 
 **Execution (AI-assisted):**
-> Execute the Step 12 Initial: Viability Assessment from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_12_viability.md`.
+> Execute the Step 12 Initial: Viability Assessment from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_12_initial_viability_assessment.md`.
 
 **Inputs:** Steps 3, 7, 9, 10, 11 outputs
 
@@ -329,7 +329,7 @@ Step 12 is split into four substeps for clarity.
 **Purpose:** Explore alternative trajectories, assumptions, and strategic options
 
 **Execution (AI-assisted):**
-> Execute the Step 12a: Viability Pathways from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_12a_product_market_fit.md`.
+> Execute the Step 12a: Viability Pathways from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_12a_viability_pathways.md`.
 
 ---
 
@@ -342,7 +342,7 @@ Step 12 is split into four substeps for clarity.
 - Prior viability data
 
 **Execution (AI-assisted):**
-> Execute the Step 12b: Viability Business Model from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_12b_business_model.md`.
+> Execute the Step 12b: Viability Business Model from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_12b_viability_business_model.md`.
 
 **CRITICAL REQUIREMENT:**
 > Generate a SEPARATE business model for each targeted requester segment. Do NOT merge segments into a single averaged model.
@@ -362,7 +362,7 @@ For each segment, produce:
 **Purpose:** Generate summary viability dashboard for decision makers
 
 **Execution (AI-assisted):**
-> Execute the Step 12 Final: Viability Dashboard Generation from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_12_dashboard_generation.md`.
+> Execute the Step 12 Final: Viability Dashboard Generation from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_12_final_dashboard_generation.md`.
 
 **Inputs:** All Step 12 substep outputs
 

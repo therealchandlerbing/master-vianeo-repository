@@ -23,20 +23,31 @@ LEGITIMACY              DESIRABILITY                 ACCEPTABILITY
 Step 4                   Step 5                       Step 8
 (Problem/Means)      (Needs/Requesters)         (Players/Influencers)
     |                        |                            |
-    |               +--------+--------+--------+          |
-    |               |        |        |        |          |
-    |               v        v        |        |          |
-    |           Step 6   Step 7       |        |          |
-    |          (Personas) (Needs Qual)|        |          |
-    |               |        |        |        |          |
-    |               v        |        |        |          |
-    |           Step 12b     |        |        |          |
-    |     (Business Models)  |        |        |          |
-    |               |        |        |        |          |
-    v               v        v        v        v          v
-Step 11         Step 11    Step 9    Step 9   Step 9   Step 9
-(Means view)   (Needs view) (Requesters)(Requesters)(Players)(Influencers)
+    |               +--------+--------+                   |
+    |               |        |        |                   |
+    |               v        v        |                   |
+    |           Step 6   Step 7       |                   |
+    |          (Personas)(Needs Qual) |                   |
+    |               |        |        |                   |
+    |               v        v        v                   v
+    |           Step 12b  Step 11  Step 9 <---------------+
+    |      (Biz Models) (Needs view)(Value Network)
+    |                                  ^
+    |                                  |
+    v                           (Requesters from Step 5,
+Step 11                          Players/Influencers from Step 8)
+(Means view)
 ```
+
+**Key Data Flows:**
+- Step 4 → Step 11 (Means view): Means with differentiation status
+- Step 5 → Step 6: Requesters become personas
+- Step 5 → Step 7: Needs and requesters for qualification matrix
+- Step 5 → Step 9: Requesters positioned in value network
+- Step 5 → Step 11: Need statements become columns
+- Step 6 → Step 12b: Requester segments for separate business models
+- Step 7 → Step 11: Importance/satisfaction ratings inform column colors
+- Step 8 → Step 9: Players and influencers with acceptability ratings
 
 ## Detailed Data Flow
 
