@@ -237,7 +237,7 @@ Generate TWO explicit tables:
 
 **New Structure:**
 1. `prompts/step_12_initial_viability_assessment.md` - Synthesis of scores
-2. `prompts/step_12a_viability_pathways.md` - Options, scenarios, assumptions
+2. `prompts/step_12a_product_market_fit.md` - Product-market fit validation
 3. `prompts/step_12b_viability_business_model.md` - Per-segment business models
 4. `prompts/step_12_final_dashboard_generation.md` - Summary dashboard
 

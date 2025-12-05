@@ -46,7 +46,7 @@ Some steps must be grounded in Vianeo platform data to avoid hallucinations. Use
 | **11 (View 1)** | Screenshot of Features-Needs table from platform | Use only existing needs as columns, match Step 5 exactly |
 | **11 (View 2)** | Screenshot/export of Means list from Step 4 | Use only existing means as columns, do not create new means |
 | **12 Initial** | Steps 3, 7, 9 outputs | Synthesize dimension scores and signals |
-| **12a** | Step 12 Initial output | Explore pathways, do not finalize recommendations |
+| **12a** | Step 12 Initial output | Create Product Market Fit Sheet with MVP configuration |
 | **12b** | Targeted requester segments from Steps 5/6 | Produce a SEPARATE business model per requester segment |
 | **12 Final** | All Step 12 substep outputs | Generate summary dashboard only |
 
@@ -251,11 +251,11 @@ You MAY propose new features in Step 11, but:
 ```
 **Attach:** Steps 3, 7, 9, 10, 11 outputs
 
-#### Step 12a: Viability Pathways
+#### Step 12a: Product Market Fit Sheet
 ```
-> Execute the Step 12a: Viability Pathways from the GITHUB Master Vianeo
+> Execute the Step 12a: Product Market Fit Sheet from the GITHUB Master Vianeo
 > Repository, synced to this project's files.
-> Use the prompt called `prompts/step_12a_viability_pathways.md`.
+> Use the prompt called `prompts/step_12a_product_market_fit.md`.
 ```
 **Attach:** Step 12 Initial output
 

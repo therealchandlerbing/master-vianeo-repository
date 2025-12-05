@@ -324,12 +324,12 @@ Step 12 is split into four substeps for clarity.
 
 ---
 
-### Step 12a: Viability Pathways
+### Step 12a: Product Market Fit Sheet
 
-**Purpose:** Explore alternative trajectories, assumptions, and strategic options
+**Purpose:** Document and validate product-market fit with MVP configuration
 
 **Execution (AI-assisted):**
-> Execute the Step 12a: Viability Pathways from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_12a_viability_pathways.md`.
+> Execute the Step 12a: Product Market Fit Sheet from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_12a_product_market_fit.md`.
 
 ---
 
