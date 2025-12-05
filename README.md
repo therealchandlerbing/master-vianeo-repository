@@ -149,7 +149,7 @@ vianeo-framework/
 | 9 | Value Network | ✅ Complete | 30KB | Network visualization, value flows |
 | 10 | Diagnostic Comment | ✅ Complete | 18KB | Executive decision brief |
 | 11 | Features-Needs Matrix | ✅ Complete | 12KB | MVP scope, feature prioritization, entity validation |
-| 12 | Initial Viability Assessment | ✅ Complete | 10KB | Gate recommendation (Go/Conditional/Hold/No) |
+| 12 Initial | Initial Viability Assessment | ✅ Complete | 10KB | Gate recommendation (Go/Conditional/Hold/No) |
 | 12a | Viability Pathways | ✅ Complete | 5KB | Strategic pathway exploration |
 | 12b | Business Model | ✅ Complete | 12KB | Segment-specific business models |
 | 12 Final | Viability Dashboard | ✅ Complete | 12KB | Summary dashboard synthesis |
