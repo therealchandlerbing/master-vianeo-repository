@@ -6,6 +6,28 @@
 
 ---
 
+## AI-Assisted Execution
+
+> To run this step with an AI assistant, see `docs/VIANEO_AI_Assisted_Workflow.md`.
+
+**Standard Call Pattern:**
+> Execute the Step 6: Persona Development from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_06_persona_development.md`.
+
+**Required Attachments:**
+- Screenshot of the Requesters list from the Vianeo platform for this project
+
+**Entity Guardrails:**
+
+> **CRITICAL: You MUST derive personas EXCLUSIVELY from the attached Requesters list.**
+>
+> - Do NOT invent new personas that don't exist in the Requesters list
+> - Do NOT introduce new requester names
+> - Use requester names EXACTLY as they appear in the screenshot
+> - Each persona must map directly to one or more requesters from Step 5
+> - If the Requesters list shows 6 requesters, your personas represent those 6 requesters (or a subset)
+
+---
+
 ## Overview
 
 The Persona Development step creates evidence-based user personas that validate the Desirability dimension by documenting:

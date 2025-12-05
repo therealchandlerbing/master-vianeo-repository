@@ -1,5 +1,36 @@
 # Step 12b: Business Model Definition
 
+---
+
+## AI-Assisted Execution
+
+> To run this step with an AI assistant, see `docs/VIANEO_AI_Assisted_Workflow.md`.
+
+**Standard Call Pattern:**
+> Execute the Step 12b: Viability Business Model from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_12b_business_model.md`.
+
+**Required Attachments:**
+- Targeted requester segments from Steps 5/6
+- Product/Market Fit Sheet from Step 12a
+- Prior viability data
+
+**Segment-Specific Business Model Requirement:**
+
+> **CRITICAL: Generate a SEPARATE business model for each targeted requester segment.**
+>
+> - Do NOT merge segments into a single averaged model
+> - Do NOT blend value propositions across segments
+> - Each segment requires its own:
+>   - Value proposition (segment-specific language)
+>   - Channels (segment-appropriate distribution)
+>   - Revenue model (segment-appropriate pricing)
+>   - Cost structure (segment-specific)
+>   - Key assumptions (segment-specific)
+> - If Steps 5/6 identify 3 requester segments, generate 3 distinct business models
+> - Format output with clear section headers per segment
+
+---
+
 ## Overview
 
 Transform Product/Market Fit configurations (Step 12a) into complete Business Model Canvases. This step defines how each product creates, delivers, and captures value through four integrated components.

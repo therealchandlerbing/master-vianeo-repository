@@ -6,6 +6,26 @@
 
 ---
 
+## AI-Assisted Execution
+
+> To run this step with an AI assistant, see `docs/VIANEO_AI_Assisted_Workflow.md`.
+
+**Standard Call Pattern:**
+> Execute the Step 2: 40-Question Diagnostic Assessment from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_02_diagnostic_40q.md`.
+
+**Required Attachments:**
+- Executive Brief from Step 0b
+
+**Canonical Source:**
+
+> **IMPORTANT:** The 40 questions in this step are defined in `docs/VIANEO_Comprehensive_Reference_Guide.md` and must be used VERBATIM.
+>
+> - Do NOT edit the wording or number of questions without updating that guide first
+> - Do NOT add, remove, or paraphrase any questions
+> - This ensures scoring consistency across all evaluations
+
+---
+
 ## Overview
 
 Step 2 provides a structured diagnostic across four critical dimensions of startup readiness. This assessment identifies strengths and gaps before the detailed Market Maturity Assessment (Step 3).

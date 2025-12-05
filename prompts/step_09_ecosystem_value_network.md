@@ -3,7 +3,68 @@
 **Time Required:** 30-60 minutes for HTML visualization (primary output)
 **Primary Output:** HTML Interactive Visualization (styled, presentation-ready)
 **Secondary Outputs:** (Optional, on request) Markdown Analysis, DOCX Data Tables, Priority Targets Summary
-**Prerequisites:** Step 5 (Desirability Analysis) recommended; Step 7 (Ecosystem Mapping) optional but accelerates process
+**Prerequisites:** Step 5 (Desirability Analysis) required; Step 8 (Players/Influencers) required
+
+---
+
+## AI-Assisted Execution
+
+> To run this step with an AI assistant, see `docs/VIANEO_AI_Assisted_Workflow.md`.
+
+**Standard Call Pattern:**
+> Execute the Step 9: Ecosystem Value Network Map from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_09_ecosystem_value_network.md`.
+
+**Required Attachments:**
+1. Screenshot of Value Network entity list from Vianeo platform (right-hand entities)
+2. Screenshot/export of Players and Influencers from Step 8
+
+**Output Structure - TWO Explicit Tables:**
+
+In addition to the HTML visualization, generate explicit data tables for easy platform transfer:
+
+**Table 1: Entities**
+| Entity Name | Entity Type | Source Step | Value Chain Position | Acceptability | Notes |
+|-------------|-------------|-------------|---------------------|---------------|-------|
+| [exact name] | Player/Influencer/Requester | Step 5/8 | Enabler/Product/Channel/Buyer/EndUser | 🟢/🟡/🔴 | [context] |
+
+**Table 2: Relationships**
+| From Entity | To Entity | Flow Type | Strength | Notes |
+|-------------|-----------|-----------|----------|-------|
+| [exact name] | [exact name] | Information/Value/Payment/Influence | High/Medium/Low | [context] |
+
+**Table 3: Connection Paths (Column-to-Column Mapping)**
+
+This table explicitly shows how value flows between value chain positions (columns):
+
+| From Column | From Entity | Connection Type | To Column | To Entity | Value Flow Description |
+|-------------|-------------|-----------------|-----------|-----------|------------------------|
+| Enablers | [Org A] | provides funding to | Product | [Core Solution] | Capital enables product development |
+| Product | [Core Solution] | distributed via | Channels | [Partner B] | Product reaches market through distribution |
+| Channels | [Partner B] | serves | Buyers | [Customer Org] | Channel delivers to purchasing decision-makers |
+| Buyers | [Customer Org] | deploys for | End Users | [User Segment] | Buyer enables end user access |
+
+**Connection Types:**
+- `provides funding to` - Capital flow (typically Enabler → Product)
+- `provides technology to` - Technical enablement (Enabler → Product)
+- `distributed via` - Go-to-market path (Product → Channel)
+- `serves` - Customer relationship (Channel → Buyer)
+- `deploys for` - Usage enablement (Buyer → End User)
+- `influences` - Non-transactional impact (Influencer → any position)
+- `regulated by` - Compliance relationship (Influencer → any position)
+
+> **PURPOSE:** This table allows innovation analysts to directly map connections in the Vianeo platform without manual deduction. Each row represents one arrow/edge in the visual network.
+
+**Entity Guardrails:**
+
+> **CRITICAL: Only use listed entity names. Do NOT invent new entities.**
+>
+> - Every entity in Table 1 must come from Step 5 (Requesters) or Step 8 (Players/Influencers)
+> - Every From/To entity in Table 2 must exist in Table 1
+> - Entity names must match EXACTLY as shown in attachments
+> - Acceptability ratings (🟢🟡🔴) must match Step 8 exactly
+> - If Step 8 shows 8 players and 4 influencers, Table 1 has those 12 entities (plus requesters from Step 5)
+> - Do NOT invent new organizations, players, or influencers
+> - This format is designed for easy import into Vianeo platform
 
 ---
 
