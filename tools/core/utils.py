@@ -11,7 +11,7 @@ import yaml
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Optional, Any, Tuple, Union
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field as dataclass_field, InitVar
 
 from .constants import CharacterLimits, ScoreThresholds, ValidationPatterns
 
@@ -472,31 +472,48 @@ def extract_table(markdown: str) -> List[Dict[str, str]]:
 # VALIDATION RESULT DATACLASS
 # =============================================================================
 
-@dataclass
 class ValidationResult:
-    """Result of a validation check."""
+    """Result of a validation check.
 
-    is_valid: bool
-    message: str
-    field_name: str = ""
-    severity: str = "error"  # error, warning, info
-    details: Dict[str, Any] = field(default_factory=dict)
+    Accepts both 'field' and 'field_name' parameters for backwards compatibility.
+    Internally uses 'field_name' as the stored attribute.
+    """
 
-    # Alias for backwards compatibility
+    def __init__(
+        self,
+        is_valid: bool,
+        message: str,
+        field_name: str = "",
+        severity: str = "error",
+        details: Optional[Dict[str, Any]] = None,
+        field: Optional[str] = None  # Backwards compatibility
+    ):
+        self.is_valid = is_valid
+        self.message = message
+        # Use field_name if provided, otherwise fall back to field
+        self.field_name = field_name if field_name else (field or "")
+        self.severity = severity
+        self.details = details if details is not None else {}
+
     @property
     def field(self) -> str:
+        """Alias for field_name (backwards compatibility)."""
         return self.field_name
 
     def __str__(self) -> str:
         prefix = {"error": "ERROR", "warning": "WARN", "info": "INFO"}
         return f"[{prefix.get(self.severity, 'INFO')}] {self.field_name}: {self.message}"
 
+    def __repr__(self) -> str:
+        return (f"ValidationResult(is_valid={self.is_valid!r}, message={self.message!r}, "
+                f"field_name={self.field_name!r}, severity={self.severity!r}, details={self.details!r})")
+
 
 @dataclass
 class ValidationReport:
     """Collection of validation results."""
 
-    results: List[ValidationResult] = field(default_factory=list)
+    results: List[ValidationResult] = dataclass_field(default_factory=list)
 
     @property
     def is_valid(self) -> bool:

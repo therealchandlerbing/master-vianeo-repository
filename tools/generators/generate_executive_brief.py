@@ -159,59 +159,8 @@ class ExecutiveBriefGenerator(BaseDocumentGenerator):
         doc.save(str(output_path))
         return True
 
-    # Note: _setup_document() is inherited from BaseDocumentGenerator
-
-    def _add_styled_heading(
-        self,
-        doc: Document,
-        text: str,
-        level: int = 1
-    ) -> None:
-        """Add a styled heading."""
-        heading = doc.add_heading(text, level=level)
-
-        # Style the heading
-        for run in heading.runs:
-            run.font.name = self.styles.FONT_FAMILY
-            run.font.color.rgb = RGBColor.from_string(self.styles.PRIMARY_BLUE)
-
-    def _add_styled_paragraph(
-        self,
-        doc: Document,
-        text: str,
-        bold_label: Optional[str] = None
-    ) -> None:
-        """Add a styled paragraph with optional bold label."""
-        para = doc.add_paragraph()
-
-        if bold_label:
-            run = para.add_run(f"{bold_label}: ")
-            run.bold = True
-            run.font.name = self.styles.FONT_FAMILY
-            run.font.size = Pt(self.styles.BODY_SIZE)
-
-        run = para.add_run(clean_text(text))
-        run.font.name = self.styles.FONT_FAMILY
-        run.font.size = Pt(self.styles.BODY_SIZE)
-        run.font.color.rgb = RGBColor.from_string(self.styles.BODY_GRAY)
-
-    def _add_character_count(
-        self,
-        doc: Document,
-        text: str,
-        limit: int,
-        field_name: str
-    ) -> None:
-        """Add character count indicator."""
-        count = len(text)
-        status = "OK" if count <= limit else "OVER"
-        color = self.styles.GREEN_HIGHLIGHT if count <= limit else self.styles.RED_HIGHLIGHT
-
-        para = doc.add_paragraph()
-        run = para.add_run(f"[{field_name}: {count}/{limit} characters - {status}]")
-        run.font.size = Pt(9)
-        run.font.color.rgb = RGBColor.from_string(self.styles.LIGHT_GRAY)
-        run.italic = True
+    # Note: _setup_document(), _add_styled_heading(), _add_styled_paragraph(),
+    # _add_character_count(), and _add_checklist() are inherited from BaseDocumentGenerator
 
     def _add_header(self, doc: Document) -> None:
         """Add document header."""
@@ -506,14 +455,6 @@ class ExecutiveBriefGenerator(BaseDocumentGenerator):
             row_cells[3].text = str(evidence.get('quality_rating', ''))
             row_cells[4].text = evidence.get('description', '')
             row_cells[5].text = evidence.get('date', '')
-
-    def _add_checklist(self, doc: Document, items: List[str]) -> None:
-        """Add quality checklist."""
-        self._add_styled_heading(doc, "Quality Checklist", level=4)
-        for item in items:
-            para = doc.add_paragraph()
-            para.add_run(f"[ ] {item}")
-            para.style = 'List Bullet'
 
 
 # =============================================================================

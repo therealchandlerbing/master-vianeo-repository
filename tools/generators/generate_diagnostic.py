@@ -128,22 +128,7 @@ class DiagnosticDocumentGenerator(BaseDocumentGenerator):
         doc.save(str(output_path))
         return True
 
-    # Note: _setup_document() is inherited from BaseDocumentGenerator
-
-    def _add_styled_heading(
-        self,
-        doc: Document,
-        text: str,
-        level: int = 1,
-        color: str = None
-    ) -> None:
-        """Add a styled heading."""
-        heading = doc.add_heading(text, level=level)
-
-        color = color or self.styles.PRIMARY_BLUE
-        for run in heading.runs:
-            run.font.name = self.styles.FONT_FAMILY
-            run.font.color.rgb = RGBColor.from_string(color)
+    # Note: _setup_document() and _add_styled_heading() are inherited from BaseDocumentGenerator
 
     def _add_header(self, doc: Document) -> None:
         """Add document header."""
