@@ -1,4 +1,4 @@
-# STEP 7: PLAYERS & INFLUENCERS ECOSYSTEM ANALYSIS
+# STEP 8: PLAYERS & INFLUENCERS ECOSYSTEM ANALYSIS
 
 **Time Required:** 30-45 minutes
 **Output:** 2 documents - Professional 2-page DOCX + Markdown analysis
@@ -734,7 +734,7 @@ Target: **BCG consultant-level presentation**
 
 ```markdown
 # [PROJECT NAME]: ECOSYSTEM PLAYERS & INFLUENCERS ANALYSIS
-**Vianeo Framework - Step 7: Acceptability Dimension**
+**Vianeo Framework - Step 8: Acceptability Dimension**
 **Analysis Date:** [Date]
 **Analyst:** [Name]
 
@@ -1103,7 +1103,7 @@ Target: **BCG consultant-level presentation**
 
 ---
 
-**End of Step 7: Players & Influencers Ecosystem Analysis**
+**End of Step 8: Players & Influencers Ecosystem Analysis**
 
 **Next Step:** Step 8 - Network Visualization (Interactive HTML ecosystem map)
 
@@ -1489,7 +1489,7 @@ This analysis directly informs:
 
 ---
 
-**End of Step 7 Prompt**
+**End of Step 8 Prompt**
 
 **For questions or clarifications, refer to:**
 - `/docs/VIANEO_Complete_Evaluation_Skill.md`
