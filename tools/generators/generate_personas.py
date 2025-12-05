@@ -19,22 +19,23 @@ from typing import Dict, Any, Optional, List
 from dataclasses import dataclass, field
 from enum import Enum
 
-try:
-    from docx import Document
-    from docx.shared import Pt, Inches, RGBColor, Twips
-    from docx.enum.text import WD_ALIGN_PARAGRAPH
-    from docx.oxml.ns import qn
-    from docx.oxml import OxmlElement
-    DOCX_AVAILABLE = True
-except ImportError:
-    DOCX_AVAILABLE = False
-    print("Warning: python-docx not installed. Install with: pip install python-docx")
-
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from core.constants import CharacterLimits, DocxStyles
 from core.utils import format_date, safe_filename, clean_text, count_characters, load_data_file
+from generators.base import BaseDocumentGenerator, is_docx_available, DOCX_AVAILABLE
+
+# Import python-docx components if available
+if DOCX_AVAILABLE:
+    from docx import Document
+    from docx.shared import Pt, Inches, RGBColor, Twips
+    from docx.enum.text import WD_ALIGN_PARAGRAPH
+    from docx.oxml.ns import qn
+    from docx.oxml import OxmlElement
+else:
+    # Type hint stub when python-docx not available
+    Document = None
 
 
 # =============================================================================
@@ -143,16 +144,16 @@ def get_validation_style(status: ValidationStatus) -> Dict[str, str]:
 # DOCX GENERATION
 # =============================================================================
 
-class PersonaDocumentGenerator:
+class PersonaDocumentGenerator(BaseDocumentGenerator):
     """Generator for VIANEO Persona documents."""
 
     def __init__(self, data: PersonaDocumentData):
+        super().__init__()
         self.data = data
-        self.styles = DocxStyles()
 
     def generate_docx(self, output_path: Path) -> bool:
         """Generate professional DOCX persona document."""
-        if not DOCX_AVAILABLE:
+        if not is_docx_available():
             print("Error: python-docx not installed")
             return False
 
@@ -173,13 +174,7 @@ class PersonaDocumentGenerator:
         doc.save(str(output_path))
         return True
 
-    def _setup_document(self, doc: Document) -> None:
-        """Set up document formatting."""
-        for section in doc.sections:
-            section.top_margin = Inches(1)
-            section.bottom_margin = Inches(1)
-            section.left_margin = Inches(1)
-            section.right_margin = Inches(1)
+    # Note: _setup_document() is inherited from BaseDocumentGenerator
 
     def _add_cover_page(self, doc: Document) -> None:
         """Add cover page."""
@@ -580,7 +575,7 @@ def generate_personas(
     outputs = {}
 
     # Generate DOCX
-    if output_format in ["docx", "both"] and DOCX_AVAILABLE:
+    if output_format in ["docx", "both"] and is_docx_available():
         docx_path = output_path.with_suffix('.docx')
         generator = PersonaDocumentGenerator(data)
         if generator.generate_docx(docx_path):

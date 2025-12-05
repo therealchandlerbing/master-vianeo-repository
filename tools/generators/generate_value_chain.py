@@ -20,8 +20,13 @@ from dataclasses import dataclass, field
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+from jinja2 import Environment, FileSystemLoader, select_autoescape
+
 from core.constants import CharacterLimits
 from core.utils import format_date, safe_filename, clean_text, load_data_file
+
+# Template directory
+TEMPLATE_DIR = Path(__file__).parent.parent / "templates"
 
 
 # =============================================================================
@@ -89,414 +94,15 @@ class ValueChainData:
 
 
 # =============================================================================
-# HTML TEMPLATES
+# TEMPLATE LOADING
 # =============================================================================
 
-HTML_TEMPLATE = """<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{project_name} - Value Network Analysis</title>
-    <style>
-        :root {{
-            --primary-blue: #1B365D;
-            --accent-blue: #2E5C8A;
-            --green: #28a745;
-            --yellow: #ffc107;
-            --red: #dc3545;
-            --gray-100: #f8f9fa;
-            --gray-200: #e9ecef;
-            --gray-600: #6c757d;
-            --gray-800: #343a40;
-        }}
-
-        * {{
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }}
-
-        body {{
-            font-family: 'Segoe UI', Calibri, sans-serif;
-            line-height: 1.6;
-            color: var(--gray-800);
-            background: var(--gray-100);
-        }}
-
-        .container {{
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }}
-
-        header {{
-            background: var(--primary-blue);
-            color: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-        }}
-
-        header h1 {{
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }}
-
-        header .subtitle {{
-            opacity: 0.8;
-            font-size: 1rem;
-        }}
-
-        .metadata {{
-            display: flex;
-            gap: 2rem;
-            margin-top: 1rem;
-            font-size: 0.875rem;
-            opacity: 0.9;
-        }}
-
-        .card {{
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }}
-
-        .card h2 {{
-            color: var(--primary-blue);
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--gray-200);
-            padding-bottom: 0.5rem;
-        }}
-
-        .card h3 {{
-            color: var(--accent-blue);
-            font-size: 1rem;
-            margin: 1rem 0 0.5rem 0;
-        }}
-
-        .summary-grid {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }}
-
-        .summary-item {{
-            background: var(--gray-100);
-            padding: 1rem;
-            border-radius: 4px;
-            text-align: center;
-        }}
-
-        .summary-item .value {{
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary-blue);
-        }}
-
-        .summary-item .label {{
-            font-size: 0.875rem;
-            color: var(--gray-600);
-        }}
-
-        .value-chain {{
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 1rem;
-            margin: 2rem 0;
-        }}
-
-        @media (max-width: 1024px) {{
-            .value-chain {{
-                grid-template-columns: repeat(3, 1fr);
-            }}
-        }}
-
-        @media (max-width: 768px) {{
-            .value-chain {{
-                grid-template-columns: 1fr;
-            }}
-        }}
-
-        .chain-column {{
-            background: var(--gray-100);
-            border-radius: 8px;
-            padding: 1rem;
-        }}
-
-        .chain-column h3 {{
-            color: var(--primary-blue);
-            font-size: 0.875rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--primary-blue);
-        }}
-
-        .org-card {{
-            background: white;
-            border-radius: 4px;
-            padding: 0.75rem;
-            margin-bottom: 0.5rem;
-            border-left: 4px solid var(--gray-200);
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-        }}
-
-        .org-card:hover {{
-            transform: translateX(4px);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        }}
-
-        .org-card.favorable {{
-            border-left-color: var(--green);
-        }}
-
-        .org-card.neutral {{
-            border-left-color: var(--yellow);
-        }}
-
-        .org-card.unfavorable {{
-            border-left-color: var(--red);
-        }}
-
-        .org-card .name {{
-            font-weight: 600;
-            font-size: 0.875rem;
-            margin-bottom: 0.25rem;
-        }}
-
-        .org-card .role {{
-            font-size: 0.75rem;
-            color: var(--gray-600);
-            margin-bottom: 0.5rem;
-        }}
-
-        .org-card .badges {{
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }}
-
-        .badge {{
-            font-size: 0.625rem;
-            padding: 0.125rem 0.5rem;
-            border-radius: 10px;
-            font-weight: 600;
-        }}
-
-        .badge-green {{
-            background: #d4edda;
-            color: #155724;
-        }}
-
-        .badge-yellow {{
-            background: #fff3cd;
-            color: #856404;
-        }}
-
-        .badge-red {{
-            background: #f8d7da;
-            color: #721c24;
-        }}
-
-        .badge-blue {{
-            background: #cce5ff;
-            color: #004085;
-        }}
-
-        .badge-gray {{
-            background: var(--gray-200);
-            color: var(--gray-600);
-        }}
-
-        table {{
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-            font-size: 0.875rem;
-        }}
-
-        th, td {{
-            padding: 0.75rem;
-            text-align: left;
-            border-bottom: 1px solid var(--gray-200);
-        }}
-
-        th {{
-            background: var(--gray-100);
-            font-weight: 600;
-            color: var(--primary-blue);
-        }}
-
-        tr:hover {{
-            background: var(--gray-100);
-        }}
-
-        .acceptability-dot {{
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 0.5rem;
-        }}
-
-        .dot-green {{ background: var(--green); }}
-        .dot-yellow {{ background: var(--yellow); }}
-        .dot-red {{ background: var(--red); }}
-
-        .legend {{
-            display: flex;
-            gap: 1.5rem;
-            margin: 1rem 0;
-            font-size: 0.875rem;
-        }}
-
-        .legend-item {{
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }}
-
-        .features-list {{
-            list-style: none;
-            padding: 0;
-        }}
-
-        .features-list li {{
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--gray-200);
-        }}
-
-        .features-list li:last-child {{
-            border-bottom: none;
-        }}
-
-        footer {{
-            text-align: center;
-            padding: 2rem;
-            color: var(--gray-600);
-            font-size: 0.875rem;
-        }}
-
-        .tooltip {{
-            position: fixed;
-            background: var(--gray-800);
-            color: white;
-            padding: 1rem;
-            border-radius: 4px;
-            max-width: 300px;
-            font-size: 0.75rem;
-            z-index: 1000;
-            display: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }}
-
-        .tooltip.visible {{
-            display: block;
-        }}
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Vianeo Step 9: Ecosystem Value Network Analysis</h1>
-            <div class="subtitle">{project_name}</div>
-            <div class="metadata">
-                <span><strong>Project:</strong> {project_name}</span>
-                <span><strong>Analysis Date:</strong> {analysis_date}</span>
-                <span><strong>Analyst:</strong> {analyst}</span>
-                <span><strong>Stage:</strong> {project_stage}</span>
-            </div>
-        </header>
-
-        <div class="card">
-            <h2>Executive Summary</h2>
-            <div class="summary-grid">
-                <div class="summary-item">
-                    <div class="value">{total_organizations}</div>
-                    <div class="label">Organizations Mapped</div>
-                </div>
-                <div class="summary-item">
-                    <div class="value">{priority_targets}</div>
-                    <div class="label">Priority Targets</div>
-                </div>
-            </div>
-            <h3>Key Insight</h3>
-            <p>{key_insight}</p>
-            <h3>Strategic Implication</h3>
-            <p>{strategic_implication}</p>
-        </div>
-
-        <div class="card">
-            <h2>Project Overview</h2>
-            <p><strong>{product_name}</strong>: {tagline}</p>
-            <p><strong>Industry:</strong> {industry}</p>
-            <p><strong>Core Solution:</strong> {core_solution}</p>
-            <h3>Key Features</h3>
-            <ul class="features-list">
-                {features_html}
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>Value Network Visualization</h2>
-            <div class="legend">
-                <div class="legend-item">
-                    <span class="acceptability-dot dot-green"></span> Favorable
-                </div>
-                <div class="legend-item">
-                    <span class="acceptability-dot dot-yellow"></span> Neutral
-                </div>
-                <div class="legend-item">
-                    <span class="acceptability-dot dot-red"></span> Unfavorable
-                </div>
-            </div>
-            <div class="value-chain">
-                {value_chain_html}
-            </div>
-        </div>
-
-        {detail_tables_html}
-
-        <footer>
-            <p>VIANEO Framework v2.0 | Generated {generation_date}</p>
-        </footer>
-    </div>
-
-    <div id="tooltip" class="tooltip"></div>
-
-    <script>
-        // Tooltip functionality
-        const tooltip = document.getElementById('tooltip');
-        const orgCards = document.querySelectorAll('.org-card');
-
-        orgCards.forEach(card => {{
-            card.addEventListener('mouseenter', (e) => {{
-                const notes = card.dataset.notes;
-                if (notes) {{
-                    tooltip.textContent = notes;
-                    tooltip.classList.add('visible');
-                }}
-            }});
-
-            card.addEventListener('mousemove', (e) => {{
-                tooltip.style.left = e.pageX + 15 + 'px';
-                tooltip.style.top = e.pageY + 15 + 'px';
-            }});
-
-            card.addEventListener('mouseleave', () => {{
-                tooltip.classList.remove('visible');
-            }});
-        }});
-    </script>
-</body>
-</html>
-"""
+def _get_jinja_env() -> Environment:
+    """Get Jinja2 environment configured for HTML templates."""
+    return Environment(
+        loader=FileSystemLoader(TEMPLATE_DIR),
+        autoescape=select_autoescape(['html', 'xml'])
+    )
 
 
 # =============================================================================
@@ -510,8 +116,49 @@ class ValueChainGenerator:
         self.data = data
 
     def generate_html(self, output_path: Path) -> bool:
-        """Generate interactive HTML visualization."""
-        html = HTML_TEMPLATE.format(
+        """Generate interactive HTML visualization using Jinja2 template."""
+        env = _get_jinja_env()
+        template = env.get_template('value_network.html.jinja2')
+
+        # Prepare value chain sections for template
+        value_chain_sections = [
+            {"title": "Enablers & Influencers", "organizations": self.data.enablers_influencers},
+            {"title": "Products & Solutions", "organizations": self.data.products_solutions},
+            {"title": "Channels & Partners", "organizations": self.data.channels_partners},
+            {"title": "Buyers", "organizations": self.data.buyers},
+            {"title": "End Users", "organizations": self.data.end_users}
+        ]
+
+        # Prepare detail sections for template
+        detail_sections = [
+            {
+                "title": "Section 3: Enablers & Influencers",
+                "description": "Organizations that provide infrastructure, funding, regulation, standards, or expertise.",
+                "organizations": self._prepare_orgs_for_template(self.data.enablers_influencers)
+            },
+            {
+                "title": "Section 4: Products & Solutions",
+                "description": "Organizations that produce complementary or substitute products/solutions.",
+                "organizations": self._prepare_orgs_for_template(self.data.products_solutions)
+            },
+            {
+                "title": "Section 5: Channels & Partners",
+                "description": "Organizations that facilitate distribution, adoption, or implementation.",
+                "organizations": self._prepare_orgs_for_template(self.data.channels_partners)
+            },
+            {
+                "title": "Section 6: Buyers",
+                "description": "Organizations or entities that pay for your solution.",
+                "organizations": self._prepare_orgs_for_template(self.data.buyers)
+            },
+            {
+                "title": "Section 7: End Users",
+                "description": "Individual people or departments who directly use your innovation.",
+                "organizations": self._prepare_orgs_for_template(self.data.end_users)
+            }
+        ]
+
+        html = template.render(
             project_name=self.data.project_name,
             analysis_date=self.data.analysis_date or format_date(),
             analyst=self.data.analyst,
@@ -524,9 +171,9 @@ class ValueChainGenerator:
             tagline=self.data.tagline,
             industry=self.data.industry,
             core_solution=self.data.core_solution,
-            features_html=self._generate_features_html(),
-            value_chain_html=self._generate_value_chain_html(),
-            detail_tables_html=self._generate_detail_tables_html(),
+            key_features=self.data.key_features,
+            value_chain_sections=value_chain_sections,
+            detail_sections=detail_sections,
             generation_date=format_date()
         )
 
@@ -534,6 +181,21 @@ class ValueChainGenerator:
             f.write(html)
 
         return True
+
+    def _prepare_orgs_for_template(self, orgs: List[OrganizationData]) -> List[Dict[str, Any]]:
+        """Prepare organization data for Jinja2 template."""
+        return [
+            {
+                "name": org.name,
+                "role": org.role,
+                "requester": org.requester,
+                "acceptability": org.acceptability,
+                "acceptability_color": org.acceptability_emoji,  # green, yellow, red
+                "need_level": org.need_level,
+                "notes": org.notes
+            }
+            for org in orgs
+        ]
 
     def _count_total_orgs(self) -> int:
         return sum(len(section) for section in [
@@ -558,114 +220,6 @@ class ValueChainGenerator:
                     org.need_level in ['Critical', 'Important']):
                     count += 1
         return count
-
-    def _generate_features_html(self) -> str:
-        items = []
-        for feature in self.data.key_features:
-            items.append(f"<li>{feature}</li>")
-        return "\n".join(items)
-
-    def _generate_org_card(self, org: OrganizationData) -> str:
-        acceptability_class = org.acceptability.lower()
-        need_badge = self._get_need_badge(org.need_level)
-
-        return f"""
-        <div class="org-card {acceptability_class}" data-notes="{org.notes}">
-            <div class="name">{org.name}</div>
-            <div class="role">{org.role}</div>
-            <div class="badges">
-                {need_badge}
-                <span class="badge badge-gray">{org.requester}</span>
-            </div>
-        </div>
-        """
-
-    def _get_need_badge(self, need_level: str) -> str:
-        badges = {
-            'Critical': '<span class="badge badge-red">Critical</span>',
-            'Important': '<span class="badge badge-yellow">Important</span>',
-            'Secondary': '<span class="badge badge-blue">Secondary</span>',
-            'None': ''
-        }
-        return badges.get(need_level, '')
-
-    def _generate_value_chain_html(self) -> str:
-        sections = [
-            ("Enablers & Influencers", self.data.enablers_influencers),
-            ("Products & Solutions", self.data.products_solutions),
-            ("Channels & Partners", self.data.channels_partners),
-            ("Buyers", self.data.buyers),
-            ("End Users", self.data.end_users)
-        ]
-
-        columns = []
-        for title, orgs in sections:
-            cards = "\n".join(self._generate_org_card(org) for org in orgs)
-            columns.append(f"""
-            <div class="chain-column">
-                <h3>{title}</h3>
-                {cards if cards else '<p style="text-align:center;color:#6c757d;font-size:0.75rem;">No organizations</p>'}
-            </div>
-            """)
-
-        return "\n".join(columns)
-
-    def _generate_detail_tables_html(self) -> str:
-        sections = [
-            ("Section 3: Enablers & Influencers", self.data.enablers_influencers,
-             "Organizations that provide infrastructure, funding, regulation, standards, or expertise."),
-            ("Section 4: Products & Solutions", self.data.products_solutions,
-             "Organizations that produce complementary or substitute products/solutions."),
-            ("Section 5: Channels & Partners", self.data.channels_partners,
-             "Organizations that facilitate distribution, adoption, or implementation."),
-            ("Section 6: Buyers", self.data.buyers,
-             "Organizations or entities that pay for your solution."),
-            ("Section 7: End Users", self.data.end_users,
-             "Individual people or departments who directly use your innovation.")
-        ]
-
-        tables = []
-        for title, orgs, description in sections:
-            if not orgs:
-                continue
-
-            rows = []
-            for org in orgs:
-                dot_class = f"dot-{org.acceptability_emoji}"
-                rows.append(f"""
-                <tr>
-                    <td>{org.name}</td>
-                    <td>{org.role}</td>
-                    <td>{org.requester}</td>
-                    <td><span class="acceptability-dot {dot_class}"></span>{org.acceptability.title()}</td>
-                    <td>{org.need_level}</td>
-                    <td>{org.notes}</td>
-                </tr>
-                """)
-
-            tables.append(f"""
-            <div class="card">
-                <h2>{title}</h2>
-                <p><em>{description}</em></p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Organization</th>
-                            <th>Role</th>
-                            <th>Requester</th>
-                            <th>Acceptability</th>
-                            <th>Need Level</th>
-                            <th>Notes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {"".join(rows)}
-                    </tbody>
-                </table>
-            </div>
-            """)
-
-        return "\n".join(tables)
 
 
 # =============================================================================

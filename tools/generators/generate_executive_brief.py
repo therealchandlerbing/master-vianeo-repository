@@ -20,18 +20,6 @@ from datetime import datetime
 from typing import Dict, Any, Optional, List
 from dataclasses import dataclass, field
 
-try:
-    from docx import Document
-    from docx.shared import Pt, Inches, RGBColor
-    from docx.enum.text import WD_ALIGN_PARAGRAPH
-    from docx.enum.table import WD_TABLE_ALIGNMENT
-    from docx.oxml.ns import qn
-    from docx.oxml import OxmlElement
-    DOCX_AVAILABLE = True
-except ImportError:
-    DOCX_AVAILABLE = False
-    print("Warning: python-docx not installed. Install with: pip install python-docx")
-
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
@@ -44,6 +32,19 @@ from core.utils import (
     load_data_file,
     ValidationReport
 )
+from generators.base import BaseDocumentGenerator, is_docx_available, DOCX_AVAILABLE
+
+# Import python-docx components if available
+if DOCX_AVAILABLE:
+    from docx import Document
+    from docx.shared import Pt, Inches, RGBColor
+    from docx.enum.text import WD_ALIGN_PARAGRAPH
+    from docx.enum.table import WD_TABLE_ALIGNMENT
+    from docx.oxml.ns import qn
+    from docx.oxml import OxmlElement
+else:
+    # Type hint stub when python-docx not available
+    Document = None
 
 
 # =============================================================================
@@ -116,12 +117,12 @@ class ExecutiveBriefData:
 # DOCX GENERATION
 # =============================================================================
 
-class ExecutiveBriefGenerator:
+class ExecutiveBriefGenerator(BaseDocumentGenerator):
     """Generator for VIANEO Executive Brief documents."""
 
     def __init__(self, data: ExecutiveBriefData):
+        super().__init__()
         self.data = data
-        self.styles = DocxStyles()
 
     def generate_docx(self, output_path: Path) -> bool:
         """
@@ -133,7 +134,7 @@ class ExecutiveBriefGenerator:
         Returns:
             True if successful, False otherwise
         """
-        if not DOCX_AVAILABLE:
+        if not is_docx_available():
             print("Error: python-docx not installed")
             return False
 
@@ -158,14 +159,7 @@ class ExecutiveBriefGenerator:
         doc.save(str(output_path))
         return True
 
-    def _setup_document(self, doc: Document) -> None:
-        """Set up document formatting."""
-        # Set margins
-        for section in doc.sections:
-            section.top_margin = Inches(1)
-            section.bottom_margin = Inches(1)
-            section.left_margin = Inches(1)
-            section.right_margin = Inches(1)
+    # Note: _setup_document() is inherited from BaseDocumentGenerator
 
     def _add_styled_heading(
         self,
@@ -811,7 +805,7 @@ def generate_executive_brief(
     outputs = {}
 
     # Generate DOCX
-    if output_format in ["docx", "both"] and DOCX_AVAILABLE:
+    if output_format in ["docx", "both"] and is_docx_available():
         docx_path = output_path.with_suffix('.docx')
         generator = ExecutiveBriefGenerator(data)
         if generator.generate_docx(docx_path):
