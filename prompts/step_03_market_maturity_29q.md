@@ -6,6 +6,20 @@
 
 ---
 
+## AI-Assisted Execution
+
+> To run this step with an AI assistant, see `docs/VIANEO_AI_Assisted_Workflow.md`. Full step context, scoring methodology, and question definitions are documented in the GITHUB Master Vianeo Repository.
+
+**Standard Call Pattern:**
+> Execute the Step 3: 29-Question Market Maturity Assessment from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_03_market_maturity_29q.md`.
+
+**Required Attachments:**
+- Step 0: Executive Brief
+- Step 2: 40-Question Diagnostic results
+- Customer interview notes/summaries (if available)
+
+---
+
 ## Overview
 
 Step 3 evaluates business model readiness through 29 evidence-based questions organized into five dimensions:

@@ -6,6 +6,21 @@
 
 ---
 
+## AI-Assisted Execution
+
+> To run this step with an AI assistant, see `docs/VIANEO_AI_Assisted_Workflow.md`. Full step context, needs frameworks, and validation requirements are documented in the GITHUB Master Vianeo Repository.
+
+**Standard Call Pattern:**
+> Execute the Step 5: Desirability - Needs/Requesters Analysis from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_05_needs_requesters.md`.
+
+**Required Attachments:**
+- Step 4: Legitimacy Assessment
+- Step 3: 29-Question Market Maturity Assessment
+- Customer interview notes (if available)
+- Business Model Canvas (if available)
+
+---
+
 ## Overview
 
 The Desirability Assessment validates that specific people need your specific solution by examining:

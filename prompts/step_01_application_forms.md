@@ -7,6 +7,19 @@
 
 ---
 
+## AI-Assisted Execution
+
+> To run this step with an AI assistant, see `docs/VIANEO_AI_Assisted_Workflow.md`. Full step context, templates, and examples are documented in the GITHUB Master Vianeo Repository.
+
+**Standard Call Pattern:**
+> Execute the Step 1: Application Forms Generation from the GITHUB Master Vianeo Repository, synced to this project's files. Use the prompt called `prompts/step_01_application_forms.md`.
+
+**Required Attachments:**
+- Completed Executive Brief from Step 0
+- Target program format preference (360 SIS or CNEN)
+
+---
+
 ## Overview
 
 Step 1 converts the Executive Brief from Step 0 into standardized application formats used by specific programs or institutions. This step is useful for:
