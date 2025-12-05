@@ -21,7 +21,7 @@ import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from core.constants import CharacterLimits
-from core.utils import format_date, safe_filename, clean_text
+from core.utils import format_date, safe_filename, clean_text, load_data_file
 
 
 # =============================================================================
@@ -783,18 +783,10 @@ def generate_value_chain(
         if input_path is None:
             raise ValueError("Either input_path or data must be provided")
 
-        input_path = Path(input_path)
-        if input_path.suffix in ['.yaml', '.yml']:
-            with open(input_path) as f:
-                raw_data = yaml.safe_load(f)
-        elif input_path.suffix == '.json':
-            with open(input_path) as f:
-                raw_data = json.load(f)
-        else:
-            raise ValueError(f"Unsupported input format: {input_path.suffix}")
+        raw_data = load_data_file(input_path)
 
         # Parse organizations
-        def parse_orgs(key):
+        def parse_orgs(key: str) -> List[OrganizationData]:
             orgs = []
             for o in raw_data.get(key, []):
                 orgs.append(OrganizationData(**o))

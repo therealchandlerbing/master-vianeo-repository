@@ -285,7 +285,7 @@ def generate_filename(
     project_name: str,
     template: str,
     date: Optional[datetime] = None,
-    **kwargs
+    **kwargs: str
 ) -> str:
     """
     Generate filename from template.
@@ -295,6 +295,9 @@ def generate_filename(
         template: Filename template with placeholders
         date: Date for filename (defaults to today)
         **kwargs: Additional template variables
+
+    Returns:
+        Generated filename string
     """
     if date is None:
         date = datetime.now()
@@ -327,6 +330,37 @@ def load_markdown(path: Union[str, Path]) -> str:
     """Load markdown file as string."""
     with open(path, 'r', encoding='utf-8') as f:
         return f.read()
+
+
+def load_data_file(path: Union[str, Path]) -> Dict[str, Any]:
+    """
+    Load data file based on extension (YAML or JSON).
+
+    Args:
+        path: Path to data file (.yaml, .yml, or .json)
+
+    Returns:
+        Parsed data dictionary
+
+    Raises:
+        ValueError: If file extension is not supported
+        FileNotFoundError: If file does not exist
+    """
+    path = Path(path)
+
+    if not path.exists():
+        raise FileNotFoundError(f"Data file not found: {path}")
+
+    suffix = path.suffix.lower()
+    if suffix in ['.yaml', '.yml']:
+        return load_yaml(path)
+    elif suffix == '.json':
+        return load_json(path)
+    else:
+        raise ValueError(
+            f"Unsupported file format: {path.suffix}. "
+            f"Expected .yaml, .yml, or .json"
+        )
 
 
 def save_yaml(data: Dict[str, Any], path: Union[str, Path]) -> None:
