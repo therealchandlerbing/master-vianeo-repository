@@ -156,24 +156,24 @@ Search project knowledge for additional context and generate Committee Synthesis
 
 ## Score Mapping Guide
 
-### Team Score (Committee) = Average of:
-- Legitimacy team assessment (expertise, commitment)
-- Feasibility execution capability
+### Team Score (Committee) = Weighted average of:
+- Legitimacy team assessment (expertise, commitment) - 60% weight
+- Feasibility execution capability - 40% weight
 - Key question: "Can this team deliver?"
 
-### Technology Score (Committee) = Average of:
-- Feasibility technical assessment
-- Legitimacy innovation assessment
+### Technology Score (Committee) = Weighted average of:
+- Feasibility technical assessment - 70% weight
+- Legitimacy innovation assessment - 30% weight
 - Key question: "Is the technology validated and differentiated?"
 
-### Management and Business Score (Committee) = Average of:
-- Viability business model assessment
-- Acceptability ecosystem assessment
+### Management and Business Score (Committee) = Weighted average of:
+- Viability business model assessment - 60% weight
+- Acceptability ecosystem assessment - 40% weight
 - Key question: "Is the business model sound and the ecosystem supportive?"
 
-### Commercial Score (Committee) = Average of:
-- Desirability customer validation
-- Viability market assessment
+### Commercial Score (Committee) = Weighted average of:
+- Desirability customer validation - 70% weight
+- Viability market assessment - 30% weight
 - Key question: "Do customers want this and will they pay?"
 
 ---

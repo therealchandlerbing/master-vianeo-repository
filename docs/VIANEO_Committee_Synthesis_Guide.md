@@ -121,6 +121,22 @@ Before generating Committee Synthesis, gather:
 - Overall weighted score
 - Threshold analysis results
 
+### From Step 4 (Legitimacy Worksheet)
+- Team expertise and commitment assessment
+- Innovation differentiation analysis
+
+### From Step 5 (Needs/Requesters Analysis)
+- Validated customer segments
+- Need validation evidence
+
+### From Step 7 (Needs Qualification Matrix)
+- Customer interview count and findings
+- Need prioritization results
+
+### From Step 8 (Players/Influencers Analysis)
+- Ecosystem stakeholder mapping
+- Partnership status
+
 ### From Step 10 (Diagnostic Comment)
 - Executive diagnostic summary
 - Critical path forward actions
@@ -149,7 +165,7 @@ Before generating Committee Synthesis, gather:
 
 ### Professional DOCX Report
 - Formatted header with project metadata
-- Color-coded score table (green >=4, yellow =3, red <=2)
+- Color-coded score table (green >=4, amber =3, red <=2)
 - Structured diagnostic sections
 - Overall assessment summary
 - Methodology footer with evidence sources

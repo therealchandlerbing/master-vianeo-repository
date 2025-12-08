@@ -9,6 +9,8 @@
 
 ### Platform Entry (Markdown)
 
+> **Note:** The Platform Entry uses a simplified 2-column Scores table (Dimension, Score) for direct platform selection. The detailed 4-column format (with Status and Key Rationale) is used in the Committee Scores section of the full report. See "Committee Scores Table Format" section below for the detailed format.
+
 ```markdown
 # [Project Name] Committee Synthesis - Vianeo Platform Entry
 
@@ -16,7 +18,7 @@
 **Title:** [Project Name]
 **Date:** [Date]
 
-## Scores
+## Scores (Select in Platform)
 | Dimension | Score |
 |-----------|:-----:|
 | Team | X/5 |
@@ -43,8 +45,8 @@
 ## Overall Assessment
 | Metric | Score | Status |
 |--------|:-----:|--------|
-| Market Maturity | X.X/5.0 | [Above/Below] threshold |
-| Overall Vianeo | X.X/5.0 | [Status] |
+| Market Maturity Score | X.X/5.0 | [Above/Below] 3.2 threshold |
+| Overall Vianeo Score | X.X/5.0 | [STRONG/PROMISING/DEVELOPING/PROBLEMATIC] |
 
 **Recommendation:** [PROCEED/CONDITIONAL PROCEED/PAUSE/DO NOT PROCEED]
 ```
@@ -178,7 +180,7 @@ For Vianeo platform compatibility:
    - Adequate: Score 3
    - Below: Score 1-2
 
-4. **Key Rationale** (left-aligned, 250 characters max)
+4. **Key Rationale** (left-aligned, 500 characters max)
    - 2-3 sentences with specific evidence
    - Include metrics where available
 
@@ -292,7 +294,7 @@ Before delivering Committee Synthesis:
 - [ ] All dimension names match specification exactly
 - [ ] Scores are integers (X/5, not decimals)
 - [ ] Status labels match score ranges
-- [ ] Rationale <=250 characters per dimension
+- [ ] Rationale <=500 characters per dimension
 - [ ] Total diagnostic comment 6-8 sentences
 
 ### Content Quality
@@ -315,8 +317,8 @@ Before delivering Committee Synthesis:
 - `IRDose_2025-12-08_Committee_Synthesis_Report.docx`
 
 **Rules:**
-- Use dashes in date (YYYY-MM-DD format in filename)
-- Underscore separators between elements
+- The date format is YYYY-MM-DD, using dashes as internal separators
+- Underscore separators between filename elements
 - CamelCase for project name
 
 ---

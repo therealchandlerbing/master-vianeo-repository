@@ -1,4 +1,4 @@
-# [Project Name] - Vianeo Platform Entry
+# [Project Name] Committee Synthesis - Vianeo Platform Entry
 
 **Purpose:** Copy/paste guide for Vianeo platform submission
 
@@ -28,7 +28,7 @@
 
 **RISKS:** [1-2 sentences with quantified gaps]
 
-**NEAR-TERM ACTIONS:** (1) [Action]. Owner: [Name]. Timeline: [X days]. (2) [Action]. Owner: [Name]. Timeline: [X days]. (3) [Action]. Owner: [Name]. Timeline: [X days].
+**NEAR-TERM ACTIONS:** (1) [Action with owner and timeline]. (2) [Action with owner and timeline]. (3) [Action with owner and timeline].
 
 **EVIDENCE GAPS:** [1-2 sentences on missing validation]
 
