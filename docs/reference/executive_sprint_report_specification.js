@@ -65,7 +65,7 @@ const projectData = {
   authorTitle: "Managing Director",
 
   // Scores
-  overallVianeosScore: "4.1 / 5.0",
+  overallVianeoScore: "4.1 / 5.0",
   marketMaturityScore: "3.1 / 5.0",
   status: "CONDITIONAL PROCEED",
 

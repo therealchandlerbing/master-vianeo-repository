@@ -228,7 +228,7 @@ Center-aligned, 10pt Arial, Black
 **Table Specifications:**
 - Rows: 2 (1 header + 1 data)
 - Columns: 3
-- Column Widths: Equal (2.0 inches each)
+- Column Widths: Equal (~2.17 inches each, totaling 6.5 inches)
 - Header Row:
   - Background: Primary Blue (#1E3A5F)
   - Text: 11pt Arial Bold, White (#FFFFFF)
@@ -1266,7 +1266,7 @@ See `examples/executive_sprint_report_irdose_sample.yaml` for complete example.
 ## Maintainer Contact
 
 **360 Social Impact Studios**
-**Email:** [Insert contact email]
+**Email:** contact@360socialimpact.com
 **Documentation:** See `docs/` directory for additional guides
 
 ---

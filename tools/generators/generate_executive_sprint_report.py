@@ -22,7 +22,7 @@ from typing import Dict, Any, Optional, List
 from dataclasses import dataclass, field
 
 import sys
-sys.path.insert(0, str(Path(__file__).parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from core.constants import DocxStyles, ScoreThresholds, VIANEO_DIMENSIONS
 from core.utils import format_date, safe_filename, clean_text, load_data_file
@@ -289,7 +289,7 @@ class ExecutiveSprintReportGenerator(BaseDocumentGenerator):
         run.font.name = self.styles.FONT_FAMILY
         run.font.size = Pt(28)
         run.bold = True
-        run.font.color.rgb = RGBColor.from_string("1E3A5F")
+        run.font.color.rgb = RGBColor.from_string(self.styles.PRIMARY_BLUE)
 
         # Title - Line 2
         subtitle = doc.add_paragraph()
@@ -298,7 +298,7 @@ class ExecutiveSprintReportGenerator(BaseDocumentGenerator):
         run.font.name = self.styles.FONT_FAMILY
         run.font.size = Pt(22)
         run.bold = True
-        run.font.color.rgb = RGBColor.from_string("1E3A5F")
+        run.font.color.rgb = RGBColor.from_string(self.styles.PRIMARY_BLUE)
 
         # Tagline
         tagline = doc.add_paragraph()
@@ -315,7 +315,7 @@ class ExecutiveSprintReportGenerator(BaseDocumentGenerator):
         run = assessment.add_run(self.data.subtitle)
         run.font.name = self.styles.FONT_FAMILY
         run.font.size = Pt(12)
-        run.font.color.rgb = RGBColor.from_string("2E5A7F")
+        run.font.color.rgb = RGBColor.from_string(self.styles.SECONDARY_BLUE)
 
         # Add spacing
         doc.add_paragraph()
@@ -377,7 +377,7 @@ class ExecutiveSprintReportGenerator(BaseDocumentGenerator):
                     run.bold = True
                     run.font.size = Pt(11)
             # Add header shading
-            self._add_cell_shading(cell, "1E3A5F")
+            self._add_cell_shading(cell, self.styles.PRIMARY_BLUE)
             self._set_cell_text_color(cell, "FFFFFF")
 
         # Data
@@ -396,7 +396,7 @@ class ExecutiveSprintReportGenerator(BaseDocumentGenerator):
                     run.font.size = Pt(11)
             # Add shading for status column
             if i == 2:
-                self._add_cell_shading(cell, "FFC107")
+                self._add_cell_shading(cell, self.styles.WARNING_YELLOW)
 
         doc.add_paragraph()
 
@@ -428,7 +428,7 @@ class ExecutiveSprintReportGenerator(BaseDocumentGenerator):
                 for run in para.runs:
                     run.bold = True
                     run.font.size = Pt(11)
-            self._add_cell_shading(cell, "1E3A5F")
+            self._add_cell_shading(cell, self.styles.PRIMARY_BLUE)
             self._set_cell_text_color(cell, "FFFFFF")
 
         # Data rows
@@ -458,7 +458,8 @@ class ExecutiveSprintReportGenerator(BaseDocumentGenerator):
                 for run in para.runs:
                     run.bold = True
                     run.font.size = Pt(11)
-                    run.font.color.rgb = RGBColor.from_string(finding.status_color)
+                    status_color = self.styles.SUCCESS_GREEN if finding.status == "PASS" else self.styles.DANGER_RED
+                    run.font.color.rgb = RGBColor.from_string(status_color)
 
             # Interpretation
             cells[3].text = finding.interpretation
@@ -469,7 +470,7 @@ class ExecutiveSprintReportGenerator(BaseDocumentGenerator):
             # Alternating row shading
             if i % 2 == 0:
                 for cell in cells:
-                    self._add_cell_shading(cell, "E8F4F8")
+                    self._add_cell_shading(cell, self.styles.LIGHT_BLUE)
 
         doc.add_paragraph()
 
@@ -549,7 +550,7 @@ class ExecutiveSprintReportGenerator(BaseDocumentGenerator):
                 for run in para.runs:
                     run.bold = True
                     run.font.size = Pt(11)
-            self._add_cell_shading(cell, "1E3A5F")
+            self._add_cell_shading(cell, self.styles.PRIMARY_BLUE)
             self._set_cell_text_color(cell, "FFFFFF")
 
         # Data rows
@@ -570,7 +571,7 @@ class ExecutiveSprintReportGenerator(BaseDocumentGenerator):
             # Alternating row shading
             if i % 2 == 0:
                 for cell in cells:
-                    self._add_cell_shading(cell, "E8F4F8")
+                    self._add_cell_shading(cell, self.styles.LIGHT_BLUE)
 
         doc.add_paragraph()
 
@@ -594,12 +595,12 @@ class ExecutiveSprintReportGenerator(BaseDocumentGenerator):
             para_format.left_indent = Inches(0.25)
             para_format.right_indent = Inches(0.25)
 
-            self._add_cell_shading_paragraph(para, "F8F9FA")
+            self._add_paragraph_shading(para, self.styles.LIGHT_BACKGROUND)
 
             run = para.add_run("Critical pricing validation needed: ")
             run.font.size = Pt(11)
             run.bold = True
-            run.font.color.rgb = RGBColor.from_string("DC3545")
+            run.font.color.rgb = RGBColor.from_string(self.styles.DANGER_RED)
 
             run = para.add_run(self.data.pricing_warning)
             run.font.size = Pt(11)
@@ -747,7 +748,7 @@ class ExecutiveSprintReportGenerator(BaseDocumentGenerator):
                 for run in para.runs:
                     run.bold = True
                     run.font.size = Pt(11)
-            self._add_cell_shading(cell, "1E3A5F")
+            self._add_cell_shading(cell, self.styles.PRIMARY_BLUE)
             self._set_cell_text_color(cell, "FFFFFF")
 
         # Data rows
@@ -786,7 +787,7 @@ class ExecutiveSprintReportGenerator(BaseDocumentGenerator):
             # Alternating row shading
             if i % 2 == 0:
                 for cell in cells:
-                    self._add_cell_shading(cell, "E8F4F8")
+                    self._add_cell_shading(cell, self.styles.LIGHT_BLUE)
 
     def _add_recommendations(self, doc: Document) -> None:
         """Add Section 5: Recommendations."""
@@ -888,7 +889,7 @@ class ExecutiveSprintReportGenerator(BaseDocumentGenerator):
                 for run in para.runs:
                     run.bold = True
                     run.font.size = Pt(11)
-            self._add_cell_shading(cell, "1E3A5F")
+            self._add_cell_shading(cell, self.styles.PRIMARY_BLUE)
             self._set_cell_text_color(cell, "FFFFFF")
 
         # Data rows
@@ -918,7 +919,7 @@ class ExecutiveSprintReportGenerator(BaseDocumentGenerator):
             # Alternating row shading
             if i % 2 == 0:
                 for cell in cells:
-                    self._add_cell_shading(cell, "E8F4F8")
+                    self._add_cell_shading(cell, self.styles.LIGHT_BLUE)
 
     def _add_conclusion(self, doc: Document) -> None:
         """Add Section 6: Conclusion."""
@@ -929,21 +930,54 @@ class ExecutiveSprintReportGenerator(BaseDocumentGenerator):
             para = doc.add_paragraph()
 
             # Special formatting for paragraphs 3 and 4
-            if i == 2 and "path forward is clear" in para_text.lower():
-                run = para.add_run("The path forward is clear: ")
-                run.font.size = Pt(11)
-                run.bold = True
-                run = para.add_run(para_text.replace("The path forward is clear: ", ""))
-                run.font.size = Pt(11)
-            elif i == 3 and "CONDITIONAL PROCEED" in para_text:
-                run = para.add_run("The assessment recommends ")
-                run.font.size = Pt(11)
-                run = para.add_run("CONDITIONAL PROCEED")
-                run.font.size = Pt(11)
-                run.bold = True
-                remaining = para_text.replace("The assessment recommends CONDITIONAL PROCEED", "")
-                run = para.add_run(remaining)
-                run.font.size = Pt(11)
+            # More robust approach: look for common patterns with case-insensitive matching
+            lower_text = para_text.lower()
+
+            if i == 2 and ("path forward" in lower_text or "next steps" in lower_text):
+                # Try to find the exact phrase to bold
+                if "path forward is clear:" in lower_text:
+                    idx = lower_text.index("path forward is clear:")
+                    before = para_text[:idx]
+                    bold_part = para_text[idx:idx+23]  # Length of "path forward is clear:"
+                    after = para_text[idx+23:]
+
+                    if before:
+                        run = para.add_run(before)
+                        run.font.size = Pt(11)
+                    run = para.add_run(bold_part)
+                    run.font.size = Pt(11)
+                    run.bold = True
+                    run = para.add_run(after)
+                    run.font.size = Pt(11)
+                else:
+                    run = para.add_run(clean_text(para_text))
+                    run.font.size = Pt(11)
+
+            elif i == 3 and (self.data.status in para_text or "recommend" in lower_text):
+                # Try to find and bold the recommendation status
+                status_terms = ["GO", "CONDITIONAL PROCEED", "NO-GO", "PIVOT RECOMMENDED"]
+                found_status = None
+                for term in status_terms:
+                    if term in para_text:
+                        found_status = term
+                        break
+
+                if found_status:
+                    idx = para_text.index(found_status)
+                    before = para_text[:idx]
+                    after = para_text[idx+len(found_status):]
+
+                    if before:
+                        run = para.add_run(before)
+                        run.font.size = Pt(11)
+                    run = para.add_run(found_status)
+                    run.font.size = Pt(11)
+                    run.bold = True
+                    run = para.add_run(after)
+                    run.font.size = Pt(11)
+                else:
+                    run = para.add_run(clean_text(para_text))
+                    run.font.size = Pt(11)
             else:
                 run = para.add_run(clean_text(para_text))
                 run.font.size = Pt(11)
@@ -1022,10 +1056,15 @@ class ExecutiveSprintReportGenerator(BaseDocumentGenerator):
             for run in para.runs:
                 run.font.color.rgb = RGBColor.from_string(color)
 
-    def _add_cell_shading_paragraph(self, para, color: str) -> None:
+    def _add_paragraph_shading(self, para: Any, color: str) -> None:
         """Add shading to a paragraph (for callout boxes)."""
-        # Note: This is a simplified version - proper implementation would use borders
-        pass
+        if not DOCX_AVAILABLE:
+            return
+
+        shading = OxmlElement('w:shd')
+        shading.set(qn('w:fill'), color)
+        shading.set(qn('w:val'), 'clear')
+        para._element.get_or_add_pPr().append(shading)
 
 
 # =============================================================================
@@ -1341,8 +1380,26 @@ def generate_executive_sprint_report(
     # Determine output path
     if output_path is None:
         project_name = safe_filename(data.project_name or "Project")
-        today = datetime.now().strftime("%Y%m%d")
-        output_path = Path(f"{project_name}_Vianeo_Sprint_Executive_Report_{today}")
+        # Use report_date from data if available, otherwise use current date
+        if data.report_date:
+            try:
+                # Try to parse date in various formats
+                from datetime import datetime
+                for date_format in ["%B %d, %Y", "%Y-%m-%d", "%m/%d/%Y"]:
+                    try:
+                        date_obj = datetime.strptime(data.report_date, date_format)
+                        date_str = date_obj.strftime("%Y%m%d")
+                        break
+                    except ValueError:
+                        continue
+                else:
+                    # If no format matches, fall back to current date
+                    date_str = datetime.now().strftime("%Y%m%d")
+            except:
+                date_str = datetime.now().strftime("%Y%m%d")
+        else:
+            date_str = datetime.now().strftime("%Y%m%d")
+        output_path = Path(f"{project_name}_Vianeo_Sprint_Executive_Report_{date_str}")
 
     output_path = Path(output_path)
     outputs = {}
