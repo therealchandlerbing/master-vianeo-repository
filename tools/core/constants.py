@@ -218,6 +218,7 @@ class DocxStyles:
 
     # Colors (hex without #)
     PRIMARY_BLUE: str = "1B365D"
+    SECONDARY_BLUE: str = "2E5A7F"
     MEDIUM_GRAY: str = "4A4A4A"
     BODY_GRAY: str = "2D2D2D"
     LIGHT_GRAY: str = "757575"
@@ -226,6 +227,13 @@ class DocxStyles:
     GREEN_HIGHLIGHT: str = "D4EDDA"
     YELLOW_HIGHLIGHT: str = "FFF3CD"
     RED_HIGHLIGHT: str = "F8D7DA"
+
+    # Status colors (for Executive Sprint Report)
+    SUCCESS_GREEN: str = "28A745"
+    WARNING_YELLOW: str = "FFC107"
+    DANGER_RED: str = "DC3545"
+    LIGHT_BACKGROUND: str = "F8F9FA"
+    LIGHT_BLUE: str = "E8F4F8"
 
     # Font sizes (in points)
     TITLE_SIZE: int = 24
@@ -308,3 +316,7 @@ class FileNaming:
     # Diagnostic
     DIAGNOSTIC_MD = "{project_name}_Vianeo_Diagnostic_Comment.md"
     DIAGNOSTIC_DOCX = "{project_name}_Vianeo_Diagnostic_Comment.docx"
+
+    # Executive Sprint Report
+    EXECUTIVE_SPRINT_REPORT_MD = "{project_name}_Vianeo_Sprint_Executive_Report_{date}.md"
+    EXECUTIVE_SPRINT_REPORT_DOCX = "{project_name}_Vianeo_Sprint_Executive_Report_{date}.docx"
