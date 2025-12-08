@@ -1,0 +1,59 @@
+# Claude Project Ignore File
+# Files and directories listed here are excluded from Claude Project context
+# to optimize token usage without affecting repository functionality.
+
+# ===========================================
+# Archived Historical Documents (~13,400 tokens)
+# ===========================================
+# These are preserved in /archive but not needed for LLM reasoning
+archive/
+
+# ===========================================
+# Development & Test Files (~15,000 tokens)
+# ===========================================
+# Test code is for CI/development validation, not LLM context
+tools/tests/
+
+# Test fixtures
+tools/tests/fixtures/
+
+# ===========================================
+# Rendered HTML Examples (~10,000 tokens)
+# ===========================================
+# These are output artifacts, not source instructions
+# Keep .md examples which are more LLM-friendly
+examples/*.html
+
+# ===========================================
+# Standard Exclusions
+# ===========================================
+# Version control
+.git/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# This file itself (meta-exclusion)
+.claudeignore
