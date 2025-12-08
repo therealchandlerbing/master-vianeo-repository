@@ -14,9 +14,6 @@ archive/
 # Test code is for CI/development validation, not LLM context
 tools/tests/
 
-# Test fixtures
-tools/tests/fixtures/
-
 # ===========================================
 # Rendered HTML Examples (~10,000 tokens)
 # ===========================================
@@ -54,6 +51,3 @@ env/
 # OS files
 .DS_Store
 Thumbs.db
-
-# This file itself (meta-exclusion)
-.claudeignore
