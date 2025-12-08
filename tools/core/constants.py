@@ -308,3 +308,7 @@ class FileNaming:
     # Diagnostic
     DIAGNOSTIC_MD = "{project_name}_Vianeo_Diagnostic_Comment.md"
     DIAGNOSTIC_DOCX = "{project_name}_Vianeo_Diagnostic_Comment.docx"
+
+    # Executive Sprint Report
+    EXECUTIVE_SPRINT_REPORT_MD = "{project_name}_Vianeo_Sprint_Executive_Report_{date}.md"
+    EXECUTIVE_SPRINT_REPORT_DOCX = "{project_name}_Vianeo_Sprint_Executive_Report_{date}.docx"
