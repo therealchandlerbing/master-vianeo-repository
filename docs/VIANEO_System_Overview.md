@@ -374,4 +374,24 @@ A successful assessment:
 
 ---
 
+## Post-Sprint Administrative Step
+
+After completing all 13 steps (0-12), generate the **Committee Synthesis** to submit findings to the Vianeo platform. This step:
+
+- Maps 5 Vianeo dimensions to 4 committee dimensions (Team, Technology, Management and Business, Commercial)
+- Condenses diagnostic into platform-compatible format (4 paragraphs, 6-8 sentences)
+- Produces professional DOCX for committee review
+
+### Post-Sprint: Committee Synthesis
+
+| Step | Name | Time | Output |
+|------|------|------|--------|
+| Post | Committee Synthesis | 20-30m | Platform scores, diagnostic comment, DOCX report |
+
+**Note:** Committee Synthesis is an administrative step performed after Step 12 completion. It translates the 5-dimension Vianeo assessment into the 4-dimension committee evaluation format for platform submission.
+
+**See:** `docs/VIANEO_Committee_Synthesis_Guide.md`
+
+---
+
 This system provides everything needed for rigorous, evidence-based business model assessment. The key is honest evaluation that identifies where to focus effort, not validation of optimistic assumptions.

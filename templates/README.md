@@ -37,6 +37,8 @@ Examples:
 | `Step12_PMF_Template.md` | Product/Market Fit sheet |
 | `Step12_Business_Model_Template.md` | Business Model Canvas |
 | `Step12_Dashboard_Template.md` | Viability dashboard |
+| `Committee_Synthesis_Template.md` | Post-sprint committee synthesis report |
+| `Committee_Synthesis_PlatformEntry.md` | Platform copy/paste entry guide |
 
 ### DOCX Format Specifications (.md describing Word format)
 | File | Purpose |
@@ -89,8 +91,11 @@ Examples:
 | **Step 10** | Diagnostic MD, Diagnostic DOCX |
 | **Step 11** | Features-Needs HTML, Dual-View HTML, Analysis MD |
 | **Step 12** | PMF MD, Business Model MD, Dashboard MD, Viability Dashboard HTML |
+| **Post-Sprint** | Committee Synthesis MD, Platform Entry MD |
 
 > **Note**: Step 6 (Persona Development) templates follow the detailed specifications in the `prompts/step_06_persona_development.md` prompt file.
+>
+> **Note**: Committee Synthesis is a post-sprint administrative step that translates the 5-dimension Vianeo assessment into the 4-dimension committee evaluation format for platform submission.
 
 ## Usage
 
